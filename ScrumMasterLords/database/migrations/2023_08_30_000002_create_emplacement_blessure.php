@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usagers', function (Blueprint $table) {
+        Schema::create('emplacement_blessures', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->boolean('brulure_engelure')->nullable();
             $table->boolean('commotion_cerebrale')->nullable();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usagers');
+        Schema::dropIfExists('emplacement_blessures');
     }
 };

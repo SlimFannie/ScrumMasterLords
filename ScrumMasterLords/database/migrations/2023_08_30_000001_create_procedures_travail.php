@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('precedure_travails', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('titre');
-            $table->string('lien');
-            $table->string('departement');
+            $table->string('titre')->nullable();
+            $table->string('lien')->nullable();
+            $table->string('departement')->nullable();
             $table->string('sous_departement')->nullable();
         });
     }

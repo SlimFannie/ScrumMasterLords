@@ -11,29 +11,29 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
+        Schema::create('formulaire_grille_audits', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('fonction');
-            $table->string('secteur');
-            $table->date('date_observation');
-            $table->string('heure');
-            $table->string('lieu');
-            $table->string('temoin');
-            $table->text('description'); /* posiblement avoir une table que pour cela */
-            $table->text('correction_amelioration'); /* posiblement avoir une table que pour cela */
-            $table->boolean('avis_superieur');
+            $table->string('nom')->nullable();
+            $table->string('prenom')->nullable();
+            $table->string('fonction')->nullable();
+            $table->string('secteur')->nullable();
+            $table->date('date_observation')->nullable();
+            $table->string('heure')->nullable();
+            $table->string('lieu')->nullable();
+            $table->string('temoin')->nullable();
+            $table->text('description')->nullable(); /* posiblement avoir une table que pour cela */
+            $table->text('correction_amelioration')->nullable(); /* posiblement avoir une table que pour cela */
+            $table->boolean('avis_superieur')->nullable();
             $table->string('nom_superieur')->nullable();
             $table->string('date_avis')->nullable();
             $table->string('signature_superieur')->nullable();
-            $table->string('no_poste_superieur');
+            $table->string('no_poste_superieur')->nullable();
             $table->string('date_signature_superieur')->nullable();
             $table->string('employer')->nullable();
             $table->string('no_poste_employer')->nullable();
             $table->string('date_signature_employer')->nullable();
-            $table->string('etat');
-            $table->foreignId('user_matricule');
+            $table->string('etat')->nullable();
+            $table->foreignId('user_matricule')->nullable();
         });
     }
 
@@ -42,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('formulaire_grille_audits');
     }
 };

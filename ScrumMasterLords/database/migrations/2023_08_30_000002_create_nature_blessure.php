@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usagers', function (Blueprint $table) {
+        Schema::create('nature_blessures', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('tete_visage_nez_yeux_oreille')->nullable();
             $table->boolean('torse')->nullable();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usagers');
+        Schema::dropIfExists('nature_blessures');
     }
 };

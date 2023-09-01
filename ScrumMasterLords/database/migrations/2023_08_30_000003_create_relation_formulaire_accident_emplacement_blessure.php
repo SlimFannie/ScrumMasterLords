@@ -11,18 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usagers', function (Blueprint $table) {
+        Schema::create('formulaire_accidents_emplacement_blessures', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('tete_visage_nez_yeux_oreille')->nullable();
-            $table->boolean('torse')->nullable();
-            $table->boolean('poumon')->nullable();
-            $table->string('bras_epaule_coude')->nullable();
-            $table->string('poignet_main_doigt')->nullable();
-            $table->string('dos')->nullable();
-            $table->string('hanche')->nullable();
-            $table->string('jambre')->nullable();
-            $table->string('pied')->nullable();
-            $table->string('autre_place')->nullable();
+            $table->string('id_formulaire')->nullable();
+            $table->string('id_emplacement_blessure')->nullable();
         });
     }
 
@@ -31,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usagers');
+        Schema::dropIfExists('formulaire_accidents_emplacement_blessures');
     }
 };

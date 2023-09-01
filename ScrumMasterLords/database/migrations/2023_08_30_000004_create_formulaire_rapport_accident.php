@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
+        Schema::create('formulaire_rapport_accident', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('nom_employer');
-            $table->string('lieux_travail');
-            $table->string('date');
-            $table->string('heure');
+            $table->string('nom_employer')->nullable();
+            $table->string('lieux_travail')->nullable();
+            $table->string('date')->nullable();
+            $table->string('heure')->nullable();
             $table->string('epi')->nullable();
             $table->string('tenue_lieux')->nullable();
             $table->string('comportement_securitaire')->nullable();
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('port_epi')->nullable();
             $table->string('respect_procedures_etablies')->nullable();
             $table->string('description')->nullable();
-            $table->string('etat');
+            $table->string('etat')->nullable();
         });
     }
 
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('formulaire_rapport_accident');
     }
 };
