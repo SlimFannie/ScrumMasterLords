@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formulaire_rapport_accident', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+        Schema::create('formulaire_grille_audits', function (Blueprint $table) {
+            $table->id()->autoIncrement()->primary();
             $table->string('nom_employer')->nullable();
             $table->string('lieux_travail')->nullable();
             $table->string('date')->nullable();
@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('respect_procedures_etablies')->nullable();
             $table->string('description')->nullable();
             $table->string('etat')->nullable();
+            $table->foreignId('matricule_superieur')->nullable();
         });
     }
 
@@ -39,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulaire_rapport_accident');
+        Schema::dropIfExists('formulaire_grille_audits');
     }
 };

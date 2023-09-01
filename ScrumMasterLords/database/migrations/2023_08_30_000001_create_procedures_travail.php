@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('precedure_travails', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+            $table->id()->autoIncrement()->primary();
             $table->string('titre')->nullable();
             $table->string('lien')->nullable();
             $table->string('departement')->nullable();

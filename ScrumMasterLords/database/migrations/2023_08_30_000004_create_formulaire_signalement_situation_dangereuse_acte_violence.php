@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formulaire_grille_audits', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+        Schema::create('formulaire_signalement_situation_dangereuses', function (Blueprint $table) {
+            $table->id()->autoIncrement()->primary();
             $table->string('nom')->nullable();
             $table->string('prenom')->nullable();
             $table->string('fonction')->nullable();
@@ -29,8 +29,7 @@ return new class extends Migration
             $table->string('signature_superieur')->nullable();
             $table->string('no_poste_superieur')->nullable();
             $table->string('date_signature_superieur')->nullable();
-            $table->string('employer')->nullable();
-            $table->string('no_poste_employer')->nullable();
+            $table->string('signature_employer')->nullable();
             $table->string('date_signature_employer')->nullable();
             $table->string('etat')->nullable();
             $table->foreignId('user_matricule')->nullable();
@@ -42,6 +41,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulaire_grille_audits');
+        Schema::dropIfExists('formulaire_signalement_situation_dangereuses');
     }
 };

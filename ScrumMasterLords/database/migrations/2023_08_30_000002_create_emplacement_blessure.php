@@ -12,18 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('emplacement_blessures', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->boolean('brulure_engelure')->nullable();
-            $table->boolean('commotion_cerebrale')->nullable();
-            $table->boolean('corps_etranger')->nullable();
-            $table->boolean('coupure_laceration_dechirure')->nullable();
-            $table->boolean('douleur_dos')->nullable();
-            $table->boolean('egratignure_eraflure_piqure_echarde')->nullable();
-            $table->boolean('entorse_elongation-contusion_foulure_luxation')->nullable();
-            $table->boolean('fracture_amputation')->nullable();
-            $table->string('irritation_infection')->nullable();
-            $table->boolean('inhalation')->nullable();
-            $table->string('autre_emplacement')->nullable();
+            $table->id()->autoIncrement()->primary();
+            $table->string('tete_visage_nez_yeux_oreille')->nullable();
+            $table->boolean('torse')->nullable();
+            $table->boolean('poumon')->nullable();
+            $table->string('bras_epaule_coude')->nullable();
+            $table->string('poignet_main_doigt')->nullable();
+            $table->string('dos')->nullable();
+            $table->string('hanche')->nullable();
+            $table->string('jambre')->nullable();
+            $table->string('pied')->nullable();
+            $table->string('autre_place')->nullable();
         });
     }
 

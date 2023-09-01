@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formulaire_declaration_situation_dangereuses', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->string('nom_eployer')->nullable();
+        Schema::create('formulaire_declaration_accident_travails', function (Blueprint $table) {
+            $table->id()->autoIncrement()->primary();
+            $table->string('nom_employer')->nullable();
             $table->string('fonction')->nullable();
             $table->date('date_accident')->nullable(); 
             $table->string('heure')->nullable();
@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('nom_temoins')->nullable();
             $table->string('violence')->nullable();
             $table->text('description')->nullable(); /* posiblement avoir une table que pour cela */
+            $table->string('premirs soins')->nullable();
+            $table->string('nom du secouriste')->nullable();
             $table->boolean('accident_sans_absence')->nullable();
             $table->boolean('accident_avec_consultation_medical')->nullable();
             $table->boolean('avis_superieur')->nullable();
@@ -29,8 +31,7 @@ return new class extends Migration
             $table->string('signature_superieur')->nullable();
             $table->string('no_poste_superieur')->nullable();
             $table->string('date_signature_superieur')->nullable();
-            $table->string('employer')->nullable();
-            $table->string('no_poste_employer')->nullable();
+            $table->string('signatue_employer')->nullable();
             $table->string('date_signature_employer')->nullable();
             $table->string('etat')->nullable();
             $table->foreignId('user_matricule')->nullable();
