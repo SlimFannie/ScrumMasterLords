@@ -3,24 +3,8 @@
 
 <div class="container-fluid g-0">
 
-    <div class="container-fluid g-0">
-        <div class="card">   
-            <div class="row g-0">
-                <div class="col-4  text-center g-0">
-                    <p>LOGO<p>
-                </div>
-                <div class="col-4  text-center g-0">
-                    <h5>Mes formulaires<h5>
-                </div>
-                <div class="col-4  text-center g-0">
-                    <p>PHOTO<p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid g-0">
-        <div class="card mt-3 g-0" style="width: 750px" id="titre1">
+    <div class="container-fluid g-0" id="titre1">
+        <div class="card mt-3 g-0" style="width: 750px" >
             <div class="row g-0">
                 <div class="col-10 offset-col-3 text-center m-4 g-0">
                     <h3 id="titre2">Signalement d'une situation dangereuse, d'un acte de violence ou d'un "passé proche"<h3>
