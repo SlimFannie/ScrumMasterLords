@@ -19,7 +19,7 @@ return new class extends Migration
             $table->boolean('coupure_laceration_dechirure')->nullable();
             $table->boolean('douleur_dos')->nullable();
             $table->boolean('egratignure_eraflure_piqure_echarde')->nullable();
-            $table->boolean('entorse_elongation-contusion_foulure_luxation')->nullable();
+            $table->boolean('entorse_elongation_contusion_foulure_luxation')->nullable();
             $table->boolean('fracture_amputation')->nullable();
             $table->string('irritation_infection')->nullable();
             $table->boolean('inhalation')->nullable();

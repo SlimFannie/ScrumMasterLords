@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('prenom')->nullable();
             $table->string('courriel')->nullable();
             $table->string('mdp')->nullable();
+            $table->string('departement')->nullable();
             $table->int('nbr_notif')->default(0)->nullable();
             $table->Integer('matricule_superieur')->nullable();
         });
