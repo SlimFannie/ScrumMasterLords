@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('formulaire_signalement_situation_dangereuses', function (Blueprint $table) {
-            $table->id()->autoIncrement()->primary();
+            $table->id()->autoIncrement();
             $table->string('nom')->nullable();
             $table->string('prenom')->nullable();
             $table->string('fonction')->nullable();

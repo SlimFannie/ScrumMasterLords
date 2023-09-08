@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('usagers', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->Integer('matricule')->primary()->nullable();
+            $table->Integer('matricule')->nullable();
             $table->string('nom')->nullable();
             $table->string('prenom')->nullable();
+            $table->string('image')->nullable();
             $table->string('courriel')->nullable();
             $table->string('mdp')->nullable();
             $table->string('departement')->nullable();
-            $table->int('nbr_notif')->default(0)->nullable();
+            $table->boolean('admin')->nullable()->default(false);
+            $table->Integer('nbr_notif')->default(0)->nullable();
             $table->Integer('matricule_superieur')->nullable();
         });
     }
