@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('formulaire_grille_audits', function (Blueprint $table) {
-            $table->id()->autoIncrement()->primary();
+            $table->id()->autoIncrement();
             $table->string('nom_employer')->nullable();
             $table->string('lieux_travail')->nullable();
             $table->string('date')->nullable();

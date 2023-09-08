@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('formulaire_declaration_accident_travails', function (Blueprint $table) {
-            $table->id()->autoIncrement()->primary();
+            $table->id()->autoIncrement();
             $table->string('nom_employer')->nullable();
             $table->string('fonction')->nullable();
             $table->date('date_accident')->nullable(); 
