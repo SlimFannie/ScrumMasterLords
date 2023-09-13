@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class DeclarationAccidentsController extends Controller
 {
@@ -27,7 +29,77 @@ class DeclarationAccidentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $nom_employer = $request->get('nom_employer');
+        $fonction = $request->get('fonction');
+        $date_accident = $request->get('date_accident');
+        $nom_temoin1 = $request->get('nom_temoin1');
+        $nom_temoin2 = $request->get('nom_temoin2');
+        $tete = $request->get('tete');
+        $visage = $request->get('visage');
+        $nez = $request->get('nez');
+        $yeux = $request->get('yeux');
+        $oreille = $request->get('oreille');
+        $torse = $request->get('torse');
+        $poumon = $request->get('poumon');
+        $bras = $request->get('bras');
+        $epaule = $request->get('epaule');
+        $coude = $request->get('coude');
+        $poignet = $request->get('poignet');
+        $coupure = $request->get('coupure');
+        $laceration = $request->get('laceration');
+        $dechirure = $request->get('dechirure');
+        $douleur_dos = $request->get('douleur_dos');
+        $egratignure = $request->get('egratignure');
+        $eraflure = $request->get('eraflure');
+        $piqure = $request->get('piqure');
+        $echarde = $request->get('echarde');
+        $entorse = $request->get('entorse');
+        $elongation = $request->get('elongation');
+        $contusion = $request->get('contusion');
+        $foulure = $request->get('foulure');
+        $luxation = $request->get('luxation');
+        $fracture = $request->get('fracture');
+        $amputation = $request->get('amputation');
+        $irritation = $request->get('irritation');
+        $infection = $request->get('infection');
+        $inhalation = $request->get('inhalation');
+        $violence_physique = $request->get('violence_physique');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom_employer');
+
+        DB::insert('insert into formulaire_declaration_accident_travails (nom_employer, fonction, date_accident,
+         nom_temoin1, nom_temoin2, tete, visage, nez, yeux, oreille, torse, poumon, bras, epaule, coude, poignet, 
+         main, doigt, dos, hanche, jambre, pied, autre_place, brulure, engelure, commotion_cerebrale, corps_etranger,
+         coupure, laceration, dechirure, douleur_dos, egratignure, eraflure, piqure, echarde, entorse, elongation, 
+         contusion, foulure, luxation, fracture, amputation, irritation, infection, inhalation, violence_physique, 
+         violence_verbale, description, premiers_soins, nom_secouriste, accident_sans_absence, 
+         accident_avec_consultation_medical, avis_superieur, nom_superieur, date_avis, signature_superieur, no_poste_superieur,
+         date_signature_employer, etat, matricule_usager, date_creation) 
+         ');
     }
 
     /**

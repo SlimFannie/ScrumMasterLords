@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nom_complet_employer')->nullable();
             $table->string('nom_complet_superieur')->nullable();
             $table->string('no_permis_conduite_employer')->nullable();
-            $table->boolean('autre_vehicules_implique')->nullable();
+            $table->boolean('autre_vehicules_implique')->nullable()->default(0);
             $table->string('etat')->nullable();
             $table->string('matricule_creation')->nullable();
             $table->string('date-creation')->nullable();
