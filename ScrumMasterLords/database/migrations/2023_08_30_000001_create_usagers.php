@@ -23,6 +23,10 @@ return new class extends Migration
             $table->boolean('admin')->nullable()->default(false);
             $table->Integer('nbr_notif')->default(0)->nullable();
             $table->Integer('matricule_superieur')->nullable();
+            $table->string('matricule_creation')->nullable();
+            $table->string('date-creation')->nullable();
+            $table->string('matricule_dernier_modificateur')->nullable();
+            $table->string('date_derniere_modification')->nullable();
         });
     }
 

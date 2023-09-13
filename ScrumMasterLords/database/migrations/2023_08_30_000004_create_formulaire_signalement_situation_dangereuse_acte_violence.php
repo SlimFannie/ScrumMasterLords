@@ -33,6 +33,10 @@ return new class extends Migration
             $table->string('date_signature_employer')->nullable();
             $table->string('etat')->nullable();
             $table->foreignId('user_matricule')->nullable();
+            $table->string('matricule_creation')->nullable();
+            $table->string('date-creation')->nullable();
+            $table->string('matricule_dernier_modificateur')->nullable();
+            $table->string('date_derniere_modification')->nullable();
         });
     }
 

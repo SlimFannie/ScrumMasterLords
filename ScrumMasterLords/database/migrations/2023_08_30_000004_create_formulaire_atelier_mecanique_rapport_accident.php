@@ -20,6 +20,10 @@ return new class extends Migration
             $table->string('no_permis_conduite_employer')->nullable();
             $table->boolean('autre_vehicules_implique')->nullable();
             $table->string('etat')->nullable();
+            $table->string('matricule_creation')->nullable();
+            $table->string('date-creation')->nullable();
+            $table->string('matricule_dernier_modificateur')->nullable();
+            $table->string('date_derniere_modification')->nullable();
         });
     }
 

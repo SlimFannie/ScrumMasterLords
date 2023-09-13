@@ -54,6 +54,10 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('etat')->nullable();
             $table->foreignId('matricule_superieur')->nullable();
+            $table->string('matricule_creation')->nullable();
+            $table->string('date-creation')->nullable();
+            $table->string('matricule_dernier_modificateur')->nullable();
+            $table->string('date_derniere_modification')->nullable();
         });
     }
 
