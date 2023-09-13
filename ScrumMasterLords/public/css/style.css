@@ -7,7 +7,95 @@ ul li {
     padding-right: 20px;
 }
 
-.noBtn {
-    border: 0px;
-    background-color: transparent;
+#bgtitre1
+{
+    margin-left: 30%;
+    padding-left: 3%;
+    border-style: solid;
+    border-radius: 20px 20px;
+    border-width: 7px;
+    width: 780px;
+}
+
+#bgtitre2
+{
+    padding-right: 4%;
+    background-color: rgb(11, 35, 65);
+}
+
+#titre2
+{
+    color: rgb(120, 198, 224);
+    font-weight: bold;
+}
+
+#bgID
+{
+    background-color: rgb(0, 118, 213);
+    padding-bottom: 3%;
+}
+
+#header
+{
+    color: rgb(11, 35, 65);
+    font-style: italic;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+#fonction
+{
+    width: 320px;
+}
+
+#description
+{
+    background-color: rgb(0, 118, 213);
+    padding-top: 8px;
+}
+
+#dEvent
+{
+    width: 95%;
+    height: 180px;
+    border-radius: 15px 15px;
+    margin-top: 5px;
+}
+
+#iEvent
+{
+    margin-top: 5%;
+}
+@media screen and (max-width: 576px)
+{
+    #bgtitre1
+    {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    #fonction
+    {
+        width: 200px;
+    }
+
+    #header
+    {
+        margin-left: 20px;
+    }
+
+    #divSecteur
+    {
+        margin-top: 74px;
+    }
+
+    #divLieu
+    {
+        margin-top: 28px;
+    }
+
+    .champ
+    {
+        margin-left: 20px;
+    }
 }
