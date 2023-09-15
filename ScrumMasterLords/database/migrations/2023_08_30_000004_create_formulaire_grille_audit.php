@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('formulaire_grille_audits', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->string('nom_formulaire')->default('grille d\'audit SST');
             $table->string('nom_employer')->nullable();
             $table->string('lieux_travail')->nullable();
             $table->string('date')->nullable();

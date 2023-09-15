@@ -11,7 +11,12 @@ body {
 /* Navbar */
 
 .bgNav {
-    background-color: #78C7E0;
+    background-color: #0076D5;
+    color: #C5D800;
+}
+
+.bgApp {
+    display: block;
 }
 
 .nav-link-lg {
@@ -32,7 +37,6 @@ ul li {
     font-size: 2.5rem;
     padding-top: 15px;
     padding-bottom: 15px;
-    color: #0B2341;
 }
 
 .noBtn {

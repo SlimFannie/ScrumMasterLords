@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('formulaire_declaration_accident_travails', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->string('nom_formulaire')->default('formulaire de déclaration de travail');
             $table->string('nom_employer')->nullable();
             $table->string('fonction')->nullable();
             $table->string('date_accident')->nullable();
@@ -69,15 +70,16 @@ return new class extends Migration
             $table->string('nom_superieur')->nullable();
             $table->string('date_avis')->nullable();
             $table->string('signature_superieur')->nullable();
+            $table->foreignId('matricule_superieur')->nullable();
             $table->string('no_poste_superieur')->nullable();
             $table->string('date_signature_superieur')->nullable();
             $table->string('signatue_employer')->nullable();
+            $table->foreignId('matricule_usager')->nullable();
             $table->string('date_signature_employer')->nullable();
             $table->string('etat')->nullable();
-            $table->foreignId('matricule_usager')->nullable();
-            $table->string('matricule_creation')->nullable();
+            $table->foreignId('matricule_creation')->nullable();
             $table->string('date_creation')->nullable();
-            $table->string('matricule_dernier_modificateur')->nullable();
+            $table->foreignId('matricule_dernier_modificateur')->nullable();
             $table->string('date_derniere_modification')->nullable();
         });
     }

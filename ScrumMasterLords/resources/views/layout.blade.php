@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-<div class="container-fluid g-0 h-100 ">
-  <nav class="navbar navbar-expand-lg bg-light h-15 fixed-top">
+<div class="container-fluid g-0 h-100">
+  <nav class="navbar navbar-expand-lg bg-light h-15 position-top">
       <div class="row text-center d-flex align-items-center px-5 w-100">
         <div class="col-2">
           <a class="navbar-brand " href="#">
@@ -25,7 +25,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
               <li class="nav-item">
-                <button class="nav-link nav-link-lg noBtn" href="#" type="button" data-bs-toggle="collapse" data-bs-target="#newForm" aria-controls="newForm" aria-expanded="false" aria-label="Toggle navigation">Nouveau formulaire <i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="nav-link nav-link-lg noBtn" href="#" type="button" data-bs-toggle="collapse" data-bs-target="#newForm" aria-controls="newForm" aria-expanded="false" aria-label="Toggle navigation" onclick="showNav()">Nouveau formulaire <i class="fa-solid fa-pen-to-square"></i></button>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-link-lg" href="#">Mes formulaires <i class="fa-solid fa-list-check"></i></a>
@@ -40,8 +40,8 @@
   </nav>
       <div class="row d-flex align-items-center text-center h-85 g-0">
         <div class="col-12">
-          @yield('contenu')
-          <div class="collapse collapse-horizontal" id="newForm">
+          <div class="bgApp" id="app">@yield('contenu')</div>
+          <div class="collapse collapse-horizontal bgNav" id="newForm">
             <ul class="noBullet">
               <li>
                 Formulaire SST
@@ -63,5 +63,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/59d2871224.js" crossorigin="anonymous"></script>
+<script src="{{ asset('js/script.js') }}" crossorigin="anonymous"></script>
 </body>
 </html>
