@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-<div class="container-fluid g-0 h-100 fixed-top">
-  <nav class="navbar navbar-expand-lg bg-light h-15">
+<div class="container-fluid g-0 h-100 ">
+  <nav class="navbar navbar-expand-lg bg-light h-15 fixed-top">
       <div class="row text-center d-flex align-items-center px-5 w-100">
         <div class="col-2">
           <a class="navbar-brand " href="#">
