@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('formulaire_signalement_situation_dangereuses', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->string('nom_formulaire')->default('Formulaire de situation dangereuse et d\'acte de violence');
             $table->string('nom')->nullable();
             $table->string('prenom')->nullable();
             $table->string('fonction')->nullable();
