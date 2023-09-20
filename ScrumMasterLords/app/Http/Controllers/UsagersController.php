@@ -3,8 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use App\Models\Usager;
+use App\Http\Requests\UsagerRequest;
 use Illuminate\View\View;
+use Illuminate\Auth\Middleware;
+use Auth;
+use DB;
+use Hash;
+use Session;
 
 class UsagersController extends Controller
 {
@@ -64,18 +71,34 @@ class UsagersController extends Controller
         //
     }
 
-    public function connection(string $matricule, string $mdp)
-    {
-        $connection = DB::select("select count(matricule) from usagers where matricule = $matricule and mdp = $mdp");
-
-        if ($connection = 1)
-        {
-            $info = DB::select('select matricule, nom, prenom, image, nbr_notif, matricule_superieur, admin from usagers where matricule = ? and mdp = ?');
-
-            //return view('', ['usagers' => $info])
+    public function login(Request $request)
+    {   
+        try
+        {   
+            Log::debug($request->matricule);
+            $user = Usager::where('matricule','=',$request->matricule)->first();
+            if($user && Hash::check($request->mdp, $user->mdp))
+            {
+                Auth::login($user);
+                if(Auth::check())
+                {
+                    Session::put('id', $user->matricule);
+                    Session::put('prenom', $user->prenom);
+                    Session::put('nom', $user->nom);
+                    return View('accueils.index', compact('user'));
+                }
+                else
+                {
+                    return redirect()->route('usagers.login')->withErrors(['message','RIIIP']);
+                } 
+            }
+            {
+                return redirect()->route('usagers.login')->withErrors(['message','RIIIP']);
+            }
         }
-        
-
-        
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+        } 
     }
 }

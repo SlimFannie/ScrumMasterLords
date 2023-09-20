@@ -6,6 +6,31 @@ html {
 
 body {
     background-color: #78C7E0;
+    height: 100%;
+}
+
+.h-15 {
+    height: 10%;
+}
+
+.h-85 {
+    height: 90%;
+}
+
+.hoverShow {
+    display: none !important;
+  }
+  
+.hoverHide{
+    display: inline;
+}
+  
+.hover:hover .hoverHide {
+    display: none;
+}
+  
+.hover:hover .hoverShow {
+    display: inline !important;
 }
 
 /* Navbar */
@@ -42,14 +67,6 @@ ul li {
 .noBtn {
     border: 0;
     background-color: transparent;
-}
-
-.h-15 {
-    height: 15%;
-}
-
-.h-85 {
-    height: 85%;
 }
 
 /* Formulaire situation dangereuse */
