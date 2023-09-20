@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-<div class="container-fluid g-0 h-100">
-  <nav class="navbar navbar-expand-lg bg-light h-15 position-top">
-      <div class="row text-center d-flex align-items-center px-5 w-100">
+<div class="container-fluid g-0 h-100 d-flex flex-column">
+  <nav class="navbar navbar-expand-lg bg-light position-top h-15">
+      <div class="row text-center align-items-center px-5 w-100">
         <div class="col-2">
           <a class="navbar-brand " href="#">
             <img src="/img/logo_v3r_n_et_blanc.jpg" class="d-inline-flex" alt="Ville de Trois-Rivières" height="80px" width="70px">
@@ -25,7 +25,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
               <li class="nav-item">
-                <button class="nav-link nav-link-lg noBtn" href="#" type="button" data-bs-toggle="collapse" data-bs-target="#newForm" aria-controls="newForm" aria-expanded="false" aria-label="Toggle navigation" onclick="showNav()">Nouveau formulaire <i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="nav-link nav-link-lg noBtn" href="#" type="button" data-bs-toggle="collapse" data-bs-target="#newForm" aria-controls="newForm" aria-expanded="false" aria-label="Toggle navigation">Nouveau formulaire <i class="fa-solid fa-pen-to-square"></i></button>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-link-lg" href="#">Mes formulaires <i class="fa-solid fa-list-check"></i></a>
@@ -38,10 +38,10 @@
         </div>
       </div>
   </nav>
-      <div class="row d-flex align-items-center text-center h-85 g-0">
-        <div class="col-12">
-          <div class="bgApp" id="app">@yield('contenu')</div>
-          <div class="collapse collapse-horizontal bgNav" id="newForm">
+      <div class="row g-0 h-85">
+        <div class="col-12 h-100">
+          <div class="bgApp collapse collapse-horizontal show h-100" id="newForm">@yield('contenu')</div>
+          <div class="collapse collapse-horizontal bgNav h-100 d-flex align-items-center justify-content-center" id="newForm">
             <ul class="noBullet">
               <li>
                 Formulaire SST

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsagersController;
 use App\Http\Controllers\SituationDangerController;
 use App\Http\Controllers\DeclarationAccidentsController;
 use App\Http\Controllers\AuditsSSTController;
@@ -19,6 +20,13 @@ use App\Http\Controllers\AuditsSSTController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/connexion', function () {
+    return view('connexion');
+});
+
+Route::POST('/connecting',
+[UsagersController::class, 'login'])->name('usagers.login');
 
 Route::get('/situationDanger',
 [SituationDangerController::class, 'index'])->name('danger.index');
