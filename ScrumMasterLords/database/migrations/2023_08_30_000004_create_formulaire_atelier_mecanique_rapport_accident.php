@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('formulaire_atelier_mecanique_rapport_accident', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('nom_formulaire')->default('rapport d\'accident');
+            $table->string('nom_formulaire')->default('formulaire accident atelier mecanique');
             $table->string('no_unite')->nullable();
             $table->string('departement')->nullable();
             $table->string('nom_complet_employer')->nullable();
             $table->string('nom_complet_superieur')->nullable();
             $table->string('no_permis_conduite_employer')->nullable();
-            $table->boolean('autre_vehicules_implique')->nullable()->default(0);
+            $table->boolean('autre_vehicules_implique')->default(0)->nullable();
             $table->string('etat')->nullable();
             $table->string('matricule_creation')->nullable();
             $table->string('date-creation')->nullable();
