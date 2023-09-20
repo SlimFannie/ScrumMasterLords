@@ -89,6 +89,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulaire_declaration_situation_dangereuses');
+        Schema::dropIfExists('formulaire_declaration_accident_travails');
     }
 };

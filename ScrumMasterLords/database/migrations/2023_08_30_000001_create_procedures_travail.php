@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('precedure_travails', function (Blueprint $table) {
+        Schema::create('procedure_travails', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('titre')->nullable();
             $table->string('lien')->nullable();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('precedure_travails');
+        Schema::dropIfExists('procedure_travails');
     }
 };
