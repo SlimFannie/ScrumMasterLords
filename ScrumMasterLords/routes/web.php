@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SituationDangerController;
+use App\Http\Controllers\DeclarationAccidentsController;
+use App\Http\Controllers\AuditsSSTController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,9 @@ Route::get('/', function () {
 
 Route::get('/situationDanger',
 [SituationDangerController::class, 'index'])->name('danger.index');
+
+Route::get('/formAccidentTravail',
+[DeclarationAccidentsController::class, 'index'])->name('accident.index');
+
+Route::get('/formAuditSST',
+[AuditsSSTController::class, 'index'])->name('audit.index');

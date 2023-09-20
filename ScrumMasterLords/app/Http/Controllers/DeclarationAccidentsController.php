@@ -12,7 +12,11 @@ class DeclarationAccidentsController extends Controller
     // les formulaires des ses employers
     public function index()
     {
-        DB::select('select id, nom_formulaire, nom_employer, date_accident from formulaire_declaration_accident_travails where matricule_usager = ? or ? = ANY (select matricule_usager where ? = matricule_superieur) ');
+        DB::select('select id, nom_formulaire, nom_employer, date_accident 
+        from formulaire_declaration_accident_travails 
+        where matricule_usager = ? or ? = 
+        ANY (select matricule_usager where ? = matricule_superieur) ');
+        return View('formulaires.formAccidentTravail');
     }
 
     //requete fait fout avoir les information d'un seul formulaire.

@@ -1,0 +1,61 @@
+body, html
+{
+    height:100%;
+    margin:0;
+}
+
+.col-6
+{
+    padding: 0;
+}
+
+.zone
+{
+    border-radius: 20px;
+    border-style: solid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(30, 73, 45);
+}
+
+.title
+{
+    margin-bottom: 1rem;
+    color: rgb(197, 216, 0);
+    font-family: 'Poppins', sans-serif;
+}
+
+.mt
+{
+    margin-top: 0.5rem;
+}
+
+.resize
+{
+    resize: vertical;
+}
+
+input
+{
+    width: max-content;
+    height: 40px;
+}
+
+header, p
+{
+    color: rgb(197, 216, 0);
+    font-family: 'Poppins';
+}
+
+input, input[type=text], input[type=checkbox], textarea
+{
+    background-color: rgba(248, 255, 243, 0.9);
+    border-radius: 8px;
+    border-color: rgb(99, 188, 85);
+
+}
+
+input[type=text]:focus
+{
+    border-color: rgb(99, 188, 85);
+}

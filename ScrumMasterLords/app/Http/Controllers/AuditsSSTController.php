@@ -11,7 +11,7 @@ class AuditsSSTController extends Controller
      */
     public function index()
     {
-        //
+        return View('formulaires.formAuditSST');
     }
 
     /**
