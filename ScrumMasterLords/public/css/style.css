@@ -8,6 +8,22 @@ body {
     background-color: #78C7E0;
 }
 
+p, header
+{
+    font-family: 'Poppins';
+}
+
+h1, h2, h3, h4, h5
+{
+    font-family: 'Poppins', sans-serif;
+}
+
+input
+{
+    width: max-content;
+    height: 40px;
+}
+
 /* Navbar */
 
 .bgNav {

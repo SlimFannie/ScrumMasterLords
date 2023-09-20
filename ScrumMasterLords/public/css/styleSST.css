@@ -1,15 +1,9 @@
-body, html
-{
-    height:100%;
-    margin:0;
-}
-
 .col-6
 {
     padding: 0;
 }
 
-.zone
+.zoneSST
 {
     border-radius: 20px;
     border-style: solid;
@@ -19,11 +13,12 @@ body, html
     border-color: rgb(30, 73, 45);
 };
 
-.title
+.titleSST
 {
     margin-bottom: 1rem;
     color: rgb(30, 73, 45);
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 .mt
@@ -31,19 +26,13 @@ body, html
     margin-top: 0.5rem;
 }
 
-input
-{
-    width: max-content;
-    height: 40px;
-}
-
-header, p, h1
+.fontSST
 {
     color: rgb(30, 73, 45);
 }
 
 
-input, input[type=text], input[type=checkbox], textarea
+.inputSST
 {
     border-radius: 8px;
     border-color: rgb(30, 73, 45);
