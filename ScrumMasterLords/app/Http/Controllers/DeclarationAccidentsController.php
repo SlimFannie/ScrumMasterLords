@@ -13,6 +13,7 @@ class DeclarationAccidentsController extends Controller
     public function index()
     {
         DB::select('select id, nom_formulaire, nom_employer, date_accident where matricule_usager = ? or ? = ANY (select matricule_usager where ');
+        return View('formulaires.formAccidentTravail');
     }
 
     //requete fait fout avoir les information d'un seul formulaire.
