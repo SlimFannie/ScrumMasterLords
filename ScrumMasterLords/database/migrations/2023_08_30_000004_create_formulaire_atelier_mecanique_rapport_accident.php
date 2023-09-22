@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nom_formulaire')->default('formulaire accident atelier mecanique');
             $table->string('no_unite')->nullable();
             $table->string('departement')->nullable();
-            $table->string('nom_complet_employer')->nullable();
-            $table->string('nom_complet_superieur')->nullable();
+            $table->string('nom_complet_employer')->nullable(); // peut-être le changer en matricule_employer
+            $table->string('nom_complet_superieur')->nullable(); // peut-être le changer en matricule_superieur
             $table->string('no_permis_conduite_employer')->nullable();
             $table->boolean('autre_vehicules_implique')->default(0)->nullable();
             $table->string('etat')->nullable();
