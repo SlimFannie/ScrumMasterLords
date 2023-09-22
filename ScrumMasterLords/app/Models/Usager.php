@@ -12,23 +12,14 @@ class Usager extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $fillable = [
-        'prenom',
-        'nom',
-        'matricule',
-        'mdp'
-    ];
-
-    protected $hidden = [
-        'mdp',
-        'remember_token',
-    ];
-
     public function getAuthPassword()
     {
         return $this->mdp;
     }
 
+    public function departement() {
+        return $this->hasOne(Departement::class);
+    }
+
     public $timestamps = false;
-}
 }

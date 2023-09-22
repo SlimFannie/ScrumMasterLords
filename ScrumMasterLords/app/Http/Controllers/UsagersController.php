@@ -82,7 +82,7 @@ class UsagersController extends Controller
                 Auth::login($user);
                 if(Auth::check())
                 {
-                    Session::put('id', $user->matricule);
+                    Session::put('id', $user->id);
                     Session::put('prenom', $user->prenom);
                     Session::put('nom', $user->nom);
                     return View('accueils.index', compact('user'));
