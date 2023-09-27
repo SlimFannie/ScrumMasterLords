@@ -20,6 +20,14 @@ class AuditsSSTController extends Controller
         DB::select('select * from formulaire_grille_audits where id = ?');
     }
 
+    public function selectForm()
+    {
+        DB::select('select id, nom_formulaire, nom_employer, date 
+        from formulaire_grille_audits 
+        where matricule_usager = ? or ? = 
+        ANY (select matricule_usager where ? = matricule_superieur)');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
