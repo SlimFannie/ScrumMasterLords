@@ -43,7 +43,6 @@ class DeclarationAccidentsController extends Controller
      */
     public function store(Request $request)
     {
-
         $nom_employer = $request->get('nom_employer');
         $fonction = $request->get('fonction');
         $date_accident = $request->get('date_accident');
