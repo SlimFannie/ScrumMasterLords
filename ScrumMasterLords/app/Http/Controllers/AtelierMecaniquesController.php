@@ -11,7 +11,7 @@ class AtelierMecaniquesController extends Controller
      */
     public function index()
     {
-        //
+        return View('formulaires.formAtelierMecanique');
     }
 
     /**

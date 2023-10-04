@@ -399,7 +399,14 @@
 
             <div class="container-fluid zoneSST">
                 <div class="row g-0">
-                    <textarea class="resize mt mb-2 inputSST" aria-label="With textarea"></textarea>
+                    <textarea class="resize mt mb-2 inputSST" aria-label="With textarea" id="description"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8"></div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
                 </div>
             </div>
         </form>

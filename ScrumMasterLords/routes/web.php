@@ -5,6 +5,7 @@ use App\Http\Controllers\UsagersController;
 use App\Http\Controllers\SituationDangerController;
 use App\Http\Controllers\DeclarationAccidentsController;
 use App\Http\Controllers\AuditsSSTController;
+use App\Http\Controllers\AtelierMecaniquesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ Route::get('/connexion', function () {
 Route::POST('/connecting',
 [UsagersController::class, 'login'])->name('usagers.login');
 
-Route::get('/situationDanger',
+Route::get('/formSituationDanger',
 [SituationDangerController::class, 'index'])->name('danger.index');
 
 Route::get('/formAccidentTravail',
@@ -36,3 +37,6 @@ Route::get('/formAccidentTravail',
 
 Route::get('/formAuditSST',
 [AuditsSSTController::class, 'index'])->name('audit.index');
+
+Route::get('/formAtelierMecanique',
+[AtelierMecaniquesController::class, 'index'])->name('atelier.index');
