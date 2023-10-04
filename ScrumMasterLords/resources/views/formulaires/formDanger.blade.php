@@ -119,6 +119,12 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-8"></div>
+            <div class="col-4">
+                <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+            </div>
+        </div>
     </form>
 
 </div>

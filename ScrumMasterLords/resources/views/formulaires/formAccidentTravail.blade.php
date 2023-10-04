@@ -3,10 +3,20 @@
 @section ('contenu')
 
     <div class="container-fluid">
+        <div class="container-fluid g-0 sign">
+            <div class="mt-3 bgTitre">
+                <div class="row g-0">
+                    <div class="col-10 offset-col-3 text-center m-4 g-0">
+                        <h3>Déclaration d'un accident de travail<h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <form action="post">
             <div class="container-fluid zoneAT">
-                <div class="row g-0 titleAT mt">
-                    <h1 class="fontAT">Identification</h1>
+                <div class="row g-0 titleZone mt">
+                    <h1 class="titleAT">Identification</h1>
                 </div>
 
                 <div class="row g-0 mb-3">
@@ -35,9 +45,9 @@
 
                 <div class="row g-0 mb-3">
                     <header>Endroit de l'évènement</header>
-                    <input type="text" class=" inputAT">
+                    <input type="text" class=" inputAT" id="endroit">
                     <header>Secteur d'activité</header>
-                    <input type="text" class=" inputAT">
+                    <input type="text" class=" inputAT" id="secteur">
                 </div>
 
                 <div class="row g-0 mb-3">
@@ -563,7 +573,7 @@
                 </div>
 
                 <div class="row g-0 mb-3">
-                    <textarea class="resize inputAT" aria-label="With textarea"></textarea>
+                    <textarea class="resize inputAT" aria-label="With textarea" id="tache"></textarea>
                 </div>
             </div>
 
@@ -592,6 +602,13 @@
                     <div class="col-2 text-center align-middle">
                         <input class="form-check-input inputAT" type="checkbox" value="" id="consultation" style="vertical-align:-webkit-baseline-middle;">
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8"></div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
                 </div>
             </div>
         </form>
