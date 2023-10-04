@@ -9,7 +9,7 @@ body, html
     padding: 0;
 }
 
-.zone
+.zoneAT
 {
     border-radius: 20px;
     border-style: solid;
@@ -18,11 +18,12 @@ body, html
     background-color: rgb(30, 73, 45);
 }
 
-.title
+.titleAT
 {
     margin-bottom: 1rem;
     color: rgb(197, 216, 0);
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 .mt
@@ -35,19 +36,13 @@ body, html
     resize: vertical;
 }
 
-input
-{
-    width: max-content;
-    height: 40px;
-}
-
-header, p
+.fontAT
 {
     color: rgb(197, 216, 0);
     font-family: 'Poppins';
 }
 
-input, input[type=text], input[type=checkbox], textarea
+.inputAT
 {
     background-color: rgba(248, 255, 243, 0.9);
     border-radius: 8px;
