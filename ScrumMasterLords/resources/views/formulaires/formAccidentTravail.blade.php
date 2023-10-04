@@ -1,455 +1,466 @@
-@extends('layout')
-@section('contenu')
+@extends ('layout')
+@section ('titre','Accident de travail')
+@section ('contenu')
 
     <div class="container-fluid">
+        <div class="container-fluid g-0 sign">
+            <div class="mt-3 bgTitre">
+                <div class="row g-0">
+                    <div class="col-10 offset-col-3 text-center m-4 g-0">
+                        <h3>Déclaration d'un accident de travail<h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <form action="post">
-            <div class="container-fluid zone">
-                <div class="row text-center g-0 title mt">
-                    <h1>Identification</h1>
+            <div class="container-fluid zoneAT">
+                <div class="row g-0 titleZone mt">
+                    <h1 class="titleAT">Identification</h1>
                 </div>
 
                 <div class="row g-0 mb-3">
-                    <header for="nom">Nom complet</header>
-                    <input id="nom" type="text" class="border-3">
+                    <header class="fontAT"for="nom">Nom complet</header>
+                    <input id="nom" type="text" class="inputAT">
 
-                    <header for="matricule">Matricule</header>
-                    <input id="matricule" type="text" class="border-3">
+                    <header class="fontAT" for="matricule">Matricule</header>
+                    <input id="matricule" type="text" class="inputAT">
                 </div>
 
                 <div class="row g-0 mb-3">
-                    <header for="fonction">Fonction lors de l'évènement</header>
-                    <input id="fonction" type="text" class="border-3">
+                    <header class="fontAT" for="fonction">Fonction lors de l'évènement</header>
+                    <input id="fonction" type="text" class="inputAT">
                 </div>
             </div>
 
-            <div class="container-fluid zone">
-                <div class="row text-center title g-0 mt">
-                    <h1>Description de l'évènement</h1>
+            <div class="container-fluid zoneAT">
+                <div class="row titleAT g-0 mt">
+                    <h1 class="fontAT">Description de l'évènement</h1>
                 </div>
 
                 <div class="row g-0 mb-3">
-                    <header for="date">Date</header>
-                    <input type="datetime-local" id="date" style="width: 150px;">
+                    <header class="fontAT" for="date">Date</header>
+                    <input type="datetime-local" id="date" style="width: 150px;" class="inputAT">
                 </div>
 
                 <div class="row g-0 mb-3">
                     <header>Endroit de l'évènement</header>
-                    <input type="text" class="border-3">
+                    <input type="text" class=" inputAT" id="endroit">
                     <header>Secteur d'activité</header>
-                    <input type="text" class="border-3">
+                    <input type="text" class=" inputAT" id="secteur">
                 </div>
 
                 <div class="row g-0 mb-3">
-                    <header for="temoin">Témoins(s)</header>
-                    <input class="mb-1 border-3" type="text" placeholder="Nom témoin" id="temoin">
-                    <input class="border-3" type="text" placeholder="Nom témoin" id="temoin2">
+                    <header class="fontAT" for="temoin">Témoins(s)</header>
+                    <input class="mb-1  inputAT" type="text" placeholder="Nom témoin" id="temoin">
+                    <input class=" inputAT" type="text" placeholder="Nom témoin" id="temoin2">
                 </div>
             </div>
 
-            <div class="container-fluid zone">
-                <div class="row text-center g-0 title mt">
-                    <h1>Nature et site de la blessure</h1>
+            <div class="container-fluid zoneAT">
+                <div class="row g-0 titleAT mt">
+                    <h1 class="fontAT">Nature et site de la blessure</h1>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Tête</p>
+                        <p class="fontAT">Tête</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="tete">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="tete">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Visage</p>
+                        <p class="fontAT">Visage</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="visage">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="visage">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Nez</p>
+                        <p class="fontAT">Nez</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="nez">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="nez">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Yeux</p>
+                        <p class="fontAT">Yeux</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="oeilG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="oeilG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="oeilD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="oeilD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Oreilles</p>
+                        <p class="fontAT">Oreilles</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="oreilleG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="oreilleG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="oreilleD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="oreilleD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Torse</p>
+                        <p class="fontAT">Torse</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="torse">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="torse">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Poumons</p>
+                        <p class="fontAT">Poumon</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="poumon">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="poumon">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Bras</p>
+                        <p class="fontAT">Bras</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="brasG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="brasG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="brasD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="brasD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Épaules</p>
+                        <p class="fontAT">Épaules</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="epauleG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="epauleG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="epauleD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="epauleD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Coudes</p>
+                        <p class="fontAT">Coudes</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="coudeG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="coudeG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="coudeD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="coudeD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Poignets</p>
+                        <p class="fontAT">Poignets</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="poignetG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="poignetG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="poignetD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="poignetD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Mains</p>
+                        <p class="fontAT">Mains</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="mainG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="mainG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="mainD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="mainD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Doigts</p>
+                        <p class="fontAT">Doigts</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="doigts">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="doigts">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Dos</p>
+                        <p class="fontAT">Dos</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="dos">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="dos">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Hanche</p>
+                        <p class="fontAT">Hanche</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="hanche">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="hanche">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Jambes</p>
+                        <p class="fontAT">Jambes</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="jambeG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="jambeG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="jambeD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="jambeD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Genoux</p>
+                        <p class="fontAT">Genoux</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="genouG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="genouG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="genouD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="genouD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Pieds</p>
+                        <p class="fontAT">Pieds</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="piedG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="piedG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="piedD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="piedD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Orteils</p>
+                        <p class="fontAT">Orteils</p>
                     </div>
                     <div class="col-8">
-                        <input class="form-check-input" type="checkbox" value="" id="orteil">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="orteil">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Chevilles</p>
+                        <p class="fontAT">Chevilles</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="chevilleG">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="chevilleG">
                     </div>
                     <div class="col-2">
-                        <p>G</p>
+                        <p class="fontAT">G</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="chevilleD">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="chevilleD">
                     </div>
                     <div class="col-2">
-                        <p>D</p>
+                        <p class="fontAT">D</p>
                     </div>
                 </div>
             </div>
 
-            <div class="container-fluid zone">
-                <div class="row text-center g-0 title mt">
-                    <h1>Description de la blessure</h1>
+            <div class="container-fluid zoneAT">
+                <div class="row g-0 titleAT mt">
+                    <h1 class="fontAT">Description de la blessure</h1>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Brûlure</p>
+                        <p class="fontAT">Brûlure</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="brulure">
-                    </div>
-                </div>
-
-                <div class="row g-0">
-                    <div class="col-10">
-                        <p>Engelure</p>
-                    </div>
-                    <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="engelure">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="brulure">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Commotion cérébrale</p>
+                        <p class="fontAT">Engelure</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="commotion">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="engelure">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Corps étranger</p>
+                        <p class="fontAT">Commotion cérébrale</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="corpsEtranger">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="commotion">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Coupure</p>
+                        <p class="fontAT">Corps étranger</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="coupure">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="corpsEtranger">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Lacération</p>
+                        <p class="fontAT">Coupure</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="laceration">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="coupure">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Déchirure</p>
+                        <p class="fontAT">Lacération</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="dechirure">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="laceration">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Douleur au dos</p>
+                        <p class="fontAT">Déchirure</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="douleurDos">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="dechirure">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Égratignure</p>
+                        <p class="fontAT">Douleur au dos</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="egratignure">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="douleurDos">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Éraflure</p>
+                        <p class="fontAT">Égratignure</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="eraflure">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="egratignure">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Piqûre</p>
+                        <p class="fontAT">Éraflure</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="piqure">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="eraflure">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Écharde</p>
+                        <p class="fontAT">Piqûre</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="echarde">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="piqure">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Entorse</p>
+                        <p class="fontAT">Écharde</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="entorse">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="echarde">
+                    </div>
+                </div>
+
+                <div class="row g-0">
+                    <div class="col-10">
+                        <p class="fontAT">Entorse</p>
+                    </div>
+                    <div class="col-2">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="entorse">
                     </div>
                 </div>
 
@@ -459,138 +470,149 @@
                     </div>
                     <div class="col-2">
                         <input class="form-check-input" type="checkbox" value="" id="elongation">
+                        <p class="fontAT">Élongation</p>
+                    </div>
+                    <div class="col-2">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="elongation">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Contusion</p>
+                        <p class="fontAT">Contusion</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="contusion">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="contusion">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Foulure</p>
+                        <p class="fontAT">Foulure</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="foulure">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="foulure">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Luxation</p>
+                        <p class="fontAT">Luxation</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="luxation">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="luxation">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Fracture</p>
+                        <p class="fontAT">Fracture</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="fracture">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="fracture">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Amputation</p>
+                        <p class="fontAT">Amputation</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="amputation">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="amputation">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Irritation</p>
+                        <p class="fontAT">Irritation</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="irritation">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="irritation">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Infection</p>
+                        <p class="fontAT">Infection</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="infection">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="infection">
                     </div>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Inhalation</p>
+                        <p class="fontAT">Inhalation</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="inhalation">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="inhalation">
                     </div>
                 </div>
             </div>
 
-            <div class="container-fluid zone">
-                <div class="row g-0 text-center title mt">
-                    <h1>Avez-vous subis de la violence</h1>
+            <div class="container-fluid zoneAT">
+                <div class="row g-0 titleAT mt">
+                    <h1 class="fontAT">Avez-vous subis de la violence</h1>
                 </div>
 
                 <div class="row g-0">
                     <div class="col-4">
-                        <p>Physique</p>
+                        <p class="fontAT">Physique</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="physique">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="physique">
                     </div>
                     <div class="col-4">
-                        <p>Verbale</p>
+                        <p class="fontAT">Verbale</p>
                     </div>
                     <div class="col-2">
-                        <input class="form-check-input" type="checkbox" value="" id="verbale">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="verbale">
                     </div>
                 </div>
             </div>
 
-            <div class="container-fluid zone">
-                <div class="row g-0 text-center title mt">
-                    <h1>Décriver la tâche effectuée et comment s'est produit la blessure</h1>
+            <div class="container-fluid zoneAT">
+                <div class="row g-0 titleAT mt">
+                    <h1 class="fontAT">Décriver la tâche effectuée et comment s'est produit la blessure</h1>
                 </div>
 
                 <div class="row g-0 mb-3">
-                    <textarea class="border-3" aria-label="With textarea"></textarea>
+                    <textarea class="resize inputAT" aria-label="With textarea" id="tache"></textarea>
                 </div>
             </div>
 
-            <div class="container-fluid zone">
+            <div class="container-fluid zoneAT">
                 <div class="row g-0 mb-3 mt">
-                    <header for="premierSoin">Premier soins</header>
-                    <input class="border-3" type="text" placeholder="Nom" id="premierSoin">
-                    <header for="secouriste">Secouriste</header>
-                    <input class="border-3" type="text" placeholder="Nom" id="secouriste">
+                    <header class="fontAT" for="premierSoin">Premier soins</header>
+                    <input class=" inputAT" type="text" placeholder="Nom" id="premierSoin">
+                    <header class="fontAT" for="secouriste">Secouriste</header>
+                    <input class=" inputAT" type="text" placeholder="Nom" id="secouriste">
                 </div>
             </div>
 
-            <div class="container-fluid zone">
+            <div class="container-fluid zoneAT">
                 <div class="row g-0 mt">
                     <div class="col-10">
-                        <p>Accident ne nécessitant aucune absence</p>
+                        <p class="fontAT">Accident ne nécessitant aucune absence</p>
                     </div>
                     <div class="col-2 text-center">
-                        <input class="form-check-input" type="checkbox" value="" id="aucuneAbsence" style="vertical-align:-webkit-baseline-middle;">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="aucuneAbsence" style="vertical-align:-webkit-baseline-middle;">
                     </div>
                 </div>
                 <div class="row g-0">
                     <div class="col-10">
-                        <p>Accident nécessitant une consultation médicale</p>
+                        <p class="fontAT">Accident nécessitant une consultation médicale</p>
                     </div>
                     <div class="col-2 text-center align-middle">
-                        <input class="form-check-input" type="checkbox" value="" id="consultation" style="vertical-align:-webkit-baseline-middle;">
+                        <input class="form-check-input inputAT" type="checkbox" value="" id="consultation" style="vertical-align:-webkit-baseline-middle;">
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8"></div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
                 </div>
             </div>
         </form>

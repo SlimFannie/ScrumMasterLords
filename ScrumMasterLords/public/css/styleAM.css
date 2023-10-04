@@ -1,0 +1,44 @@
+header, p, h1, label
+{
+    color: rgb(120, 198, 224);
+}
+
+
+input, input[type=text], input[type=checkbox], textarea
+{
+    border-radius: 8px;
+    border-color: rgb(120, 198, 224);
+    color: rgb(0, 118, 213);
+};
+
+input[type=text]:focus
+{
+    border-color: rgb(0, 118, 213);
+}
+
+.col-6
+{
+    padding: 0;
+}
+
+.zoneAM
+{
+    border-radius: 20px;
+    border-style: solid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(11, 35, 65);
+    border-color: rgb(0, 118, 213);
+};
+
+.titleAM
+{
+    margin-bottom: 1rem;
+    color: rgb(0, 118, 213);
+    font-family: 'Poppins', sans-serif;
+}
+
+.mt
+{
+    margin-top: 0.5rem;
+}
