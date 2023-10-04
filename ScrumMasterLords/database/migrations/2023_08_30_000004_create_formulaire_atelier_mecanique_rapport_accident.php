@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('nom_complet_employer')->nullable(); // peut-être le changer en matricule_employer
             $table->string('nom_complet_superieur')->nullable(); // peut-être le changer en matricule_superieur
             $table->string('no_permis_conduite_employer')->nullable();
-            $table->boolean('autre_vehicules_implique')->default(0)->nullable();
+            $table->boolean('autre_vehicules_vrai')->default(0)->nullable();
+            $table->boolean('autre_vehicules_faux')->default(0)->nullable();
             $table->string('etat')->nullable();
             $table->string('matricule_creation')->nullable();
             $table->string('date-creation')->nullable();

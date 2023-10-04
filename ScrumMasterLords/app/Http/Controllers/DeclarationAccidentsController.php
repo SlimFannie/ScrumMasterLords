@@ -43,70 +43,74 @@ class DeclarationAccidentsController extends Controller
      */
     public function store(Request $request)
     {
-        $nom_employer = $request->get('nom_employer');
+        $nom_employer = $request->get('nom');
         $fonction = $request->get('fonction');
-        $date_accident = $request->get('date_accident');
-        $nom_temoin1 = $request->get('nom_temoin1');
-        $nom_temoin2 = $request->get('nom_temoin2'); //5
+        $date_accident = $request->get('datetime-local');
+        $endroit = $request->get('endroit');
+        $secteur = $request->get('secteur');//5
+        $nom_temoin1 = $request->get('temoin');
+        $nom_temoin2 = $request->get('temoin2'); 
         $tete = $request->get('tete');
         $visage = $request->get('visage');
-        $nez = $request->get('nez');
-        $oeil_gauche = $request->get('oeil_gauche');
-        $oeil_droite = $request->get('oeil_droite'); //10
-        $oreille_gauche = $request->get('oreille_gauche');
-        $oreille_droite = $request->get('oreille_droite');
-        $torse = $request->get('torse');
+        $nez = $request->get('nez');//10
+        $oeil_gauche = $request->get('oeilG');
+        $oeil_droite = $request->get('oeilD'); 
+        $oreille_gauche = $request->get('oreilleG');
+        $oreille_droite = $request->get('oreilleD');
+        $torse = $request->get('torse');//15
         $poumon = $request->get('poumon');
-        $bras_gauche = $request->get('bras_gauche'); //15
-        $bras_droite = $request->get('bras_droite');
-        $epaule_gauche = $request->get('epaule_gauche');
-        $epaule_droite = $request->get('epaule_droite');
-        $coude_gauche = $request->get('coude_gauche');
-        $coude_droite = $request->get('coude_droite'); //20
-        $poignet_gauche = $request->get('poignet_gauche');
-        $poignet_droite = $request->get('poignet_droite');
-        $main_gauche = $request->get('main_gauche');
-        $main_droite = $request->get('main_droite');
-        $doigt = $request->get('doigt'); //25
+        $bras_gauche = $request->get('brasG'); 
+        $bras_droite = $request->get('brasD');
+        $epaule_gauche = $request->get('epauleG');
+        $epaule_droite = $request->get('epauleD');//20
+        $coude_gauche = $request->get('coudeG');
+        $coude_droite = $request->get('coudeD'); 
+        $poignet_gauche = $request->get('poignetG');
+        $poignet_droite = $request->get('poignetD');
+        $main_gauche = $request->get('mainG'); //25
+        $main_droite = $request->get('mainD');
+        $doigt = $request->get('doigts');
         $dos = $request->get('dos');
         $hanche = $request->get('hanche');
-        $jambre_gauche = $request->get('jambre_gauche');
-        $jambre_droite = $request->get('jambre_droite');
-        $pied_gauche = $request->get('pied_gauche'); //30
-        $pied_droite = $request->get('pied_droite');
-        $orteils = $request->get('orteils');
-        $chevilles_gauche = $request->get('chevilles_gauche');
-        $chevilles_droite = $request->get('chevilles_droite');
-        $brulure = $request->get('brulure'); //35
-        $engelure = $request->get('engelure');
-        $commotion_cerebrale = $request->get('commotion_cerebrale');
-        $corps_etranger = $request->get('corps_etranger');
+        $jambre_gauche = $request->get('jambeG');//30
+        $jambre_droite = $request->get('jambeD');
+        $genoux_gauche = $request->get('genouG');
+        $genoux_droite = $request->get('genouD');
+        $pied_gauche = $request->get('piedG'); 
+        $pied_droite = $request->get('piedD');//35
+        $orteils = $request->get('orteil');
+        $chevilles_gauche = $request->get('chevilleG');
+        $chevilles_droite = $request->get('chevilleD');
+        $brulure = $request->get('brulure'); 
+        $engelure = $request->get('engelure');//40
+        $commotion_cerebrale = $request->get('commotion');
+        $corps_etranger = $request->get('corpsEtranger');
         $coupure = $request->get('coupure');
-        $laceration = $request->get('laceration'); //40
-        $dechirure = $request->get('dechirure');
-        $douleur_dos = $request->get('douleur_dos');
+        $laceration = $request->get('laceration'); 
+        $dechirure = $request->get('dechirure');//45
+        $douleur_dos = $request->get('douleurDos');
         $egratignure = $request->get('egratignure');
         $eraflure = $request->get('eraflure');
-        $piqure = $request->get('piqure'); //45
-        $echarde = $request->get('echarde');
+        $piqure = $request->get('piqure'); 
+        $echarde = $request->get('echarde');//50
         $entorse = $request->get('entorse');
         $elongation = $request->get('elongation');
         $contusion = $request->get('contusion');
-        $foulure = $request->get('foulure'); //50
-        $luxation = $request->get('luxation');
+        $foulure = $request->get('foulure'); 
+        $luxation = $request->get('luxation');//55
         $fracture = $request->get('fracture');
         $amputation = $request->get('amputation');
         $irritation = $request->get('irritation');
-        $infection = $request->get('infection'); //55
-        $inhalation = $request->get('inhalation');
-        $violence_physique = $request->get('violence_physique');
-        $violence_verbale = $request->get('violence_verbale');
-        $description = $request->get('description');
-        $premiers_soins = $request->get('premiers_soins'); //60
-        $nom_secouriste = $request->get('nom_secouriste');
-        $accident_sans_absence = $request->get('accident_sans_absence');
-        $accident_avec_consultation_medical = $request->get('accident_avec_consultation_medical');
-        $matricule_usager = $request->get('matricule_usager');
+        $infection = $request->get('infection'); 
+        $inhalation = $request->get('inhalation');//60
+        $violence_physique = $request->get('physique');
+        $violence_verbale = $request->get('verbale'); 
+        $description = $request->get('tache');
+        $premiers_soins = $request->get('premierSoin');
+        $nom_secouriste = $request->get('secouriste');//65
+        $accident_sans_absence = $request->get('aucuneAbsence');
+        $accident_avec_consultation_medical = $request->get('consultation'); 
+        $matricule_usager = $request->get('matricule'); //68
         /*$avis_superieur = $request->get('avis_superieur'); //65
         $date_avis = $request->get('date_avis');
         $signature_superieur = $request->get('signature_superieur');
@@ -117,19 +121,20 @@ class DeclarationAccidentsController extends Controller
         
 
         DB::insert('insert into formulaire_declaration_accident_travails (
-        nom_employer, fonction, date_accident, nom_temoin1, nom_temoin2,
-        tete, visage, nez, oeil_gauche, oeil_droite,
-        oreille_gauche, oreille_droite, torse, poumon, bras_gauche, 
-        bras_droite, epaule_gauche, epaule_droite, coude_gauche, coude_droite, 
-        poignet_gauche, poignet_droite, main_gauche, main_droite, doigt,
-        dos, hanche, jambre_gauche, jambre_droite, pied_gauche, 
-        pied_droite, orteils, chevilles_gauche, chevilles_droite, brulure,
-        engelure, commotion_cerebrale, corps_etranger, coupure, laceration, 
-        dechirure, douleur_dos, egratignure, eraflure, piqure, 
-        echarde, entorse, elongation, contusion, foulure, 
-        luxation, fracture, amputation, irritation, infection, 
-        inhalation, violence_physique, violence_verbale, description, premiers_soins, 
-        nom_secouriste, accident_sans_absence, accident_avec_consultation_medical, matricule_usager,
+        nom_employer, fonction, date_accident, endroit, secteur,
+        nom_temoin1, nom_temoin2, tete, visage, nez, 
+        oeil_gauche, oeil_droite, oreille_gauche, oreille_droite, torse, 
+        poumon, bras_gauche, bras_droite, epaule_gauche, epaule_droite, 
+        coude_gauche, coude_droite, poignet_gauche, poignet_droite, main_gauche,
+        main_droite, doigt, dos, hanche, jambre_gauche, 
+        jambre_droite, genoux_gauche, genoux_droite, pied_gauche, pied_droite, 
+        orteils, chevilles_gauche, chevilles_droite, brulure, engelure, 
+        commotion_cerebrale, corps_etranger, coupure, laceration, dechirure, 
+        douleur_dos, egratignure, eraflure, piqure, echarde, 
+        entorse, elongation, contusion, foulure, luxation, 
+        fracture, amputation, irritation, infection, inhalation, 
+        violence_physique, violence_verbale, description, premiers_soins, nom_secouriste, 
+        accident_sans_absence, accident_avec_consultation_medical, matricule_usager,
         ) values 
          (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
@@ -137,21 +142,22 @@ class DeclarationAccidentsController extends Controller
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-         ?, ?, ?, ?) ',/*avis_superieur, nom_superieur, date_avis, signature_superieur, no_poste_superieur, 
+         ?, ?, ?, ?, ?, ?, ?, ?) ',/*avis_superieur, nom_superieur, date_avis, signature_superieur, no_poste_superieur, 
         date_signature_employer, etat, date_creation*/
-        [$nom_employer, $fonction, $date_accident, $nom_temoin1, $nom_temoin2, 
-        $tete, $visage, $nez, $oeil_gauche, $oeil_droite, 
-        $oreille_droite, $oreille_gauche, $torse, $poumon, $bras_gauche,
-        $bras_droite, $epaule_gauche, $epaule_droite, $coude_gauche, $coude_droite,
-        $poignet_gauche, $poignet_droite, $main_gauche, $main_droite, $doigt, 
-        $dos, $hanche, $jambre_gauche, $jambre_droite, $pied_gauche, 
-        $pied_droite, $orteils, $chevilles_gauche, $chevilles_droite, $brulure, 
-        $engelure, $commotion_cerebrale, $corps_etranger, $coupure, $laceration, 
-        $dechirure, $douleur_dos, $egratignure, $eraflure, $piqure, 
-        $echarde, $entorse, $elongation, $contusion, $foulure, 
-        $luxation, $fracture, $amputation, $irritation, $infection, 
-        $inhalation, $violence_physique, $violence_verbale, $description, $premiers_soins, 
-        $nom_secouriste, $accident_sans_absence, $accident_avec_consultation_medical, $matricule_usager,
+        [$nom_employer, $fonction, $date_accident, $endroit, $secteur,
+        $nom_temoin1, $nom_temoin2, $tete, $visage, $nez, 
+        $oeil_gauche, $oeil_droite, $oreille_droite, $oreille_gauche, $torse, 
+        $poumon, $bras_gauche, $bras_droite, $epaule_gauche, $epaule_droite, 
+        $coude_gauche, $coude_droite, $poignet_gauche, $poignet_droite, $main_gauche, 
+        $main_droite, $doigt, $dos, $hanche, $jambre_gauche, 
+        $jambre_droite, $genoux_gauche, $genoux_droite, $pied_gauche, $pied_droite, 
+        $orteils, $chevilles_gauche, $chevilles_droite, $brulure, $engelure, 
+        $commotion_cerebrale, $corps_etranger, $coupure, $laceration, $dechirure, 
+        $douleur_dos, $egratignure, $eraflure, $piqure, $echarde, 
+        $entorse, $elongation, $contusion, $foulure, $luxation, 
+        $fracture, $amputation, $irritation, $infection, $inhalation, 
+        $violence_physique, $violence_verbale, $description, $premiers_soins, $nom_secouriste, 
+        $accident_sans_absence, $accident_avec_consultation_medical, $matricule_usager,
         /*$avis_superieur, $nom_superieur, $date_avis, $signature_superieur, $no_poste_superieur, 
         $date_signature_employer, $etat, $date_creation*/]);
         
