@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('usagers', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->Integer('matricule')->nullable();
+            $table->mediumInteger('matricule');
             $table->string('nom')->nullable();
             $table->string('prenom')->nullable();
             $table->string('image')->nullable();

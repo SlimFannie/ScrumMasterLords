@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('formulaire_grille_audits', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('nom_formulaire')->default('grille d\'audit SST');
+            $table->string('nom_formulaire')->default('grille audit SST');
             $table->string('nom_employer')->nullable();
             $table->string('lieux_travail')->nullable();
             $table->string('date')->nullable();
-            $table->boolean('heure')->nullable();
             $table->boolean('epi_conforme')->nullable()->default(0);
             $table->boolean('epi_non_conforme')->nullable()->default(0);
             $table->boolean('epi_na')->nullable()->default(0);
@@ -42,6 +41,9 @@ return new class extends Migration
             $table->boolean('methode_travail_conforme')->nullable()->default(0);
             $table->boolean('methode_travail_non_conforme')->nullable()->default(0);
             $table->boolean('methode_travail_na')->nullable()->default(0);
+            $table->boolean('autre_travail_conforme')->nullable()->default(0);
+            $table->boolean('autre_travail_non_conforme')->nullable()->default(0);
+            $table->boolean('autre_travail_na')->nullable()->default(0);
             $table->string('autre')->nullable();
             $table->boolean('respect_distanciation_conforme')->nullable()->default(0);
             $table->boolean('respect_distanciation_non_conforme')->nullable()->default(0);

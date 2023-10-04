@@ -22,21 +22,34 @@ return new class extends Migration
             $table->boolean('tete')->nullable()->default(0); /* premier champ emplacement de la bléssure */
             $table->boolean('visage')->nullable()->default(0);
             $table->boolean('nez')->nullable()->default(0);
-            $table->boolean('yeux')->nullable()->default(0);
-            $table->boolean('oreille')->nullable()->default(0);
+            $table->boolean('oeil_gauche')->nullable()->default(0);
+            $table->boolean('oeil_droit')->nullable()->default(0);
+            $table->boolean('oreille_gauche')->nullable()->default(0);
+            $table->boolean('oreille_droite')->nullable()->default(0);
             $table->boolean('torse')->nullable()->default(0);
             $table->boolean('poumon')->nullable()->default(0);
-            $table->boolean('bras')->nullable()->default(0);
-            $table->boolean('epaule')->nullable()->default(0);
-            $table->boolean('coude')->nullable()->default(0);
-            $table->boolean('poignet')->nullable()->default(0);
-            $table->boolean('main')->nullable()->default(0);
+            $table->boolean('bras_gauche')->nullable()->default(0);
+            $table->boolean('bras_droite')->nullable()->default(0);
+            $table->boolean('epaule_gauche')->nullable()->default(0);
+            $table->boolean('epaule_droite')->nullable()->default(0);
+            $table->boolean('coude_gauche')->nullable()->default(0);
+            $table->boolean('coude_droite')->nullable()->default(0);
+            $table->boolean('poignet_gauche')->nullable()->default(0);
+            $table->boolean('poignet_droite')->nullable()->default(0);
+            $table->boolean('main_gauche')->nullable()->default(0);
+            $table->boolean('main_droite')->nullable()->default(0);
             $table->boolean('doigt')->nullable()->default(0);
             $table->boolean('dos')->nullable()->default(0);
             $table->boolean('hanche')->nullable()->default(0);
-            $table->boolean('jambre')->nullable()->default(0);
-            $table->boolean('pied')->nullable()->default(0);
-            $table->string('autre_place')->nullable(); /* dernier champ emplacement de la bléssure */
+            $table->boolean('jambre_gauche')->nullable()->default(0);
+            $table->boolean('jambre_droite')->nullable()->default(0);
+            $table->boolean('genoux_gauche')->nullable()->default(0);
+            $table->boolean('genoux_droite')->nullable()->default(0);
+            $table->boolean('pied_gauche')->nullable()->default(0);
+            $table->boolean('pied_droite')->nullable()->default(0);
+            $table->boolean('orteils')->nullable()->default(0);
+            $table->boolean('chevilles_gauche')->nullable()->default(0);
+            $table->boolean('chevilles_droite')->nullable()->default(0);/* dernier champ emplacement de la bléssure */
             $table->boolean('brulure')->nullable()->default(0);/* premier champ description de la bléssure */
             $table->boolean('engelure')->nullable()->default(0);
             $table->boolean('commotion_cerebrale')->nullable()->default(0);
@@ -89,6 +102,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulaire_declaration_situation_dangereuses');
+        Schema::dropIfExists('formulaire_declaration_accident_travails');
     }
 };
