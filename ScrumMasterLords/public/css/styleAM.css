@@ -1,10 +1,9 @@
-header, p, h1, label
+.textAM
 {
     color: rgb(120, 198, 224);
 }
 
-
-input, input[type=text], input[type=checkbox], textarea
+.inputAM
 {
     border-radius: 8px;
     border-color: rgb(120, 198, 224);
@@ -36,6 +35,14 @@ input[type=text]:focus
     margin-bottom: 1rem;
     color: rgb(0, 118, 213);
     font-family: 'Poppins', sans-serif;
+}
+
+.bigTitleAM
+{
+    border-style: solid;
+    border-radius: 20px 20px;
+    border-width: 7px;
+    color: rgb(11, 35, 65);
 }
 
 .mt

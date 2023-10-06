@@ -1,4 +1,5 @@
 @extends('layout')
+@section ('titre','Situation dangereuse')
 @section('contenu')
 
 <div class="container-fluid g-0">
@@ -66,7 +67,7 @@
             </div>
         </div>
 
-        <div class="container-fluid g-0" id="description">
+        <div class="container-fluid g-0 description">
             <div class="row g-0">
                 <div class="col g-0">
                     <header for="dateHeure" id="header">Date et heure de l'observation :</header>
