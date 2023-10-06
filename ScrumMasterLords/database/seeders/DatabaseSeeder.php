@@ -18,12 +18,9 @@ class DatabaseSeeder extends Seeder
         
         //données de tests
 
-        $this->call(AtelierMecaniqueRapportAccidentTableSeeder::class);
-        $this->call(DeclarationAccidentsTableSeeder::class);
-        $this->call(GrilleAuditTableSeeder::class);
-        $this->call(ProceduresTravailTableseeder::class);
-        $this->call(SignalementTituationDangereuseActeViolenceTableSeeder::class);
         $this->call(UsagersSeeder::class);
+        $this->call(DepartementsSeeder::class);
+        
 
     }
 }
