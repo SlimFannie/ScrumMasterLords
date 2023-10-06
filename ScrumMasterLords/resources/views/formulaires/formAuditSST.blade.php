@@ -75,7 +75,7 @@
                         <input class="form-check-input inputSST" type="checkbox" value="" id="lieuxNA">
                     </div>
                     <div class="col-11">
-                        <p class="fontSST">N/A</p>
+                        <p class="fontSST">N/A</p
                     </div>
                 </div>
             </div>

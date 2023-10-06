@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('nom_employer')->nullable();
             $table->string('fonction')->nullable();
             $table->string('date_accident')->nullable();
+            $table->string('endroit')->nullable();
+            $table->string('secteur')->nullable();
             $table->string('nom_temoin1')->nullable(); 
             $table->string('nom_temoin2')->nullable(); /* fin header formulaire */
             $table->boolean('tete')->nullable()->default(0); /* premier champ emplacement de la bléssure */

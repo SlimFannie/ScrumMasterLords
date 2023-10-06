@@ -466,6 +466,10 @@
 
                 <div class="row g-0">
                     <div class="col-10">
+                        <p>Élongation</p>
+                    </div>
+                    <div class="col-2">
+                        <input class="form-check-input" type="checkbox" value="" id="elongation">
                         <p class="fontAT">Élongation</p>
                     </div>
                     <div class="col-2">
