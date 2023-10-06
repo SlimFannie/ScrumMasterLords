@@ -43,15 +43,15 @@ return new class extends Migration
             $table->boolean('doigt')->nullable()->default(0);
             $table->boolean('dos')->nullable()->default(0);
             $table->boolean('hanche')->nullable()->default(0);
-            $table->boolean('jambre_gauche')->nullable()->default(0);
-            $table->boolean('jambre_droite')->nullable()->default(0);
+            $table->boolean('jambe_gauche')->nullable()->default(0);
+            $table->boolean('jambe_droite')->nullable()->default(0);
             $table->boolean('genoux_gauche')->nullable()->default(0);
             $table->boolean('genoux_droite')->nullable()->default(0);
             $table->boolean('pied_gauche')->nullable()->default(0);
             $table->boolean('pied_droite')->nullable()->default(0);
             $table->boolean('orteils')->nullable()->default(0);
-            $table->boolean('chevilles_gauche')->nullable()->default(0);
-            $table->boolean('chevilles_droite')->nullable()->default(0);/* dernier champ emplacement de la bléssure */
+            $table->boolean('cheville_gauche')->nullable()->default(0);
+            $table->boolean('cheville_droite')->nullable()->default(0);/* dernier champ emplacement de la bléssure */
             $table->boolean('brulure')->nullable()->default(0);/* premier champ description de la bléssure */
             $table->boolean('engelure')->nullable()->default(0);
             $table->boolean('commotion_cerebrale')->nullable()->default(0);
@@ -80,7 +80,7 @@ return new class extends Migration
             $table->string('premiers_soins')->nullable();
             $table->string('nom_secouriste')->nullable();
             $table->boolean('accident_sans_absence')->nullable()->default(0);
-            $table->boolean('accident_avec_consultation_medical')->nullable()->default(0);
+            $table->boolean('accident_avec_consultation_medicale')->nullable()->default(0);
             $table->boolean('avis_superieur')->nullable()->default(0);
             $table->string('nom_superieur')->nullable();
             $table->string('date_avis')->nullable();
@@ -88,7 +88,7 @@ return new class extends Migration
             $table->foreignId('matricule_superieur')->nullable();
             $table->string('no_poste_superieur')->nullable();
             $table->string('date_signature_superieur')->nullable();
-            $table->string('signatue_employer')->nullable();
+            $table->string('signature_employer')->nullable();
             $table->foreignId('matricule_usager')->nullable();
             $table->string('date_signature_employer')->nullable();
             $table->string('etat')->nullable();

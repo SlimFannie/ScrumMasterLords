@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\AccidentRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Formulaire_declaration_accident_travail;
+use Illuminate\Support\Facades\Log;
+
 
 class DeclarationAccidentsController extends Controller
 {
@@ -43,8 +46,9 @@ class DeclarationAccidentsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AccidentRequest $request)
     {
+        try {
         $nom_employer = $request->get('nom');
         $fonction = $request->get('fonction');
         $date_accident = $request->get('datetime-local');
@@ -74,15 +78,15 @@ class DeclarationAccidentsController extends Controller
         $doigt = $request->get('doigts');
         $dos = $request->get('dos');
         $hanche = $request->get('hanche');
-        $jambre_gauche = $request->get('jambeG');//30
-        $jambre_droite = $request->get('jambeD');
+        $jambe_gauche = $request->get('jambeG');//30
+        $jambe_droite = $request->get('jambeD');
         $genoux_gauche = $request->get('genouG');
         $genoux_droite = $request->get('genouD');
         $pied_gauche = $request->get('piedG'); 
         $pied_droite = $request->get('piedD');//35
         $orteils = $request->get('orteil');
-        $chevilles_gauche = $request->get('chevilleG');
-        $chevilles_droite = $request->get('chevilleD');
+        $cheville_gauche = $request->get('chevilleG');
+        $cheville_droite = $request->get('chevilleD');
         $brulure = $request->get('brulure'); 
         $engelure = $request->get('engelure');//40
         $commotion_cerebrale = $request->get('commotion');
@@ -111,57 +115,69 @@ class DeclarationAccidentsController extends Controller
         $premiers_soins = $request->get('premierSoin');
         $nom_secouriste = $request->get('secouriste');//65
         $accident_sans_absence = $request->get('aucuneAbsence');
-        $accident_avec_consultation_medical = $request->get('consultation'); 
+        $accident_avec_consultation_medicale = $request->get('consultation'); 
         $matricule_usager = $request->get('matricule'); //68
-        /*$avis_superieur = $request->get('avis_superieur'); //65
+        /*
+        $avis_superieur = $request->get('avis_superieur'); //65
         $date_avis = $request->get('date_avis');
         $signature_superieur = $request->get('signature_superieur');
         $no_poste_superieur = $request->get('no_poste_superieur');
         $date_signature_employer = $request->get('date_signature_employer');
         $etat = $request->get('etat');
-        $date_creation = $request->get('date_creation'); */
-        
-
+        $date_creation = $request->get('date_creation'); */ 
         DB::insert('insert into formulaire_declaration_accident_travails (
         nom_employer, fonction, date_accident, endroit, secteur,
         nom_temoin1, nom_temoin2, tete, visage, nez, 
-        oeil_gauche, oeil_droite, oreille_gauche, oreille_droite, torse, 
+        oeil_gauche, oeil_droit, oreille_gauche, oreille_droite, torse, 
         poumon, bras_gauche, bras_droite, epaule_gauche, epaule_droite, 
         coude_gauche, coude_droite, poignet_gauche, poignet_droite, main_gauche,
-        main_droite, doigt, dos, hanche, jambre_gauche, 
-        jambre_droite, genoux_gauche, genoux_droite, pied_gauche, pied_droite, 
-        orteils, chevilles_gauche, chevilles_droite, brulure, engelure, 
+        main_droite, doigt, dos, hanche, jambe_gauche, 
+        jambe_droite, genoux_gauche, genoux_droite, pied_gauche, pied_droite, 
+        orteils, cheville_gauche, cheville_droite, brulure, engelure, 
         commotion_cerebrale, corps_etranger, coupure, laceration, dechirure, 
         douleur_dos, egratignure, eraflure, piqure, echarde, 
         entorse, elongation, contusion, foulure, luxation, 
         fracture, amputation, irritation, infection, inhalation, 
         violence_physique, violence_verbale, description, premiers_soins, nom_secouriste, 
-        accident_sans_absence, accident_avec_consultation_medical, matricule_usager,
-        ) values 
+        accident_sans_absence, accident_avec_consultation_medicale, matricule_usager
+        )values 
          (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-         ?, ?, ?, ?, ?, ?, ?, ?) ',/*avis_superieur, nom_superieur, date_avis, signature_superieur, no_poste_superieur, 
-        date_signature_employer, etat, date_creation*/
+         ?, ?, ?, ?, ?, ?, ?, ?)',/*avis_superieur, nom_superieur, date_avis, signature_superieur, no_poste_superieur, 
+        date_signature_employer, etat, date_creation*/ 
         [$nom_employer, $fonction, $date_accident, $endroit, $secteur,
         $nom_temoin1, $nom_temoin2, $tete, $visage, $nez, 
         $oeil_gauche, $oeil_droite, $oreille_droite, $oreille_gauche, $torse, 
         $poumon, $bras_gauche, $bras_droite, $epaule_gauche, $epaule_droite, 
         $coude_gauche, $coude_droite, $poignet_gauche, $poignet_droite, $main_gauche, 
-        $main_droite, $doigt, $dos, $hanche, $jambre_gauche, 
-        $jambre_droite, $genoux_gauche, $genoux_droite, $pied_gauche, $pied_droite, 
-        $orteils, $chevilles_gauche, $chevilles_droite, $brulure, $engelure, 
+        $main_droite, $doigt, $dos, $hanche, $jambe_gauche, 
+        $jambe_droite, $genoux_gauche, $genoux_droite, $pied_gauche, $pied_droite, 
+        $orteils, $cheville_gauche, $cheville_droite, $brulure, $engelure, 
         $commotion_cerebrale, $corps_etranger, $coupure, $laceration, $dechirure, 
         $douleur_dos, $egratignure, $eraflure, $piqure, $echarde, 
         $entorse, $elongation, $contusion, $foulure, $luxation, 
         $fracture, $amputation, $irritation, $infection, $inhalation, 
         $violence_physique, $violence_verbale, $description, $premiers_soins, $nom_secouriste, 
-        $accident_sans_absence, $accident_avec_consultation_medical, $matricule_usager,
-        /*$avis_superieur, $nom_superieur, $date_avis, $signature_superieur, $no_poste_superieur, 
-        $date_signature_employer, $etat, $date_creation*/]);
+        $accident_sans_absence, $accident_avec_consultation_medicale, $matricule_usager]); 
+        //$avis_superieur, $nom_superieur, $date_avis, $signature_superieur, $no_poste_superieur, 
+        //$date_signature_employer, $etat, $date_creation
+        
+        $declarationAccident = new Formulaire_declaration_accident_travail($request->all());
+        $declarationAccident->save();
+        }
+        catch (\Throwable $e) {
+            Log::debug($e);
+            
+        }
+        return redirect()->route('accident.index');
+
+
+
+        
         
     }
 
