@@ -29,7 +29,24 @@ class SituationDangerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nom = $request->get('nom');
+        $prenom = $request->get('prenom');
+        $matricule = $request->get('matricule');
+        $fonction = $request->get('fonction'); 
+        $secteur = $request->get('secteur');//5
+        $date = $request->get('datetime-local');
+        $lieu = $request->get('lieu');
+        $temois = $request->get('dTemoin');
+        $description = $request->get('dEvent');
+        $correction = $request->get('dCorrection');//10
+        DB::insert('insert into formulaire_signalement_situation_dangereuses (
+            nom, prenom, matricule, fonction, secteur,
+            date, lieu, temois, description, correction
+            ) values 
+             (?, ?, ?, ?, ?,
+             ?, ?, ?, ?, ?)',
+            [$nom, $prenom, $matricule, $fonction, $secteur,
+            $date, $lieu, $temois, $description, $correction]);
     }
 
     /**
