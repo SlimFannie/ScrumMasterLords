@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <form>
+    <form method="post">
 
         <div class="container-fluid g-0" id="bgID">
             
@@ -115,14 +115,18 @@
                     <header for="nameSup" id="headerSup">Nom du superviseur</header>
                     <label for="nameSup" id="labelSup">, j'ai avisé mon supérieur immédiat</label>
                     <input type="text" id="nameSup">
+                    <label for="dateHeure" id="headerHeureSup">Date :</label>
+                    <input type="datetime-local" id="dateHeureSup" class="champ">
                 </div>
             </div>
         </div>
 
+        <hr style="height: 3px;">
+
         <div class="row">
             <div class="col-8"></div>
             <div class="col-4">
-                <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+                <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
             </div>
         </div>
     </form>
