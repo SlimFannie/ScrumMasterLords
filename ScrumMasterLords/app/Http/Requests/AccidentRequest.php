@@ -22,7 +22,11 @@ class AccidentRequest extends FormRequest
     public function rules(): array
     {
         return [
+<<<<<<< Updated upstream
             //
+=======
+            
+>>>>>>> Stashed changes
         ];
     }
 }
