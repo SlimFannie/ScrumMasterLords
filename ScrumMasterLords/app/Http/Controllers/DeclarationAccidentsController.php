@@ -166,8 +166,8 @@ class DeclarationAccidentsController extends Controller
         //$avis_superieur, $nom_superieur, $date_avis, $signature_superieur, $no_poste_superieur, 
         //$date_signature_employer, $etat, $date_creation
         
-        $declarationAccident = new Formulaire_declaration_accident_travail($request->all());
-        $declarationAccident->save();
+        //$declarationAccident = new Formulaire_declaration_accident_travail($request->all());
+        //$declarationAccident->save();
         }
         catch (\Throwable $e) {
             Log::debug($e);

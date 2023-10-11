@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formulaire_atelier_mecanique_rapport_accident', function (Blueprint $table) {
+        Schema::create('formulaire_atelier_mecanique_rapport_accidents', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('nom_formulaire')->default('formulaire accident atelier mecanique');
             $table->string('no_unite')->nullable();
@@ -23,9 +23,9 @@ return new class extends Migration
             $table->boolean('autre_vehicules_faux')->default(0)->nullable();
             $table->string('etat')->nullable();
             $table->string('matricule_creation')->nullable();
-            $table->string('date-creation')->nullable();
+            $table->string('created_at')->nullable();
             $table->string('matricule_dernier_modificateur')->nullable();
-            $table->string('date_derniere_modification')->nullable();
+            $table->string('updated_at')->nullable();
         });
     }
 
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formulaire_atelier_mecanique_rapport_accident');
+        Schema::dropIfExists('formulaire_atelier_mecanique_rapport_accidents');
     }
 };

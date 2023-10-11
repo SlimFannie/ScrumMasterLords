@@ -43,3 +43,6 @@ Route::get('/formAuditSST',
 
 Route::get('/formAtelierMecanique',
 [AtelierMecaniquesController::class, 'index'])->name('atelier.index');
+
+Route::get('/storeAtelierMecanique',
+[AtelierMecaniquesController::class, 'store'])->name('atelier.store');

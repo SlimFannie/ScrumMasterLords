@@ -11,7 +11,7 @@
 
         <hr>
 
-        <form action="post">
+        <form methode="post" action="{{route('atelier.store')}}">
             <div class="container-fluid zoneAM">
                 <div class="row g-0 mt">
                     <header for="num">Numéro(s) d'unité(s) impliqué(s)</header>
@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-8"></div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+                    <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
                 </div>
             </div>
         </form>

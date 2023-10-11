@@ -93,9 +93,9 @@ return new class extends Migration
             $table->string('date_signature_employer')->nullable();
             $table->string('etat')->nullable();
             $table->foreignId('matricule_creation')->nullable();
-            $table->string('date_creation')->nullable();
+            $table->string('created_at')->nullable();
             $table->foreignId('matricule_dernier_modificateur')->nullable();
-            $table->string('date_derniere_modification')->nullable();
+            $table->string('updated_at')->nullable();
         });
     }
 
