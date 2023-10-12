@@ -32,7 +32,20 @@ class AtelierMecaniquesController extends Controller
      */
     public function store(Request $request)
     {
-            try {
+            
+       try {
+            $declarationAccident = new Formulaire_atelier_mecanique_rapport_accident($request->all());
+            $declarationAccident->save();
+            }
+            catch (\Throwable $e) {
+                Log::debug($e);
+                
+            }
+            return redirect()->route('atelier.index');
+            
+        
+            /*
+        try {
                 $no_unite = $request->get('num');
                 $departement = $request->get('dep');
                 $nom_complet_employer = $request->get('nom');
@@ -46,19 +59,18 @@ class AtelierMecaniquesController extends Controller
                 ) values 
                 (?, ?, ?, ?, ?,
                 ?, ?)',
-                ["Hello Word", "Here", "is", "my", "proof",
+                [$no_unite, $departement, $nom_complet_employer, $nom_complet_superieur, $numero_permis_conduire,
                 $autre_vehicule_vrai, $autre_vehicule_faux]);
                 
                 //$declarationAccident = new Formulaire_declaration_accident_travail($request->all());
                 //$declarationAccident->save();
-                //$atelier = new Formulaire_atelier_mecanique_rapport_accident($request->all());
-                //$atelier->save();
                 }
                 catch (\Throwable $e) {
                     Log::debug($e);
                     
                 }
                 return redirect()->route('atelier.index');
+            */    
     }
 
     /**

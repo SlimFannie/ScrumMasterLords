@@ -12,6 +12,7 @@
         <hr>
 
         <form methode="post" action="{{route('atelier.store')}}">
+            @csrf
             <div class="container-fluid zoneAM">
                 <div class="row g-0 mt">
                     <header for="num">Numéro(s) d'unité(s) impliqué(s)</header>
