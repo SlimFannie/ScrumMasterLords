@@ -33,7 +33,7 @@ body {
     display: inline !important;
 }
 
-p, header
+p, header, label
 {
     font-family: 'Poppins';
     font-weight: bold;
@@ -42,12 +42,31 @@ p, header
 h1, h2, h3, h4, h5
 {
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
-input
+input[type=text]
 {
     width: max-content;
     height: 40px;
+}
+
+input[type=datetime-local]
+{
+    width: max-content;
+    height: 40px;
+}
+
+input[type=checkbox]
+{
+    height: 20px;
+    width: 20px;
+}
+
+input[type=radio]
+{
+    height: 20px;
+    width: 20px;
 }
 
 button
