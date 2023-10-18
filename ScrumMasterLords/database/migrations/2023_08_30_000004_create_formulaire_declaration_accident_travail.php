@@ -21,67 +21,67 @@ return new class extends Migration
             $table->string('secteur')->nullable();
             $table->string('nom_temoin1')->nullable(); 
             $table->string('nom_temoin2')->nullable(); /* fin header formulaire */
-            $table->boolean('tete')->nullable()->default(false); /* premier champ emplacement de la bléssure */
-            $table->boolean('visage')->nullable()->default(false);
-            $table->boolean('nez')->nullable()->default(false);
-            $table->boolean('oeil_gauche')->nullable()->default(false);
-            $table->boolean('oeil_droit')->nullable()->default(false);
-            $table->boolean('oreille_gauche')->nullable()->default(false);
-            $table->boolean('oreille_droite')->nullable()->default(false);
-            $table->boolean('torse')->nullable()->default(false);
-            $table->boolean('poumon')->nullable()->default(false);
-            $table->boolean('bras_gauche')->nullable()->default(false);
-            $table->boolean('bras_droite')->nullable()->default(false);
-            $table->boolean('epaule_gauche')->nullable()->default(false);
-            $table->boolean('epaule_droite')->nullable()->default(false);
-            $table->boolean('coude_gauche')->nullable()->default(false);
-            $table->boolean('coude_droite')->nullable()->default(false);
-            $table->boolean('poignet_gauche')->nullable()->default(false);
-            $table->boolean('poignet_droite')->nullable()->default(false);
-            $table->boolean('main_gauche')->nullable()->default(false);
-            $table->boolean('main_droite')->nullable()->default(false);
-            $table->boolean('doigt')->nullable()->default(false);
-            $table->boolean('dos')->nullable()->default(false);
-            $table->boolean('hanche')->nullable()->default(false);
-            $table->boolean('jambe_gauche')->nullable()->default(false);
-            $table->boolean('jambe_droite')->nullable()->default(false);
-            $table->boolean('genoux_gauche')->nullable()->default(false);
-            $table->boolean('genoux_droite')->nullable()->default(false);
-            $table->boolean('pied_gauche')->nullable()->default(false);
-            $table->boolean('pied_droite')->nullable()->default(false);
-            $table->boolean('orteils')->nullable()->default(false);
-            $table->boolean('cheville_gauche')->nullable()->default(false);
-            $table->boolean('cheville_droite')->nullable()->default(false);/* dernier champ emplacement de la bléssure */
-            $table->boolean('brulure')->nullable()->default(false);/* premier champ description de la bléssure */
-            $table->boolean('engelure')->nullable()->default(false);
-            $table->boolean('commotion_cerebrale')->nullable()->default(false);
-            $table->boolean('corps_etranger')->nullable()->default(false);
-            $table->boolean('coupure')->nullable()->default(false);
-            $table->boolean('laceration')->nullable()->default(false);
-            $table->boolean('dechirure')->nullable()->default(false);
-            $table->boolean('douleur_dos')->nullable()->default(false);
-            $table->boolean('egratignure')->nullable()->default(false);
-            $table->boolean('eraflure')->nullable()->default(false);
-            $table->boolean('piqure')->nullable()->default(false);
-            $table->boolean('echarde')->nullable()->default(false);
-            $table->boolean('entorse')->nullable()->default(false);
-            $table->boolean('elongation')->nullable()->default(false);
-            $table->boolean('contusion')->nullable()->default(false);
-            $table->boolean('foulure')->nullable()->default(false);
-            $table->boolean('luxation')->nullable()->default(false);
-            $table->boolean('fracture')->nullable()->default(false);
-            $table->boolean('amputation')->nullable()->default(false);
-            $table->boolean('irritation')->nullable()->default(false);
-            $table->boolean('infection')->nullable()->default(false);
-            $table->boolean('inhalation')->nullable()->default(false);/* dernier champ description de la bléssure */
-            $table->boolean('violence_physique')->nullable()->default(false); 
-            $table->boolean('violence_verbale')->nullable()->default(false);
-            $table->text('description')->nullable(); /* possiblement avoir une table que pour cela */
+            $table->boolean('tete')->nullable()->default(0); /* premier champ emplacement de la bléssure */
+            $table->boolean('visage')->nullable()->default(0);
+            $table->boolean('nez')->nullable()->default(0);
+            $table->boolean('oeil_gauche')->nullable()->default(0);
+            $table->boolean('oeil_droit')->nullable()->default(0);
+            $table->boolean('oreille_gauche')->nullable()->default(0);
+            $table->boolean('oreille_droite')->nullable()->default(0);
+            $table->boolean('torse')->nullable()->default(0);
+            $table->boolean('poumon')->nullable()->default(0);
+            $table->boolean('bras_gauche')->nullable()->default(0);
+            $table->boolean('bras_droite')->nullable()->default(0);
+            $table->boolean('epaule_gauche')->nullable()->default(0);
+            $table->boolean('epaule_droite')->nullable()->default(0);
+            $table->boolean('coude_gauche')->nullable()->default(0);
+            $table->boolean('coude_droite')->nullable()->default(0);
+            $table->boolean('poignet_gauche')->nullable()->default(0);
+            $table->boolean('poignet_droite')->nullable()->default(0);
+            $table->boolean('main_gauche')->nullable()->default(0);
+            $table->boolean('main_droite')->nullable()->default(0);
+            $table->boolean('doigt')->nullable()->default(0);
+            $table->boolean('dos')->nullable()->default(0);
+            $table->boolean('hanche')->nullable()->default(0);
+            $table->boolean('jambe_gauche')->nullable()->default(0);
+            $table->boolean('jambe_droite')->nullable()->default(0);
+            $table->boolean('genoux_gauche')->nullable()->default(0);
+            $table->boolean('genoux_droite')->nullable()->default(0);
+            $table->boolean('pied_gauche')->nullable()->default(0);
+            $table->boolean('pied_droite')->nullable()->default(0);
+            $table->boolean('orteils')->nullable()->default(0);
+            $table->boolean('cheville_gauche')->nullable()->default(0);
+            $table->boolean('cheville_droite')->nullable()->default(0);/* dernier champ emplacement de la bléssure */
+            $table->boolean('brulure')->nullable()->default(0);/* premier champ description de la bléssure */
+            $table->boolean('engelure')->nullable()->default(0);
+            $table->boolean('commotion_cerebrale')->nullable()->default(0);
+            $table->boolean('corps_etranger')->nullable()->default(0);
+            $table->boolean('coupure')->nullable()->default(0);
+            $table->boolean('laceration')->nullable()->default(0);
+            $table->boolean('dechirure')->nullable()->default(0);
+            $table->boolean('douleur_dos')->nullable()->default(0);
+            $table->boolean('egratignure')->nullable()->default(0);
+            $table->boolean('eraflure')->nullable()->default(0);
+            $table->boolean('piqure')->nullable()->default(0);
+            $table->boolean('echarde')->nullable()->default(0);
+            $table->boolean('entorse')->nullable()->default(0);
+            $table->boolean('elongation')->nullable()->default(0);
+            $table->boolean('contusion')->nullable()->default(0);
+            $table->boolean('foulure')->nullable()->default(0);
+            $table->boolean('luxation')->nullable()->default(0);
+            $table->boolean('fracture')->nullable()->default(0);
+            $table->boolean('amputation')->nullable()->default(0);
+            $table->boolean('irritation')->nullable()->default(0);
+            $table->boolean('infection')->nullable()->default(0);
+            $table->boolean('inhalation')->nullable()->default(0);/* dernier champ description de la bléssure */
+            $table->boolean('violence_physique')->nullable()->default(0); 
+            $table->boolean('violence_verbale')->nullable()->default(0);
+            $table->text('description')->nullable(); /* posiblement avoir une table que pour cela */
             $table->string('premiers_soins')->nullable();
             $table->string('nom_secouriste')->nullable();
-            $table->boolean('accident_sans_absence')->nullable()->default(false);
-            $table->boolean('accident_avec_consultation_medicale')->nullable()->default(false);
-            $table->boolean('avis_superieur')->nullable()->default(false);
+            $table->boolean('accident_sans_absence')->nullable()->default(0);
+            $table->boolean('accident_avec_consultation_medicale')->nullable()->default(0);
+            $table->boolean('avis_superieur')->nullable()->default(0);
             $table->string('nom_superieur')->nullable();
             $table->string('date_avis')->nullable();
             $table->string('signature_superieur')->nullable();
@@ -93,9 +93,9 @@ return new class extends Migration
             $table->string('date_signature_employer')->nullable();
             $table->string('etat')->nullable();
             $table->foreignId('matricule_creation')->nullable();
-            $table->string('date_creation')->nullable();
+            $table->string('created_at')->nullable();
             $table->foreignId('matricule_dernier_modificateur')->nullable();
-            $table->string('date_derniere_modification')->nullable();
+            $table->string('updated_at')->nullable();
         });
     }
 

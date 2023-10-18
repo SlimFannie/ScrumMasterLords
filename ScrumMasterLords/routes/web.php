@@ -35,8 +35,14 @@ Route::get('/formSituationDanger',
 Route::get('/formAccidentTravail',
 [DeclarationAccidentsController::class, 'index'])->name('accident.index');
 
+Route::POST('/storeAccidentTravail',
+[DeclarationAccidentsController::class, 'store'])->name('accident.store');
+
 Route::get('/formAuditSST',
 [AuditsSSTController::class, 'index'])->name('audit.index');
 
 Route::get('/formAtelierMecanique',
 [AtelierMecaniquesController::class, 'index'])->name('atelier.index');
+
+Route::get('/storeAtelierMecanique',
+[AtelierMecaniquesController::class, 'store'])->name('atelier.store');

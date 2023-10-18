@@ -100,7 +100,7 @@ class AuditsSSTController extends Controller
              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-             ?) ',
+             ?)',
             [$nom_employer, $lieux_travail, $date, $epi_conforme, $epi_non_conforme,
             $epi_na, $tenue_lieux_conforme, $tenue_lieux_non_conforme, $tenue_lieux_na, $comportement_securitaire_conforme,
             $comportement_securitaire_non_conforme, $comportement_securitaire_na, $signalisation_conforme, $signalisation_non_conforme, $signalisation_na,

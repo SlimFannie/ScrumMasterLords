@@ -17,7 +17,8 @@
             <p>Bonjour, NomUser. Lorsque vous soumettez ce formulaire, le propriétaire verra votre nom et votre adresse e-mail.</p>
         </div>
 
-        <form action="post">
+        <form methode="post" action="{{route('atelier.store')}}">
+            @csrf
             <div class="container-fluid zoneAM">
                 <div class="row g-0 mt">
                     <header class="textAM" for="num">Numéro(s) d'unité(s) impliqué(s)</header>
@@ -49,7 +50,6 @@
                             </label>
                         </div>
                 </div>
-
                 <div class="row g-0 mb-3 mt">
                     <div class="col-7"></div>
                     <div class="col-5">
