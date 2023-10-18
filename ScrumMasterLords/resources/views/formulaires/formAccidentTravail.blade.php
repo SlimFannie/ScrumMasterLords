@@ -4,10 +4,10 @@
 
     <div class="container-fluid">
         <div class="container-fluid g-0 sign">
-            <div class="mt-3 bgTitre">
+            <div class="mt-3 bigTitleAT">
                 <div class="row g-0">
                     <div class="col-10 offset-col-3 text-center m-4 g-0">
-                        <h3>Déclaration d'un accident de travail<h3>
+                        <h3 class="fontAT">Déclaration d'un accident de travail<h3>
                     </div>
                 </div>
             </div>
@@ -15,8 +15,8 @@
 
         <form action="post">
             <div class="container-fluid zoneAT">
-                <div class="row g-0 titleZone mt">
-                    <h1 class="titleAT">Identification</h1>
+                <div class="row g-0 mt">
+                    <h3 class="fontAT">Identification</h3>
                 </div>
 
                 <div class="row g-0 mb-3">
@@ -34,8 +34,8 @@
             </div>
 
             <div class="container-fluid zoneAT">
-                <div class="row titleAT g-0 mt">
-                    <h1 class="fontAT">Description de l'évènement</h1>
+                <div class="row g-0 mt">
+                    <h3 class="fontAT">Description de l'évènement</h3>
                 </div>
 
                 <div class="row g-0 mb-3">
@@ -44,9 +44,9 @@
                 </div>
 
                 <div class="row g-0 mb-3">
-                    <header>Endroit de l'évènement</header>
+                    <header class="fontAT">Endroit de l'évènement</header>
                     <input type="text" class=" inputAT" id="endroit">
-                    <header>Secteur d'activité</header>
+                    <header class="fontAT">Secteur d'activité</header>
                     <input type="text" class=" inputAT" id="secteur">
                 </div>
 
@@ -58,8 +58,8 @@
             </div>
 
             <div class="container-fluid zoneAT">
-                <div class="row g-0 titleAT mt">
-                    <h1 class="fontAT">Nature et site de la blessure</h1>
+                <div class="row g-0 mt">
+                    <h3 class="fontAT">Nature et site de la blessure</h3>
                 </div>
 
                 <div class="row g-0">
@@ -343,8 +343,8 @@
             </div>
 
             <div class="container-fluid zoneAT">
-                <div class="row g-0 titleAT mt">
-                    <h1 class="fontAT">Description de la blessure</h1>
+                <div class="row g-0 mt">
+                    <h3 class="fontAT">Description de la blessure</h3>
                 </div>
 
                 <div class="row g-0">
@@ -551,8 +551,8 @@
             </div>
 
             <div class="container-fluid zoneAT">
-                <div class="row g-0 titleAT mt">
-                    <h1 class="fontAT">Avez-vous subis de la violence</h1>
+                <div class="row g-0 mt">
+                    <h3 class="fontAT">Avez-vous subis de la violence</h3>
                 </div>
 
                 <div class="row g-0">
@@ -572,8 +572,8 @@
             </div>
 
             <div class="container-fluid zoneAT">
-                <div class="row g-0 titleAT mt">
-                    <h1 class="fontAT">Décriver la tâche effectuée et comment s'est produit la blessure</h1>
+                <div class="row g-0 mt">
+                    <h3 class="fontAT">Décriver la tâche effectuée et comment s'est produit la blessure</h3>
                 </div>
 
                 <div class="row g-0 mb-3">
