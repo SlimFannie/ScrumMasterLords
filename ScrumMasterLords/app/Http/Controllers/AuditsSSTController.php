@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\AuditSSTRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use App\Models\Formulaire_grille_audit;
+use Illuminate\Support\Facades\Log;
 
 class AuditsSSTController extends Controller
 {
@@ -41,49 +44,60 @@ class AuditsSSTController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $nom_employer = $request->get('nomEmploye');
-        $lieux_travail = $request->get('lieux');
-        $date = $request->get('date');
-        $epi_conforme = $request->get('epiConf');
-        $epi_non_conforme = $request->get('epiNonConf'); //5
-        $epi_na = $request->get('epiNA');
-        $tenue_lieux_conforme = $request->get('lieuxConf');
-        $tenue_lieux_non_conforme = $request->get('lieuxNonConf');
-        $tenue_lieux_na = $request->get('lieuxNA');
-        $comportement_securitaire_conforme = $request->get('compConf'); //10
-        $comportement_securitaire_non_conforme = $request->get('compNonConf');
-        $comportement_securitaire_na = $request->get('compNA');
-        $signalisation_conforme = $request->get('signConf');
-        $signalisation_non_conforme = $request->get('signNonConf');
-        $signalisation_na = $request->get('signNA'); //15
-        $fiches_signaletique_conforme = $request->get('fichesConf');
-        $fiches_signaletique_non_conforme = $request->get('fichesNonConf');
-        $fiches_signaletique_na = $request->get('fichesNA');
-        $travaux_excavation_conforme = $request->get('travConf');
-        $travaux_excavation_non_conforme = $request->get('travNonConf'); //20
-        $travaux_excavation_na = $request->get('travNA');
-        $espace_clos_conforme = $request->get('espConf');
-        $espace_clos_non_conforme = $request->get('espNonConf');
-        $espace_clos_na = $request->get('espNA');
-        $methode_travail_conforme = $request->get('methodeConf'); //25
-        $methode_travail_non_conforme = $request->get('methodeNonConf');
-        $methode_travail_na = $request->get('methodeNA');
-        $autre = $request->get('autre');
-        $autre_conforme = $request->get('autreConf');
-        $autre_non_conforme = $request->get('autreNonConf'); //30
-        $autre_na = $request->get('autreNA');
-        $respect_distanciation_conforme = $request->get('distanciationConf');
-        $respect_distanciation_non_conforme = $request->get('distanciationNonConf');
-        $respect_distanciation_na = $request->get('distanciationNA');
-        $port_epi_conforme = $request->get('epiConf'); //35
-        $port_epi_non_conforme = $request->get('epiNonConf');
-        $port_epi_na = $request->get('epiNA');
-        $respect_procedures_etablies_conforme = $request->get('proceduresConf');
-        $respect_procedures_etablies_non_conforme = $request->get('proceduresNonConf');
-        $respect_procedures_etablies_na = $request->get('proceduresNA'); //40
-        $description = $request->get('description');
+    public function store(AuditSSTRequest $request)
+    { 
+        try {
+            $AuditSST = new Formulaire_grille_audit($request->all());    
+            $AuditSST->save();
+            }
+            catch (\Throwable $e) {
+                Log::debug($e);
+                
+            }
+            return redirect()->route('audit.store');
+        /*
+        try {
+            $nom_employer = $request->get('nomEmploye');
+            $lieux_travail = $request->get('lieux');
+            $date = $request->get('date');
+            $epi_conforme = $request->get('epiConf');
+            $epi_non_conforme = $request->get('epiNonConf'); //5
+            $epi_na = $request->get('epiNA');
+            $tenue_lieux_conforme = $request->get('lieuxConf');
+            $tenue_lieux_non_conforme = $request->get('lieuxNonConf');
+            $tenue_lieux_na = $request->get('lieuxNA');
+            $comportement_securitaire_conforme = $request->get('compConf'); //10
+            $comportement_securitaire_non_conforme = $request->get('compNonConf');
+            $comportement_securitaire_na = $request->get('compNA');
+            $signalisation_conforme = $request->get('signConf');
+            $signalisation_non_conforme = $request->get('signNonConf');
+            $signalisation_na = $request->get('signNA'); //15
+            $fiches_signaletique_conforme = $request->get('fichesConf');
+            $fiches_signaletique_non_conforme = $request->get('fichesNonConf');
+            $fiches_signaletique_na = $request->get('fichesNA');
+            $travaux_excavation_conforme = $request->get('travConf');
+            $travaux_excavation_non_conforme = $request->get('travNonConf'); //20
+            $travaux_excavation_na = $request->get('travNA');
+            $espace_clos_conforme = $request->get('espConf');
+            $espace_clos_non_conforme = $request->get('espNonConf');
+            $espace_clos_na = $request->get('espNA');
+            $methode_travail_conforme = $request->get('methodeConf'); //25
+            $methode_travail_non_conforme = $request->get('methodeNonConf');
+            $methode_travail_na = $request->get('methodeNA');
+            $autre = $request->get('autre');
+            $autre_conforme = $request->get('autreConf');
+            $autre_non_conforme = $request->get('autreNonConf'); //30
+            $autre_na = $request->get('autreNA');
+            $respect_distanciation_conforme = $request->get('distanciationConf');
+            $respect_distanciation_non_conforme = $request->get('distanciationNonConf');
+            $respect_distanciation_na = $request->get('distanciationNA');
+            $port_epi_conforme = $request->get('epiConf'); //35
+            $port_epi_non_conforme = $request->get('epiNonConf');
+            $port_epi_na = $request->get('epiNA');
+            $respect_procedures_etablies_conforme = $request->get('proceduresConf');
+            $respect_procedures_etablies_non_conforme = $request->get('proceduresNonConf');
+            $respect_procedures_etablies_na = $request->get('proceduresNA'); //40
+            $description = $request->get('description');
 
         DB::insert('insert into formulaire_grille_audits (
             nom_employer, lieux_travail, date, epi_conforme, epi_non_conforme,
@@ -110,6 +124,14 @@ class AuditsSSTController extends Controller
             $autre_na, $respect_distanciation_conforme, $respect_distanciation_non_conforme, $respect_distanciation_na, $port_epi_conforme,
             $port_epi_non_conforme, $port_epi_na, $respect_procedures_etablies_conforme, $respect_procedures_etablies_non_conforme, $respect_procedures_etablies_na,
             $description]);
+            }
+            catch (\Throwable $e) {
+                Log::debug($e);
+                    
+            }
+            return redirect()->route('audit.store'); 
+            */
+        
     }
 
     /**
