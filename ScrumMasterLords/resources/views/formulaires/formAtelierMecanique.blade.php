@@ -22,19 +22,19 @@
             <div class="container-fluid zoneAM">
                 <div class="row g-0 mt">
                     <header class="textAM" for="num">Numéro(s) d'unité(s) impliqué(s)</header>
-                        <input type="text" id="num" class="border-3 mb-2 inputAM">
+                        <input type="text" id="num" class="border-3 mb-2 inputAM" name="no_unite">
 
                     <header class="textAM" for="dep" class="mt">Département</header>
-                        <input type="text" id="dep" class="border-3 mb-2 inputAM">
+                        <input type="text" id="dep" class="border-3 mb-2 inputAM" name="departement">
 
                     <header class="textAM" for="nom" class="mt">Nom complet de l'employé</header>
-                        <input type="text" id="nom" class="border-3 mb-2 inputAM">
+                        <input type="text" id="nom" class="border-3 mb-2 inputAM" name="nom_complet_employer">
 
                     <header class="textAM" for="nomSup" class="mt">Nom complet du supérieur</header>
-                        <input type="text" id="nomSup" class="border-3 mb-2 inputAM">
+                        <input type="text" id="nomSup" class="border-3 mb-2 inputAM" name="nom_complet_superieur">
 
                     <header class="textAM" for="numPermis" class="mt">Numéro du permis de conduire</header>
-                        <input type="text" id="numPermis" class="border-3 mb-2 inputAM">
+                        <input type="text" id="numPermis" class="border-3 mb-2 inputAM" name="no_permis_conduite_employer">
 
                     <header class="textAM" for="autre" class="mt">Autre véhicules impliqués (citoyen)</header>
                         <div class="form-check">
@@ -53,7 +53,7 @@
                 <div class="row g-0 mb-3 mt">
                     <div class="col-7"></div>
                     <div class="col-5">
-                        <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+                        <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
                     </div>
                 </div>
             </div>

@@ -25,13 +25,13 @@
             <div class="container-fluid zoneSST">
                 <div class="row g-0 mt">
                     <header class="fontSST" for="nomEmploye">nom de l'employé</header>
-                    <input type="text" id="nomEmploye" class="mb-2 inputSST">
+                    <input type="text" id="nomEmploye" class="mb-2 inputSST" name="nom_employer">
 
                     <header class="fontSST" for="lieux">Lieu(x) des travaux</header>
-                    <input type="text" id="lieux" class="mb-2 inputSST">
+                    <input type="text" id="lieux" class="mb-2 inputSST" name="lieux_travail">
 
                     <header class="fontSST" for="date">Date</header>
-                    <input type="datetime-local" id="date" style="width: 150px;" class="mb-3 inputSST">
+                    <input type="datetime-local" id="date" style="width: 150px;" class="mb-3 inputSST" name="date">
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiConf" name="epi_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiNonConf" name="epi_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiNA" name="epi_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="lieuxConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="lieuxConf" name="tenue_lieux_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="lieuxNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="lieuxNonConf" name="tenue_lieux_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="lieuxNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="lieuxNA" name="tenue_lieux_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p
@@ -105,7 +105,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="compConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="compConf" name="comportement_securitaire_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="compNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="compNonConf" name="comportement_securitaire_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -121,7 +121,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="compNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="compNA" name="comportement_securitaire_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -135,7 +135,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="signConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="signConf" name="signalisation_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -143,7 +143,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="signNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="signNonConf" name="signalisation_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -151,7 +151,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="signNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="signNA" name="travaux_excavation_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -165,7 +165,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="fichesConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="fichesConf" name="fiches_signaletique_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -173,7 +173,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="fichesNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="fichesNonConf" name="fiches_signaletique_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -181,7 +181,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="fichesNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="fichesNA" name="fiches_signaletique_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -195,7 +195,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="travConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="travConf" name="travaux_excavation_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -203,7 +203,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="travNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="travNonConf" name="travaux_excavation_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -211,7 +211,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="travNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="travNA" name="travaux_excavation_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -225,7 +225,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="espConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="espConf" name="espace_clos_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -233,7 +233,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="espNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="espNonConf" name="espace_clos_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -241,7 +241,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="espNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="espNA" name="espace_clos_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -255,7 +255,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="methodeConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="methodeConf" name="methode_travail_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -263,7 +263,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="methodeNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="methodeNonConf" name="methode_travail_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -271,7 +271,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="methodeNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="methodeNA" name="methode_travail_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -282,11 +282,11 @@
             <div class="container-fluid zoneSST">
                 <div class="row g-0 mt titleSST">
                     <h3 class="fontSST">Autre(s)</h3>
-                    <input type="text" id="autre" class=" mb-2 inputSST">
+                    <input type="text" id="autre" class=" mb-2 inputSST" name="autre">
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="autreConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="autreConf" name="autre_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -294,7 +294,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="autreNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="autreNonConf" name="autre_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -302,7 +302,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="autreNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="autreNA" name="autre_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -320,7 +320,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="distanciationConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="distanciationConf" name="respect_distanciation_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -328,7 +328,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="distanciationNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="distanciationNonConf" name="respect_distanciation_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -336,7 +336,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="distanciationNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="distanciationNA" name="respect_distanciation_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -350,7 +350,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiConf" name="port_epi_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -358,7 +358,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiNonConf" name="port_epi_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -366,7 +366,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="epiNA" name="port_epi_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -380,7 +380,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="proceduresConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="proceduresConf" name="respect_procedures_etablies_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Conforme</p>
@@ -388,7 +388,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="proceduresNonConf">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="proceduresNonConf" name="respect_procedures_etablies_non_conforme">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">Non Conforme</p>
@@ -396,7 +396,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input class="form-check-input inputSST" type="checkbox" value="" id="proceduresNA">
+                        <input class="form-check-input inputSST" type="checkbox" value="" id="proceduresNA" name="respect_procedures_etablies_na">
                     </div>
                     <div class="col-11">
                         <p class="fontSST">N/A</p>
@@ -410,14 +410,14 @@
 
             <div class="container-fluid zoneSST">
                 <div class="row g-0">
-                    <textarea class="resize mt mb-2 textAreaSST" aria-label="With textarea" id="description"></textarea>
+                    <textarea class="resize mt mb-2 textAreaSST" aria-label="With textarea" id="description" name="description"></textarea>
                 </div>
             </div>
 
             <div class="row g-o mb-3">
                 <div class="col-7"></div>
                 <div class="col-5">
-                    <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+                    <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
                 </div>
             </div>
         </form>
