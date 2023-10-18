@@ -1,4 +1,5 @@
 @extends('layout')
+@section ('titre','Situation dangereuse')
 @section('contenu')
 
 <div class="container-fluid g-0">
@@ -24,7 +25,7 @@
         </div>
     </div>
 
-    <form>
+    <form method="post">
 
         <div class="container-fluid g-0" id="bgID">
             
@@ -66,7 +67,7 @@
             </div>
         </div>
 
-        <div class="container-fluid g-0" id="description">
+        <div class="container-fluid g-0 description">
             <div class="row g-0">
                 <div class="col g-0">
                     <header for="dateHeure" id="header">Date et heure de l'observation :</header>
@@ -115,14 +116,18 @@
                     <header for="nameSup" id="headerSup">Nom du superviseur</header>
                     <label for="nameSup" id="labelSup">, j'ai avisé mon supérieur immédiat</label>
                     <input type="text" id="nameSup">
+                    <label for="dateHeure" id="headerHeureSup">Date :</label>
+                    <input type="datetime-local" id="dateHeureSup" class="champ">
                 </div>
             </div>
         </div>
 
+        <hr style="height: 3px;">
+
         <div class="row">
             <div class="col-8"></div>
             <div class="col-4">
-                <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+                <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
             </div>
         </div>
     </form>

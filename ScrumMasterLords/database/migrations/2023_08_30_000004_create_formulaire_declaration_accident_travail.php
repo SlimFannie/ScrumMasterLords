@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('formulaire_declaration_accident_travails', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('nom_formulaire')->default('formulaire de déclaration de travail');
-            $table->string('nom_employer')->nullable();
-            $table->string('fonction')->nullable();
-            $table->string('date_accident')->nullable();
-            $table->string('endroit')->nullable();
+            $table->string('nom_formulaire')->default('Accident de travail');
+            $table->string('nom_employer');
+            $table->string('fonction');
+            $table->string('date_accident');
+            $table->string('endroit');
             $table->string('secteur')->nullable();
             $table->string('nom_temoin1')->nullable(); 
             $table->string('nom_temoin2')->nullable(); /* fin header formulaire */

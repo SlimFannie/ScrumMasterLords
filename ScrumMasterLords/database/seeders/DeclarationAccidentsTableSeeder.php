@@ -17,7 +17,7 @@ class DeclarationAccidentsTableSeeder extends Seeder
     {
         DB::table('formulaire_declaration_accident_travails')->insert([
             [
-                'nom_formulaire' => 'formulaire de déclaration de travail',
+                'nom_formulaire' => 'Formulaire de déclaration de travail',
                 'nom_employer' => 'Julio Deschelle',
                 'date_accident' => '2023-09-19',
                 'tete' => true,
@@ -29,7 +29,7 @@ class DeclarationAccidentsTableSeeder extends Seeder
                 'matricule_superieur' => 1000002,
             ],
             [
-                'nom_formulaire' => 'formulaire de déclaration de travail',
+                'nom_formulaire' => 'Formulaire de déclaration de travail',
                 'nom_employer' => 'Julio Deschelle',
                 'date_accident' => '2023-08-21',
                 'tete' => true,
