@@ -10,22 +10,33 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <div class="container-fluid h-100 d-flex align-items-center justify-content-center">
+    <div class="container-fluid h-100 accueilText">
         <div class="row text-center">
             <div class="col-12">
-                <form method="post" id="FormUsager" action="{{ route('usagers.login') }}" >
+                <div class="cloudDiv">
+                    <div id="cloud">
+                        <img src="/img/logo_v3r_n_et_blanc.jpg" class="logoAccueil">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="formDiv">
+                <form method="POST" id="FormUsager" action="{{ route('usagers.login') }}">
                     @csrf
                     <div class="mb-3">
-                        <h1>Numéro d'employé</h1>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="inputMatricule" class="labelAccueil">Numéro d'employé</label>
+                        <input type="text" class="form-control" name="inputMatricule" id="inputMatricule">
                     </div>
                     <div class="mb-3">
-                        <h1>Mot de passe</h1>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="inputPassword" class="labelAccueil">Mot de passe:</label>
+                        <input type="password" class="form-control" name="inputPassword" id="inputPassword">
                     </div>
                     <p><i class="fa-solid fa-user-shield"></i> Les administrateurs de l'application ne vous demanderons jamais votre mot de passe, ni par courriel ni par téléphone!<p>
                     <button type="submit" class="btn btn-primary hover"><h3>Connexion <i class="fa-solid fa-door-closed hoverHide"></i><i class="fa-solid fa-door-open hoverShow"></i></h3></button>
                 </form>
+                </div>
             </div>
         </div>
     </div>

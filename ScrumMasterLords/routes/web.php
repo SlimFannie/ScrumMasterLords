@@ -26,12 +26,13 @@ Route::get('/connexion', function () {
     return view('connexion');
 });
 
-Route::POST('/connecting',
+Route::POST('/connexion',
 [UsagersController::class, 'login'])->name('usagers.login');
 
-Route::get('/formSituationDanger',
+Route::get('/SituationDangereuse',
 [SituationDangerController::class, 'index'])->name('danger.index');
 
+<<<<<<< Updated upstream
 Route::post('/storeSituationDanger',
 [SituationDangerController::class, 'store'])->name('danger.store');
 
@@ -52,3 +53,13 @@ Route::get('/formAtelierMecanique',
 
 Route::get('/storeAtelierMecanique',
 [AtelierMecaniquesController::class, 'store'])->name('atelier.store');
+=======
+Route::get('/AccidentTravail',
+[DeclarationAccidentsController::class, 'index'])->name('accident.index');
+
+Route::get('/AuditSST',
+[AuditsSSTController::class, 'index'])->name('audit.index');
+
+Route::get('/AtelierMecanique',
+[AtelierMecaniquesController::class, 'index'])->name('atelier.index');
+>>>>>>> Stashed changes

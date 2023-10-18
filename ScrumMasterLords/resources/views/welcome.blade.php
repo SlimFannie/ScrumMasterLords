@@ -8,8 +8,7 @@
             <div class="row g-0">
                 <div class="col-12">
                     <h1 class="pb-3">Formulaires en cours</h1>
-                    @if(count($activeForms))
-                        @foreach($activeForms as $activeForm)
+
                         <div class="card d-inline-flex">
                             <div class="card-header">
                                 <h5 class="card-title m-0">Type de formulaire</h5>
@@ -21,10 +20,9 @@
                                 Date
                             </div>
                         </div>
-                        @endforeach
-                    @else
+
                     <h4>Il n'y a aucun formulaire en attente de traitement.</h4>
-                    @endif
+
                     <h1 class="py-3">Formulaires traités</h1>
                     <div class="card">
                         <div class="card-header">
