@@ -21,7 +21,7 @@
             <h3 class="titreSecondaireSST mt">Identification</h3>
         </div>
 
-        <form action="post">
+        <form methode="post" action="{{route('audit.store')}}">
             <div class="container-fluid zoneSST">
                 <div class="row g-0 mt">
                     <header class="fontSST" for="nomEmploye">nom de l'employé</header>
