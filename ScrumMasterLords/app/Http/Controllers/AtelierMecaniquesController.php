@@ -30,7 +30,7 @@ class AtelierMecaniquesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AtelierMecaniqueRequest $request)
     {
             
        try {
@@ -46,7 +46,7 @@ class AtelierMecaniquesController extends Controller
         
             /*
         try {
-                $no_unite = $request->get('num');
+                $no_unite = $request->get('num'); 
                 $departement = $request->get('dep');
                 $nom_complet_employer = $request->get('nom');
                 $nom_complet_superieur = $request->get('nomSup');
