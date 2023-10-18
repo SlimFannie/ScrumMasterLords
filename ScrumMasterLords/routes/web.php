@@ -32,6 +32,9 @@ Route::POST('/connecting',
 Route::get('/formSituationDanger',
 [SituationDangerController::class, 'index'])->name('danger.index');
 
+Route::post('/storeSituationDanger',
+[SituationDangerController::class, 'store'])->name('danger.store');
+
 Route::get('/formAccidentTravail',
 [DeclarationAccidentsController::class, 'index'])->name('accident.index');
 

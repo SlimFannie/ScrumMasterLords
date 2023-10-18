@@ -35,9 +35,9 @@ return new class extends Migration
             $table->string('etat')->nullable();
             $table->foreignId('user_matricule')->nullable();
             $table->string('matricule_creation')->nullable();
-            $table->string('date-creation')->nullable();
+            $table->string('created_at')->nullable();
             $table->string('matricule_dernier_modificateur')->nullable();
-            $table->string('date_derniere_modification')->nullable();
+            $table->string('updated_at')->nullable();
         });
     }
 
