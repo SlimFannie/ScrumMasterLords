@@ -54,7 +54,7 @@ class AuditsSSTController extends Controller
                 Log::debug($e);
                 
             }
-            return redirect()->route('audit.store');
+            return redirect()->route('audit.index');
         /*
         try {
             $nom_employer = $request->get('nomEmploye');
