@@ -26,10 +26,10 @@ Route::get('/connexion', function () {
     return view('connexion');
 });
 
-Route::POST('/connecting',
+Route::POST('/connexion',
 [UsagersController::class, 'login'])->name('usagers.login');
 
-Route::get('/formSituationDanger',
+Route::get('/SituationDangereuse',
 [SituationDangerController::class, 'index'])->name('danger.index');
 
 Route::post('/storeSituationDanger',

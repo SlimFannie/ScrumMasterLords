@@ -76,8 +76,8 @@ class UsagersController extends Controller
         try
         {   
             Log::debug($request->matricule);
-            $user = Usager::where('matricule','=',$request->matricule)->first();
-            if($user && Hash::check($request->mdp, $user->mdp))
+            $user = Usager::where('matricule','=',$request->inputMatricule)->first();
+            if($user && Hash::check($request->inputPassword, $user->mdp))
             {
                 Auth::login($user);
                 if(Auth::check())

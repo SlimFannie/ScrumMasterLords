@@ -1,0 +1,141 @@
+h1, h2, h3, h4, h5
+{
+    color: #FFFFFF;
+    font-weight: bolder;
+    margin: 0px;
+}
+
+label {
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+input {
+    height: 90px!important;
+    font-size: 1.5rem!important;
+    padding: 30px 20px 0px 20px!important;
+}
+
+.coBorder {
+    border-radius: 0px 5px 5px 0px!important;
+}
+
+.alerteMDP:hover {
+    background: rgba(255, 242, 168,0.7);
+    color: #0B2341;
+}
+
+.alerteMDP:hover .dramaLine {
+    text-decoration: underline;
+}
+
+.btn-co {
+    background-color: #0B2341; 
+    color: #0076D5;
+}
+
+.accueilText {
+    color: #0b2341;
+    font-family: 'Poppins', sans-serif;
+}
+
+.accueil {
+    position: relative;
+}
+
+#cloud {
+    background: rgba(255, 255, 255);
+    width: 300px; 
+    height: 100px;
+    border-radius: 150px;	
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    animation: move 3s infinite;
+  }
+
+ .logoAccueil {
+    height: 125px;
+    position: absolute;
+    top: -50px;
+    right: 70px;
+} 
+
+  #cloud:after {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    z-index: -1;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+    left: 50px;
+  }
+  
+  #cloud:before {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    top: -90px;
+    right: 40px;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translatex(0);
+    }
+    50% {
+      transform: translatex(-40px);
+    }
+  }
+
+.cloudDiv {
+    position: absolute;
+    left:50%;
+    top: 25%;
+    transform: translate(-50%,-50%);
+}
+
+.formDiv {
+    position: absolute;
+    top: 40%;
+}
+
+video {
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+#videoBG {
+    position: absolute;
+}
+
+#videoFrame {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 118, 213, .75)
+  }
+
+.footer {
+    position: sticky;
+    top: 200px;
+    padding: 0;
+}

@@ -33,26 +33,25 @@ body {
     display: inline !important;
 }
 
-p, header
+a, p, header
 {
     font-family: 'Poppins';
     font-weight: bold;
 }
 
+a {
+    text-decoration: none;
+    color: #C5D800;
+}
+
+a:hover {
+    color:#C5D800;
+    text-decoration: underline wavy white;
+}
+
 h1, h2, h3, h4, h5
 {
     font-family: 'Poppins', sans-serif;
-}
-
-input
-{
-    width: max-content;
-    height: 40px;
-}
-
-button
-{
-   
 }
 
 .bgTitre
