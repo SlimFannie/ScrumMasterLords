@@ -31,7 +31,7 @@
                         @csrf
                         <div class="form-floating w-50 m-auto mb-3 text-center">
                             <input type="text" class="form-control" name="inputMatricule" id="inputMatricule" placeholder="#">
-                            <label for="inputMatricule">Votre numéro d'employé</label>
+                            <label for="inputMatricule" class="px-4">Votre numéro d'employé</label>
                         </div>
                         <div class="form-floating input-group w-50 m-auto mb-3 text-center">
                             <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Votre mot de passe">
@@ -39,7 +39,7 @@
                                     <i class="fa-solid fa-eye fa-lg" id="showEye"></i>
                                     <i class="fa-solid fa-eye-slash d-none fa-lg" id="hideEye"></i>
                                 </span>
-                            <label for="inputPassword">Votre mot de passe</label>
+                            <label for="inputPassword" class="px-4">Votre mot de passe</label>
                         </div>
                         <h5 class="alerteMDP w-75 m-auto mt-5 mb-5"><i class="fa-solid fa-user-shield"></i> Les administrateurs de l'application ne vous demanderons <span class="dramaLine">JAMAIS</span> votre mot de passe!<h5>
                         <button type="submit" class="btn btn-co hover"><h3>Connexion <i class="fa-solid fa-door-closed hoverHide"></i><i class="fa-solid fa-door-open hoverShow"></i></h3></button>

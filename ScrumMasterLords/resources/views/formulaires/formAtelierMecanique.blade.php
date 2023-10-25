@@ -38,13 +38,13 @@
 
                     <header class="textAM" for="autre" class="mt">Autre véhicules impliqués (citoyen)</header>
                         <div class="form-check">
-                            <input class="form-check-input inputAM" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <input class="form-check-input inputAM" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="true">
                             <label class="form-check-label textAM" for="flexRadioDefault1">
                             Oui
                             </label>
                         </div>
                         <div class="form-check mb-2">
-                            <input class="form-check-input inputAM" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <input class="form-check-input inputAM" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="false">
                             <label class="form-check-label textAM" for="flexRadioDefault2">
                             Non
                             </label>
