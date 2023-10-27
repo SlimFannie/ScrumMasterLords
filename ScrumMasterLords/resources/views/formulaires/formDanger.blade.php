@@ -32,26 +32,26 @@
                 <div class="row g-0">
                     <div class="col-lg-3 offset-lg-1 col-6 mt-3 g-0">
                         <header for="nom" id="header">Nom</header>
-                        <input id="nom" class="champ">
+                        <input name="" id="nom" class="champ">
                     </div>
                     <div class="col-lg-3 col-6 mt-3 g-0">
                         <header for="prenom" id="header">Prénom</header>
-                        <input id="prenom" class="champ">
+                        <input name="" id="prenom" class="champ">
                     </div>
 
                     <div class="col-lg-3 col-12 mt-3 g-0" id="Mat">
                         <header for="matricule" id="header">Matricule</header>
-                        <input id="matricule" class="champ">
+                        <input name="" id="matricule" class="champ">
                     </div>
                 </div>
                 <div class="row g-0">
                     <div class="col-lg-3 offset-lg-2 col-6 mt-5 g-0">
                         <header for="fonction" id="header">Fonction au moment de l'évènement</header>
-                        <input id="fonction" class="champ">
+                        <input name="" id="fonction" class="champ">
                     </div>
                     <div class="col-lg-4 col-6 g-0 mt-5" id="divSecteur">
                         <header for="secteur" id="header">Secteur d'activité</header>
-                        <input id="secteur" class="champ">
+                        <input name="" id="secteur" class="champ">
                     </div>
                 </div>
             
@@ -71,11 +71,11 @@
             <div class="row g-0">
                 <div class="col g-0">
                     <header for="dateHeure" id="header">Date et heure de l'observation :</header>
-                    <input type="datetime-local" id="dateHeure" class="champ">
+                    <input name="" type="datetime-local" id="dateHeure" class="champ">
                 </div>
                 <div class="col g-0" id="divLieu">
                     <header for="lieu" id="header">Lieu</header>
-                    <input id="lieu" class="champ">
+                    <input name="" id="lieu" class="champ">
                 </div>
             </div>
 
@@ -110,12 +110,12 @@
         <div class="container-fluid g-0">
             <div class="row g-0">
                 <div class="col-1 g-0">
-                    <input type="checkbox" id="checkSup">
+                    <input name="" type="checkbox" id="checkSup">
                 </div>
                 <div class="col g-0" id="Sup">
                     <header for="nameSup" id="headerSup">Nom du superviseur</header>
                     <label for="nameSup" id="labelSup">, j'ai avisé mon supérieur immédiat</label>
-                    <input type="text" id="nameSup">
+                    <input name="" type="text" id="nameSup">
                 </div>
             </div>
         </div>
