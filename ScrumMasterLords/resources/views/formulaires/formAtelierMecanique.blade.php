@@ -21,31 +21,31 @@
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt">
                     <header class="textForm" for="num">Numéro(s) d'unité(s) impliqué(s)</header>
-                        <input type="text" id="num" class="border-3 mb-2 inputForm">
+                        <input name="no_unite" type="text" id="num" class="border-3 mb-2 inputForm">
 
                     <header class="textForm" for="dep" class="mt">Département</header>
-                        <input type="text" id="dep" class="border-3 mb-2 inputForm">
+                        <input name="departement" type="text" id="dep" class="border-3 mb-2 inputForm">
 
                     <header class="textForm" for="nom" class="mt">Nom complet de l'employé</header>
-                        <input type="text" id="nom" class="border-3 mb-2 inputForm">
+                        <input name="nom_complet_employer" type="text" id="nom" class="border-3 mb-2 inputForm">
 
                     <header class="textForm" for="nomSup" class="mt">Nom complet du supérieur</header>
-                        <input type="text" id="nomSup" class="border-3 mb-2 inputForm">
+                        <input name="nom_complet_superieur" type="text" id="nomSup" class="border-3 mb-2 inputForm">
 
                     <header class="textForm" for="numPermis" class="mt">Numéro du permis de conduire</header>
-                        <input type="text" id="numPermis" class="border-3 mb-2 inputForm">
+                        <input name="no_permis_conduite_employer" type="text" id="numPermis" class="border-3 mb-2 inputForm">
 
                     <hr>
 
                     <header class="textForm" for="autre" class="mt">Autre véhicules impliqués (citoyen)</header>
                         <div class="form-check">
-                            <input class="form-check-input inputForm" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <input class="form-check-input inputForm" type="radio" name="autre_vehicule_vrai" id="flexRadioDefault1" value=1>
                             <label class="form-check-label textForm" for="flexRadioDefault1">
                             Oui
                             </label>
                         </div>
                         <div class="form-check mb-2">
-                            <input class="form-check-input inputForm" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <input class="form-check-input inputForm" type="radio" name="autre_vehicule_faux" id="flexRadioDefault2" value=1>
                             <label class="form-check-label textForm" for="flexRadioDefault2">
                             Non
                             </label>
