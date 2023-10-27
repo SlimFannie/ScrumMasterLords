@@ -74,16 +74,19 @@ class UsagersController extends Controller
     {   
         try
         {   
-            $user = Usager::where('matricule','=',$request->inputMatricule,'and','mdp','=',$request->inputPassword)->first();
+            $user = Usager::where([['matricule','=',$request->inputMatricule], ['mdp',$request->inputPassword]])->first();
 
             if($user)
-            {
+                {
                     Session::put('id', $user->id);
                     Session::put('prenom', $user->prenom);
                     Session::put('nom', $user->nom);
-                    Log::debug("Oui");
                     return View('welcome', compact('user'));
-            }
+                }
+            else
+                {
+                    $errorid = "Vos identifiants sont erronés";
+                } 
         }
         catch(\Throwable $e)
         {
