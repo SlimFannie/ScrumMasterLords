@@ -25,33 +25,33 @@
         </div>
     </div>
 
-    <form method="post" action="{{route('danger.store')}}">
-        @csrf
+    <form>
+
         <div class="container-fluid g-0" id="bgID">
             
                 <div class="row g-0">
                     <div class="col-lg-3 offset-lg-1 col-6 mt-3 g-0">
                         <header for="nom" id="header">Nom</header>
-                        <input id="nom" class="champ" name="nom">
+                        <input id="nom" class="champ">
                     </div>
                     <div class="col-lg-3 col-6 mt-3 g-0">
                         <header for="prenom" id="header">Prénom</header>
-                        <input id="prenom" class="champ" name="prenom">
+                        <input id="prenom" class="champ">
                     </div>
 
                     <div class="col-lg-3 col-12 mt-3 g-0" id="Mat">
                         <header for="matricule" id="header">Matricule</header>
-                        <input id="matricule" class="champ" name="user_matricule">
+                        <input id="matricule" class="champ">
                     </div>
                 </div>
                 <div class="row g-0">
                     <div class="col-lg-3 offset-lg-2 col-6 mt-5 g-0">
                         <header for="fonction" id="header">Fonction au moment de l'évènement</header>
-                        <input id="fonction" class="champ" name="fonction">
+                        <input id="fonction" class="champ">
                     </div>
                     <div class="col-lg-4 col-6 g-0 mt-5" id="divSecteur">
                         <header for="secteur" id="header">Secteur d'activité</header>
-                        <input id="secteur" class="champ" name="secteur">
+                        <input id="secteur" class="champ">
                     </div>
                 </div>
             
@@ -71,32 +71,32 @@
             <div class="row g-0">
                 <div class="col g-0">
                     <header for="dateHeure" id="header">Date et heure de l'observation :</header>
-                    <input type="datetime-local" id="dateHeure" class="champ" name="date_observation">
+                    <input type="datetime-local" id="dateHeure" class="champ">
                 </div>
                 <div class="col g-0" id="divLieu">
                     <header for="lieu" id="header">Lieu</header>
-                    <input id="lieu" class="champ" name="lieu">
+                    <input id="lieu" class="champ">
                 </div>
             </div>
 
             <div class="row g-0">
                 <div class="col text-center g-0" id="iTemoin">
                 <header for="dTemoin" id="header">Témoins :</header>
-                    <textarea id="dTemoin" name="temoin"></textarea>
+                    <textarea id="dTemoin"></textarea>
                 </div>
             </div>
 
             <div class="row g-0" id="iEvent">
                 <div class="col text-center g-0">
                     <header for="dEvent" id="header">Description :</header>
-                    <textarea id="dEvent" name="description"></textarea>
+                    <textarea id="dEvent"></textarea>
                 </div>
             </div>
 
             <div class="row g-0">
                 <div class="col text-center g-0" id="iCorrection">
                     <header for="dCorrection" id="header">Correction(s) ou amélioraions proposées:</header>
-                    <textarea id="dCorrection" name="correction_amelioration"></textarea>
+                    <textarea id="dCorrection"></textarea>
                 </div>
             </div>
         </div>
@@ -110,24 +110,20 @@
         <div class="container-fluid g-0">
             <div class="row g-0">
                 <div class="col-1 g-0">
-                    <input type="checkbox" id="checkSup" name="avis_superieur">
+                    <input type="checkbox" id="checkSup">
                 </div>
                 <div class="col g-0" id="Sup">
                     <header for="nameSup" id="headerSup">Nom du superviseur</header>
                     <label for="nameSup" id="labelSup">, j'ai avisé mon supérieur immédiat</label>
-                    <input type="text" id="nameSup" name="nom_superieur">
-                    <label for="dateHeure" id="headerHeureSup">Date :</label>
-                    <input type="datetime-local" id="dateHeureSup" class="champ" name="date_avis">
+                    <input type="text" id="nameSup">
                 </div>
             </div>
         </div>
 
-        <hr style="height: 3px;">
-
         <div class="row">
             <div class="col-8"></div>
             <div class="col-4">
-                <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
+                <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
             </div>
         </div>
     </form>

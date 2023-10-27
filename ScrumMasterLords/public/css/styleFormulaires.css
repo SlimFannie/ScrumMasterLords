@@ -1,0 +1,61 @@
+.textForm
+{
+    color: white;
+}
+
+.titleForm
+{
+    color: rgb(120, 198, 224);
+}
+
+.inputForm
+{
+    border-radius: 8px;
+    border-color: rgb(120, 198, 224);
+    color:rgb(11, 35, 65);
+};
+
+input[type=text]:focus
+{
+    border-color: rgb(0, 118, 213);
+}
+
+.col-6
+{
+    padding: 0;
+}
+
+.zoneForm
+{
+    border-radius: 20px;
+    border-style: solid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(11, 35, 65);
+    border-color: rgb(0, 118, 213);
+};
+
+.Form
+{
+    margin-bottom: 1rem;
+    color: rgb(0, 118, 213);
+    font-family: 'Poppins', sans-serif;
+}
+
+.bigTitleForm
+{
+    border-style: solid;
+    border-radius: 20px 20px;
+    border-width: 7px;
+    color: rgb(11, 35, 65);
+}
+
+.mt
+{
+    margin-top: 0.5rem;
+}
+
+h1, h2, h3, h4, h5
+{
+    color: rgb(11, 35, 65);
+}

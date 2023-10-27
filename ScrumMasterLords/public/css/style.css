@@ -33,25 +33,45 @@ body {
     display: inline !important;
 }
 
-a, p, header
+p, header, label
 {
     font-family: 'Poppins';
     font-weight: bold;
 }
 
-a {
-    text-decoration: none;
-    color: #C5D800;
-}
-
-a:hover {
-    color:#C5D800;
-    text-decoration: underline wavy white;
-}
-
-h1, h2, h3, h4, h5, label, input
+h1, h2, h3, h4, h5
 {
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+input[type=text]
+{
+    width: max-content;
+    height: 40px;
+}
+
+input[type=datetime-local]
+{
+    width: max-content;
+    height: 40px;
+}
+
+input[type=checkbox]
+{
+    height: 20px;
+    width: 20px;
+}
+
+input[type=radio]
+{
+    height: 20px;
+    width: 20px;
+}
+
+button
+{
+   
 }
 
 .bgTitre
