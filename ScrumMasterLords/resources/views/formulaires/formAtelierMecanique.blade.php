@@ -39,13 +39,13 @@
 
                     <header class="textForm" for="autre" class="mt">Autre véhicules impliqués (citoyen)</header>
                         <div class="form-check">
-                            <input class="form-check-input inputForm" type="radio" name="autre_vehicule_vrai" id="flexRadioDefault1" value=>
+                            <input class="form-check-input inputForm" type="radio" name="autre_vehicule_vrai" id="flexRadioDefault1" value=1>
                             <label class="form-check-label textForm" for="flexRadioDefault1">
                             Oui
                             </label>
                         </div>
                         <div class="form-check mb-2">
-                            <input class="form-check-input inputForm" type="radio" name="autre_vehicule_faux" id="flexRadioDefault2" value=>
+                            <input class="form-check-input inputForm" type="radio" name="autre_vehicule_faux" id="flexRadioDefault2" value=1>
                             <label class="form-check-label textForm" for="flexRadioDefault2">
                             Non
                             </label>
