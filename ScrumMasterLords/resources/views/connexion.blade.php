@@ -27,22 +27,24 @@
             <div class="row text-center">
                 <div class="col-12 d-flex align-items-center justify-content-center">
                     <div class="formDiv">
-                    <form method="POST" id="FormUsager" action="{{ route('usagers.login') }}">
+                    <form method="POST" id="FormUsager" action="{{ route('usagers.login') }}" onsubmit="return requiredConnexion()">
                         @csrf
-                        <div class="form-floating w-50 m-auto mb-3 text-center">
+                        <div id="alertMatricule" class="alert alert-primary alertPosition d-none"></div>
+                        <div class="form-floating m-auto mb-3 text-center inputWidth">
                             <input type="text" class="form-control" name="inputMatricule" id="inputMatricule" placeholder="#">
-                            <label for="inputMatricule" class="px-4">Votre numéro d'employé</label>
+                            <label for="inputMatricule" id="labelMatricule" class="px-4">Votre numéro d'employé</label>
                         </div>
-                        <div class="form-floating input-group w-50 m-auto mb-3 text-center">
+                        <div id="alertPassword" class="alert alert-primary alertPosition d-none"></div>
+                        <div class="form-floating input-group m-auto mb-3 text-center inputWidth">
                             <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Votre mot de passe">
                                 <span class="input-group-text coBorder" onclick="passwordShowHide();">
                                     <i class="fa-solid fa-eye fa-lg" id="showEye"></i>
                                     <i class="fa-solid fa-eye-slash d-none fa-lg" id="hideEye"></i>
                                 </span>
-                            <label for="inputPassword" class="px-4">Votre mot de passe</label>
+                            <label for="inputPassword" id="labelPassword" class="px-4">Votre mot de passe</label>
                         </div>
-                        <h5 class="alerteMDP w-75 m-auto mt-5 mb-5"><i class="fa-solid fa-user-shield"></i> Les administrateurs de l'application ne vous demanderons <span class="dramaLine">JAMAIS</span> votre mot de passe!<h5>
-                        <button type="submit" class="btn btn-co hover"><h3>Connexion <i class="fa-solid fa-door-closed hoverHide"></i><i class="fa-solid fa-door-open hoverShow"></i></h3></button>
+                        <h5 class="alerteMDP w-75 m-auto mt-lg-5 mb-lg-5 mb-4 mt-4"><i class="fa-solid fa-user-shield"></i> Les administrateurs de l'application ne vous demanderons <span class="dramaLine">JAMAIS</span> votre mot de passe!<h5>
+                        <button class="btn btn-co hover" id="submitConnexion"><h3>Connexion <i class="fa-solid fa-door-closed hoverHide"></i><i class="fa-solid fa-door-open hoverShow"></i></h3></button>
                     </form>
                     </div>
                 </div>

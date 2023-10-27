@@ -16,6 +16,43 @@ input {
     padding: 30px 20px 0px 20px!important;
 }
 
+.formDiv {
+  position: absolute;
+  top: 40%;
+}
+
+.inputWidth {
+width: 500px;
+}
+
+.alertPosition {
+  height: 90px;
+  width: 250px;
+
+  position: absolute;
+  z-index: 2;
+  right: 80%;
+  margin-right: 10px;
+
+  font-size: 1.2rem;
+}
+
+.alertPosition::after {
+  content: "";
+  position: absolute;
+  top: 50%;                     
+  margin-top: -15px;                
+  right:-30px;
+  border: solid 15px transparent;
+  border-left-color: #cfe2ff;
+  z-index: 1;
+}
+
+.form-control:focus {
+  border: 1px solid rgba(255, 242, 168,0.7)!important;
+  box-shadow: 0px 0px 2px 5px rgba(255, 242, 168,0.7)!important;
+}
+
 .coBorder {
     border-radius: 0px 5px 5px 0px!important;
 }
@@ -98,11 +135,6 @@ input {
     transform: translate(-50%,-50%);
 }
 
-.formDiv {
-    position: absolute;
-    top: 40%;
-}
-
 video {
     object-fit: fill;
     height: 100%;
@@ -138,4 +170,28 @@ video {
     position: sticky;
     top: 200px;
     padding: 0;
+}
+
+@media (max-width: 576px) { 
+
+#cloud {
+    animation: none;
+  }
+
+label {
+    font-size: 1.2rem;
+}
+
+input {
+  height: 70px!important;
+  font-size: 1.2rem!important;
+  font-weight: bolder;
+  padding: 20px 20px 0px 20px!important;
+}
+
+.inputWidth {
+  width: 300px;
+}
+
+
 }

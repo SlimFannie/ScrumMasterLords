@@ -13,3 +13,41 @@ function passwordShowHide() {
       hide_eye.style.display = "none";
     }
   }
+
+function requiredConnexion() {
+    const matricule = document.getElementById("inputMatricule").value;
+    const mdp = document.getElementById("inputPassword").value;
+    const alertMatricule = document.getElementById("alertMatricule");
+    const alertPassword = document.getElementById("alertPassword");
+
+    if (matricule.length<1) {
+      alertMatricule.innerHTML = "<i class=\"fa-solid fa-triangle-exclamation\"></i> Vous devez entrer un matricule";
+      alertMatricule.classList.remove('d-none');
+      alertMatricule.classList.add('d-block');
+      errorMAT = 1
+    } else {
+      alertMatricule.classList.remove('d-block');
+      alertMatricule.classList.add('d-none');
+      errorMAT = 0;
+    }
+
+    if (mdp.length<1) {
+      alertPassword.innerHTML = "<i class=\"fa-solid fa-triangle-exclamation\"></i> Vous devez entrer un mot de passe";
+      alertPassword.classList.remove('d-none');
+      alertPassword.classList.add('d-block');
+      errorMDP = 1;
+    } else {
+      alertPassword.classList.remove('d-block');
+      alertPassword.classList.add('d-none');
+      errorMDP = 0;
+    }
+
+    if (errorMAT == 0 && errorMDP == 0) {
+      alertPassword.innerHTML = "<i class=\"fa-solid fa-triangle-exclamation\"></i> Vous devez entrer un mot de passe";
+      alertPassword.classList.remove('d-none');
+      alertPassword.classList.add('d-block');
+      return true;
+    } else {
+      return false;
+    }
+ }
