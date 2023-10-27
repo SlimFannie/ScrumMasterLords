@@ -29,7 +29,7 @@ Route::get('/connexion', function () {
 Route::POST('/connexion',
 [UsagersController::class, 'login'])->name('usagers.login');
 
-Route::get('/SituationDangereuse',
+Route::get('/formSituationDangereuse',
 [SituationDangerController::class, 'index'])->name('danger.index');
 
 Route::post('/storeSituationDanger',
