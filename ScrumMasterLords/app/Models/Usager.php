@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\Usager as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
@@ -11,6 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 class Usager extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    protected $fillable = [
+        'matricule',
+        'mdp'
+    ];
 
     public function getAuthPassword()
     {

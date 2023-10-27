@@ -5,15 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Usager;
-use App\Http\Requests\UsagerRequest;
 use Illuminate\View\View;
 use Illuminate\Auth\Middleware;
 use Auth;
 use DB;
-use Hash;
 use Session;
 
 class UsagersController extends Controller
+
 {
     /**
      * Display a listing of the resource.
@@ -75,25 +74,15 @@ class UsagersController extends Controller
     {   
         try
         {   
-            Log::debug($request->matricule);
-            $user = Usager::where('matricule','=',$request->inputMatricule)->first();
-            if($user && Hash::check($request->inputPassword, $user->mdp))
+            $user = Usager::where('matricule','=',$request->inputMatricule,'and','mdp','=',$request->inputPassword)->first();
+
+            if($user)
             {
-                Auth::login($user);
-                if(Auth::check())
-                {
                     Session::put('id', $user->id);
                     Session::put('prenom', $user->prenom);
                     Session::put('nom', $user->nom);
-                    return View('accueils.index', compact('user'));
-                }
-                else
-                {
-                    return redirect()->route('usagers.login')->withErrors(['message','RIIIP']);
-                } 
-            }
-            {
-                return redirect()->route('usagers.login')->withErrors(['message','RIIIP']);
+                    Log::debug("Oui");
+                    return View('welcome', compact('user'));
             }
         }
         catch(\Throwable $e)

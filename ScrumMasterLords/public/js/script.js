@@ -1,3 +1,5 @@
+const xs = window.matchMedia("(max-width:900px)");
+
 function passwordShowHide() {
     var x = document.getElementById("inputPassword");
     var show_eye = document.getElementById("showEye");
@@ -18,12 +20,17 @@ function requiredConnexion() {
     const matricule = document.getElementById("inputMatricule").value;
     const mdp = document.getElementById("inputPassword").value;
     const alertMatricule = document.getElementById("alertMatricule");
+    const labelMatricule = document.getElementById("labelMatricule");
     const alertPassword = document.getElementById("alertPassword");
+    const labelPassword = document.getElementById("labelPassword");
 
     if (matricule.length<1) {
       alertMatricule.innerHTML = "<i class=\"fa-solid fa-triangle-exclamation\"></i> Vous devez entrer un matricule";
       alertMatricule.classList.remove('d-none');
       alertMatricule.classList.add('d-block');
+      if(xs.matches) {
+        labelMatricule.innerHTML = "Vous devez entrer un matricule."
+      }
       errorMAT = 1
     } else {
       alertMatricule.classList.remove('d-block');
@@ -43,9 +50,6 @@ function requiredConnexion() {
     }
 
     if (errorMAT == 0 && errorMDP == 0) {
-      alertPassword.innerHTML = "<i class=\"fa-solid fa-triangle-exclamation\"></i> Vous devez entrer un mot de passe";
-      alertPassword.classList.remove('d-none');
-      alertPassword.classList.add('d-block');
       return true;
     } else {
       return false;

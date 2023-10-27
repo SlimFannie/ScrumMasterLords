@@ -10,6 +10,10 @@ label {
     font-size: 2rem;
 }
 
+.petitText {
+  
+}
+
 input {
     height: 90px!important;
     font-size: 1.5rem!important;
@@ -23,6 +27,11 @@ input {
 
 .inputWidth {
 width: 500px;
+}
+
+.alertConnexion {
+  width: 500px;
+  font-size: 1.2rem;
 }
 
 .alertPosition {
@@ -55,6 +64,7 @@ width: 500px;
 
 .coBorder {
     border-radius: 0px 5px 5px 0px!important;
+    width: 50px;
 }
 
 .alerteMDP:hover {
@@ -193,5 +203,19 @@ input {
   width: 300px;
 }
 
+.logoAccueil {
+  height: 110px;
+  position: absolute;
+  top: -30px;
+  right: 90px;
+} 
+
+.alertPosition {
+  display: none!important;
+}
+
+.alertPosition::after {
+  display: none!important;
+}
 
 }
