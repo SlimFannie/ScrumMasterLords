@@ -17,13 +17,13 @@
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt">
                     <header class="textForm" for="nomEmploye">nom de l'employé</header>
-                    <input name="" type="text" id="nomEmploye" class="mb-2 inputForm">
+                    <input name="nom_employer" type="text" id="nomEmploye" class="mb-2 inputForm">
 
                     <header class="textForm" for="lieux">Lieu(x) des travaux</header>
-                    <input name="" type="text" id="lieux" class="mb-2 inputForm">
+                    <input name="lieux_travail" type="text" id="lieux" class="mb-2 inputForm">
 
                     <header class="textForm" for="date">Date</header>
-                    <input name="" type="datetime-local" id="date" style="width: 150px;" class="mb-3 inputForm">
+                    <input name="date" type="datetime-local" id="date" style="width: 150px;" class="mb-3 inputForm">
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="epiConf">
+                        <input name="epi_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="epiConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="epiNonConf">
+                        <input name="epi_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="epiNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="epiNA">
+                        <input name="epi_na" class="form-check-input inputForm" type="checkbox" value="1" id="epiNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="lieuxConf">
+                        <input name="tenue_lieux_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="lieuxConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="lieuxNonConf">
+                        <input name="tenue_lieux_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="lieuxNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="lieuxNA">
+                        <input name="tenue_lieux_na" class="form-check-input inputForm" type="checkbox" value="1" id="lieuxNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="compConf">
+                        <input name="comportement_securitaire_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="compConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="compNonConf">
+                        <input name="comportement_securitaire_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="compNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="compNA">
+                        <input name="comportement_securitaire_na" class="form-check-input inputForm" type="checkbox" value="1" id="compNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="signConf">
+                        <input name="signalisation_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="signConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="signNonConf">
+                        <input name="signalisation_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="signNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -139,7 +139,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="signNA">
+                        <input name="signalisation_na" class="form-check-input inputForm" type="checkbox" value="1" id="signNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -153,7 +153,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="fichesConf">
+                        <input name="fiches_signaletique_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="fichesConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -161,7 +161,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="fichesNonConf">
+                        <input name="fiches_signaletique_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="fichesNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -169,7 +169,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="fichesNA">
+                        <input name="fiches_signaletique_na" class="form-check-input inputForm" type="checkbox" value="1" id="fichesNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -183,7 +183,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="travConf">
+                        <input name="travaux_excavation_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="travConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -191,7 +191,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="travNonConf">
+                        <input name="travaux_excavation_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="travNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -199,7 +199,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="travNA">
+                        <input name="travaux_excavation_na" class="form-check-input inputForm" type="checkbox" value="1" id="travNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -213,7 +213,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="espConf">
+                        <input name="espace_clos_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="espConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -221,7 +221,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="espNonConf">
+                        <input name="espace_clos_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="espNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -229,7 +229,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="espNA">
+                        <input name="espace_clos_na" class="form-check-input inputForm" type="checkbox" value="1" id="espNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -243,7 +243,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="methodeConf">
+                        <input name="methode_travail_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="methodeConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -251,7 +251,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="methodeNonConf">
+                        <input name="methode_travail_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="methodeNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -259,7 +259,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="methodeNA">
+                        <input name="methode_travail_na" class="form-check-input inputForm" type="checkbox" value="1" id="methodeNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -270,11 +270,11 @@
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt titleSST">
                     <h3 class="textForm text-center">Autre(s)</h3>
-                    <input name="" type="text" id="autre" class=" mb-2 inputForm">
+                    <input name="autre" type="text" id="autre" class=" mb-2 inputForm">
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="autreConf">
+                        <input name="autre_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="autreConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -282,7 +282,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="autreNonConf">
+                        <input name="autre_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="autreNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -290,7 +290,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="autreNA">
+                        <input name="autre_na" class="form-check-input inputForm" type="checkbox" value="1" id="autreNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -308,7 +308,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="distanciationConf">
+                        <input name="respect_distanciation_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="distanciationConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -316,7 +316,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="distanciationNonConf">
+                        <input name="respect_distanciation_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="distanciationNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -324,7 +324,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="distanciationNA">
+                        <input name="respect_distanciation_na" class="form-check-input inputForm" type="checkbox" value="1" id="distanciationNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -338,7 +338,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="epiConf">
+                        <input name="port_epi_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="epiConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -346,7 +346,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="epiNonConf">
+                        <input name="port_epi_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="epiNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -354,7 +354,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="epiNA">
+                        <input name="port_epi_na" class="form-check-input inputForm" type="checkbox" value="1" id="epiNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -368,7 +368,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="proceduresConf">
+                        <input name="respect_procedures_etablies_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="proceduresConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Conforme</p>
@@ -376,7 +376,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="proceduresNonConf">
+                        <input name="respect_procedures_etablies_non_conforme" class="form-check-input inputForm" type="checkbox" value="1" id="proceduresNonConf">
                     </div>
                     <div class="col-11">
                         <p class="textForm">Non Conforme</p>
@@ -384,7 +384,7 @@
                 </div>
                 <div class="row g-0">
                     <div class="col-1">
-                        <input name="" class="form-check-input inputForm" type="checkbox" value="1" id="proceduresNA">
+                        <input name="respect_procedures_etablies_na" class="form-check-input inputForm" type="checkbox" value="1" id="proceduresNA">
                     </div>
                     <div class="col-11">
                         <p class="textForm">N/A</p>
@@ -398,14 +398,14 @@
 
             <div class="container-fluid zoneForm">
                 <div class="row g-0">
-                    <textarea class="resize mt mb-2 textAreaSST" aria-label="With textarea" id="description"></textarea>
+                    <textarea name="description" class="resize mt mb-2 textAreaSST" aria-label="With textarea" id="description"></textarea>
                 </div>
             </div>
 
             <div class="row g-o mb-3">
                 <div class="col-7"></div>
                 <div class="col-5">
-                    <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+                    <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
                 </div>
             </div>
         </form>
