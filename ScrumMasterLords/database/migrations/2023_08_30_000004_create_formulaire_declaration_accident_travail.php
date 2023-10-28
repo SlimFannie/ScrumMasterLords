@@ -24,32 +24,43 @@ return new class extends Migration
             $table->boolean('tete')->nullable()->default(0); /* premier champ emplacement de la bléssure */
             $table->boolean('visage')->nullable()->default(0);
             $table->boolean('nez')->nullable()->default(0);
+            $table->boolean('yeux')->nullable()->default(0);
             $table->boolean('oeil_gauche')->nullable()->default(0);
             $table->boolean('oeil_droit')->nullable()->default(0);
+            $table->boolean('oreilles')->nullable()->default(0);
             $table->boolean('oreille_gauche')->nullable()->default(0);
             $table->boolean('oreille_droite')->nullable()->default(0);
             $table->boolean('torse')->nullable()->default(0);
             $table->boolean('poumon')->nullable()->default(0);
+            $table->boolean('bras')->nullable()->default(0);
             $table->boolean('bras_gauche')->nullable()->default(0);
             $table->boolean('bras_droite')->nullable()->default(0);
+            $table->boolean('epaules')->nullable()->default(0);
             $table->boolean('epaule_gauche')->nullable()->default(0);
             $table->boolean('epaule_droite')->nullable()->default(0);
+            $table->boolean('coudes')->nullable()->default(0);
             $table->boolean('coude_gauche')->nullable()->default(0);
             $table->boolean('coude_droite')->nullable()->default(0);
+            $table->boolean('poignets')->nullable()->default(0);
             $table->boolean('poignet_gauche')->nullable()->default(0);
             $table->boolean('poignet_droite')->nullable()->default(0);
+            $table->boolean('mains')->nullable()->default(0);
             $table->boolean('main_gauche')->nullable()->default(0);
             $table->boolean('main_droite')->nullable()->default(0);
             $table->boolean('doigt')->nullable()->default(0);
             $table->boolean('dos')->nullable()->default(0);
             $table->boolean('hanche')->nullable()->default(0);
+            $table->boolean('jambes')->nullable()->default(0);
             $table->boolean('jambe_gauche')->nullable()->default(0);
             $table->boolean('jambe_droite')->nullable()->default(0);
+            $table->boolean('genoux')->nullable()->default(0);
             $table->boolean('genoux_gauche')->nullable()->default(0);
             $table->boolean('genoux_droite')->nullable()->default(0);
+            $table->boolean('pieds')->nullable()->default(0);
             $table->boolean('pied_gauche')->nullable()->default(0);
             $table->boolean('pied_droite')->nullable()->default(0);
             $table->boolean('orteils')->nullable()->default(0);
+            $table->boolean('chevilles')->nullable()->default(0);
             $table->boolean('cheville_gauche')->nullable()->default(0);
             $table->boolean('cheville_droite')->nullable()->default(0);/* dernier champ emplacement de la bléssure */
             $table->boolean('brulure')->nullable()->default(0);/* premier champ description de la bléssure */
