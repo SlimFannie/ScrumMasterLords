@@ -9,11 +9,11 @@ body {
     height: 100%;
 }
 
-.h-15 {
+.h-10 {
     height: 10%;
 }
 
-.h-85 {
+.h-90 {
     height: 90%;
 }
 
@@ -69,51 +69,10 @@ input[type=radio]
     width: 20px;
 }
 
-button
-{
-   
-}
-
 .bgTitre
 {
     padding-left: 3%;
     border-style: solid;
     border-radius: 20px 20px;
     border-width: 7px;
-}
-
-/* Navbar */
-
-.bgNav {
-    background-color: #0076D5;
-    color: #C5D800;
-}
-
-.bgApp {
-    display: block;
-}
-
-.nav-link-lg {
-    font-size: 2rem;
-    color: #0B2341;
-}
-
-ul li {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.noBullet {
-    list-style-type: none;
-}
-
-.noBullet li {
-    font-size: 2.5rem;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.noBtn {
-    border: 0;
-    background-color: transparent;
 }

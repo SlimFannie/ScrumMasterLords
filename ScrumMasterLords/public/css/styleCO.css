@@ -22,16 +22,26 @@ input {
 
 .formDiv {
   position: absolute;
-  top: 40%;
+  top: 35%;
+  padding-top: 30px;
 }
 
 .inputWidth {
   width: 500px!important;
+
+  margin-bottom: 15px!important;
 }
 
 .alertConnexion {
+  background-color: rgba(255, 242, 168,0.7);
+  border: 1px solid rgba(255, 242, 168,0.7);
+
   width: 500px;
+  padding: 10px;
+
   font-size: 1.2rem;
+  font-weight: bolder;
+  color: #0B2341;
 }
 
 .alertPosition {
@@ -44,6 +54,11 @@ input {
   margin-right: 10px;
 
   font-size: 1.2rem;
+  font-weight: bolder;
+  color: #0B2341;
+
+  background-color: rgba(255, 242, 168,0.7);
+  border: 1px solid rgba(255, 242, 168,0.1);
 }
 
 .alertPosition::after {
@@ -51,9 +66,9 @@ input {
   position: absolute;
   top: 50%;                     
   margin-top: -15px;                
-  right:-30px;
-  border: solid 15px transparent;
-  border-left-color: #cfe2ff;
+  right:-29.5px;
+  border: solid 14px transparent;
+  border-left-color: rgba(255, 242, 168,0.7);
   z-index: 1;
 }
 
@@ -65,6 +80,10 @@ input {
 .coBorder {
     border-radius: 0px 5px 5px 0px!important;
     width: 50px;
+}
+
+.alerteMDP {
+  margin-bottom: 35px!important;
 }
 
 .alerteMDP:hover {
@@ -182,12 +201,40 @@ video {
     padding: 0;
 }
 
-@media (max-width: 576px) { 
+@media (max-width: 576px) or ((max-height: 800px) and (min-width:1000px)) { 
+
+  .cloudDiv {
+    position: absolute;
+    left:50%;
+    top: 20%;
+  }
+
+  .formDiv {
+    position: absolute;
+    top: 30%;
+  }
 
   #cloud {
-      animation: none;
-    }
-
+    width: 200px; 
+    height: 60px;
+    box-shadow: 5px 5px rgba(0,0,0,0.2);
+    animation: none
+  }
+  
+  #cloud:after {
+    width: 60px;
+    height: 60px;
+    top: -50px;
+    left: 30px;
+  }
+  
+  #cloud:before {
+    width: 120px;
+    height: 110px;
+    top: -70px;
+    right: 20px;
+  }
+ 
   label {
       font-size: 1.2rem;
   }
@@ -200,14 +247,14 @@ video {
   }
 
   .inputWidth {
-    width: 300px;
+    width: 300px!important;
   }
 
   .logoAccueil {
-    height: 110px;
+    height: 90px;
     position: absolute;
-    top: -30px;
-    right: 90px;
+    top: -40px;
+    right: 50px;
   } 
 
   .alertPosition {
@@ -218,4 +265,42 @@ video {
     display: none!important;
   }
 
+  .alertConnexion {
+    font-size: 1rem;
+    width: 300px;
+  }
+
+  .alerteMDP {
+    font-size: 1rem;
+  }
+
+}
+
+@media (min-width: 576px) and (max-width:1180px) {
+  .alertPosition {
+    display: none!important;
+  }
+
+  .alertPosition::after {
+    display: none!important;
+  }
+
+  .alerteMDP {
+    font-size: 1.5rem;
+  }
+}
+
+@media(max-height: 800px) and (min-width:1000px) {
+  .alerteMDP {
+    font-size: 1rem!important;
+  }
+
+  .alertConnexion {
+    width: 500px;
+  }
+
+  .formDiv {
+    top: 25%;
+    padding-top: 45px;
+  }
 }

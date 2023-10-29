@@ -19,15 +19,18 @@ use App\Http\Controllers\AtelierMecaniquesController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/connexion', function () {
     return view('connexion');
-});
+})->name('connexion');
+
+Route::get('/{username}', function() {
+    return view('welcome');
+})->name('dashboard');
 
 Route::POST('/connexion',
 [UsagersController::class, 'login'])->name('usagers.login');
+
+Route::POST('/déconnexion',
+[UsagersController::class, 'logout'])->name('usagers.logout');
 
 Route::get('/formSituationDangereuse',
 [SituationDangerController::class, 'index'])->name('danger.index');

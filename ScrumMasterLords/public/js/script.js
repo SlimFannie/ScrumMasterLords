@@ -1,4 +1,5 @@
-const xs = window.matchMedia("(max-width:900px)");
+const xs = window.matchMedia("(max-width:1180px)");
+const nest = window.matchMedia("(min-width:1000px) and (max-height:800px");
 
 function passwordShowHide() {
     var x = document.getElementById("inputPassword");
@@ -28,8 +29,8 @@ function requiredConnexion() {
       alertMatricule.innerHTML = "<i class=\"fa-solid fa-triangle-exclamation\"></i> Vous devez entrer un matricule";
       alertMatricule.classList.remove('d-none');
       alertMatricule.classList.add('d-block');
-      if(xs.matches) {
-        labelMatricule.innerHTML = "Vous devez entrer un matricule."
+      if(xs.matches || nest.matches) {
+        labelMatricule.innerHTML = "Entrez un matricule."
       }
       errorMAT = 1
     } else {
@@ -43,6 +44,9 @@ function requiredConnexion() {
       alertPassword.classList.remove('d-none');
       alertPassword.classList.add('d-block');
       errorMDP = 1;
+      if(xs.matches || nest.matches) {
+        labelPassword.innerHTML = "Entrez un mot de passe."
+      }
     } else {
       alertPassword.classList.remove('d-block');
       alertPassword.classList.add('d-none');
