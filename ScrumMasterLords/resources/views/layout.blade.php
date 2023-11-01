@@ -26,7 +26,9 @@
             <div class="btn-line"></div>
             <div class="btn-line"></div>
           </button>
-          <div class="avatarNav d-lg-none position-absolute"></div>
+          <div class="avatarNav d-lg-none position-absolute">
+          </div>
+          <span class="position-absolute z-4 start-100 translate-middle badge rounded-pill bg-danger">99+</span>
         </div>
         <div class="col-12 col-lg-6 justify-content-lg-end d-none d-lg-flex navOpen" id="navigation">
           <ul class="navbar-nav">
