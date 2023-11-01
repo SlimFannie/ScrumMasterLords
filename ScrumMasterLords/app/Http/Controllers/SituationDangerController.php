@@ -27,6 +27,19 @@ class SituationDangerController extends Controller
         //
     }
 
+    public function selectOneForm(string $id)
+    {
+        DB::select('select * from formulaire_signalement_situation_dangereuses where id = :id', ['id' => $id]);
+    }
+
+    public function selectForm(string $matricule)
+    {
+        DB::select('select id, nom_formulaire, nom_employer, date 
+        from formulaire_signalement_situation_dangereuses 
+        where matricule_usager = :matricule or :matricule = 
+        ANY (select matricule_usager where :matricule = matricule_superieur)', ['matricule' => $matricule]);
+    }
+
     /**
      * Store a newly created resource in storage.
      */

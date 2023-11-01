@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AccidentRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-use App\Models\Formulaire_declaration_accident_travail;
+use App\Models\Accident;
 use Illuminate\Support\Facades\Log;
 
 
@@ -47,7 +47,9 @@ class DeclarationAccidentsController extends Controller
     public function store(AccidentRequest $request)
     {
         try {
-
+            Log::debug('entré dans le requete');
+            $declarationAccident = new Formulaire_declaration_accident_travail($request->all());
+            $declarationAccident->save();
         /*
         $nom_employer = $request->get('nom');
         $fonction = $request->get('fonction');
@@ -167,9 +169,6 @@ class DeclarationAccidentsController extends Controller
         $accident_sans_absence, $accident_avec_consultation_medicale, $matricule_usager]); */
         //$avis_superieur, $nom_superieur, $date_avis, $signature_superieur, $no_poste_superieur, 
         //$date_signature_employer, $etat, $date_creation
-        
-        $declarationAccident = new Formulaire_declaration_accident_travail($request->all());
-        $declarationAccident->save();
         }
         catch (\Throwable $e) {
             Log::debug($e);
