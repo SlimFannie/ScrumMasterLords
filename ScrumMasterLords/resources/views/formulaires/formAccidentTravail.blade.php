@@ -3,7 +3,7 @@
 @section ('contenu')
 
     <div class="container-fluid">
-        <div class="container-fluid g-0 mb-2 sign mb-3">
+        <div class="container-fluid g-0 mb-2 sign mb-3 marginNav">
             <div class="mt-3 bigTitleForm">
                 <div class="row g-0 mb-2">
                     <div class="col-10 offset-col-3 text-center m-4 g-0 mb-2">
