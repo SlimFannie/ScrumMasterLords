@@ -9,6 +9,10 @@ body {
     height: 100%;
 }
 
+.marginNav {
+    margin-top: 7%;
+}
+
 .h-10 {
     height: 10%;
 }

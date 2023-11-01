@@ -3,7 +3,7 @@
 @section('contenu')
 
 <div class="container-fluid">
-    <div class="container-fluid g-0 mb-2 sign mb-3">
+    <div class="container-fluid g-0 mb-2 sign mb-3 marginNav">
         <div class="mt-3 bigTitleForm">
             <div class="row g-0 mb-2">
                 <div class="col-10 offset-col-3 text-center m-4 g-0 mb-2">
@@ -54,30 +54,17 @@
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dTemoin" id="header">Témoins :</header>
-                <textarea id="dTemoin"></textarea>
+                <textarea id="dTemoin" class="resize inputForm"></textarea>
             </div>
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dEvent" id="header">Description :</header>
-                <textarea id="dEvent"></textarea>
+                <textarea id="dEvent" class="resize inputForm"></textarea>
             </div>
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dCorrection" id="header">Correction(s) ou amélioraions proposées:</header>
-                <textarea id="dCorrection"></textarea>
-            </div>
-        </div>
-        
-        <div class="container-fluid g-0">
-            <div class="row g-0">
-                <div class="col-1 g-0">
-                    <input class="inputForm" type="text" type="checkbox" id="checkSup">
-                </div>
-                <div class="col g-0" id="Sup">
-                    <header class="textForm" for="nameSup" id="headerSup">Nom du superviseur</header>
-                    <label for="nameSup" id="labelSup">, j'ai avisé mon supérieur immédiat</label>
-                    <input class="inputForm" type="text" type="text" id="nameSup">
-                </div>
+                <textarea id="dCorrection" class="resize inputForm"></textarea>
             </div>
         </div>
 
