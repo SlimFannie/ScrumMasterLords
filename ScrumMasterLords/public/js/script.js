@@ -1,61 +1,55 @@
+var openBool;
+var showMenu;
+var divider = document.getElementById("navDivider");
 const xs = window.matchMedia("(max-width:1180px)");
-const nest = window.matchMedia("(min-width:1000px) and (max-height:800px");
 
-function passwordShowHide() {
-    var x = document.getElementById("inputPassword");
-    var show_eye = document.getElementById("showEye");
-    var hide_eye = document.getElementById("hideEye");
-    hide_eye.classList.remove("d-none");
-    if (x.type === "password") {
-      x.type = "text";
-      show_eye.style.display = "none";
-      hide_eye.style.display = "block";
+function navControl() {
+    const panneau = document.getElementById("panneau");
+    const menu = document.getElementById("menu");
+    var mesForms = document.getElementById("mesForms");
+    var navOpen = document.querySelector(".navOpen");
+
+    if ((panneau.classList.contains("d-block") && menu.classList.contains("d-none")) || openBool == 0) {
+        panneau.classList.replace("d-block", "d-none");
+        menu.classList.replace("d-none", "d-flex");
+        navOpen.classList.add("navOpenNew");
+        divider.classList.replace("navOpenDivider","navOpenDividerNew");
+        openBool = 1;
+        if (xs.matches) {
+            mesForms.classList.add("d-none");
+        }
     } else {
-      x.type = "password";
-      show_eye.style.display = "block";
-      hide_eye.style.display = "none";
+        panneau.classList.replace("d-none", "d-block");
+        menu.classList.replace("d-flex", "d-none");
+        navOpen.classList.remove("navOpenNew");
+        divider.classList.replace("navOpenDividerNew", "navOpenDivider");
+        openBool = 0;
+        if (xs.matches) {
+            mesForms.classList.remove("d-none");
+        }
     }
-  }
+}
 
-function requiredConnexion() {
-    const matricule = document.getElementById("inputMatricule").value;
-    const mdp = document.getElementById("inputPassword").value;
-    const alertMatricule = document.getElementById("alertMatricule");
-    const labelMatricule = document.getElementById("labelMatricule");
-    const alertPassword = document.getElementById("alertPassword");
-    const labelPassword = document.getElementById("labelPassword");
-
-    if (matricule.length<1) {
-      alertMatricule.innerHTML = "<i class=\"fa-solid fa-triangle-exclamation\"></i> Vous devez entrer un matricule";
-      alertMatricule.classList.remove('d-none');
-      alertMatricule.classList.add('d-block');
-      if(xs.matches || nest.matches) {
-        labelMatricule.innerHTML = "Entrez un matricule."
-      }
-      errorMAT = 1
-    } else {
-      alertMatricule.classList.remove('d-block');
-      alertMatricule.classList.add('d-none');
-      errorMAT = 0;
+function toggleNav() {
+    var navigation = document.getElementById("navigation");
+    var overlay = document.getElementById("overlayNav");
+    var hamburger = document.querySelector(".menu-btn");
+    const menu = document.querySelector(".menu");
+    
+    if (xs.matches) {
+        if (navigation.classList.contains("d-none")) {
+            navigation.classList.replace("d-none", "d-flex");
+            overlay.classList.replace("d-none", "d-flex");
+            divider.classList.add("navOpenDivider");
+            hamburger.classList.add("close");
+        } else {
+            navigation.classList.replace("d-flex", "d-none");
+            overlay.classList.replace("d-flex", "d-none");
+            divider.classList.remove("navOpenDivider");
+            hamburger.classList.remove("close");
+            if(openBool == 1) {
+                navControl();
+            }     
+        }    
     }
-
-    if (mdp.length<1) {
-      alertPassword.innerHTML = "<i class=\"fa-solid fa-triangle-exclamation\"></i> Vous devez entrer un mot de passe";
-      alertPassword.classList.remove('d-none');
-      alertPassword.classList.add('d-block');
-      errorMDP = 1;
-      if(xs.matches || nest.matches) {
-        labelPassword.innerHTML = "Entrez un mot de passe."
-      }
-    } else {
-      alertPassword.classList.remove('d-block');
-      alertPassword.classList.add('d-none');
-      errorMDP = 0;
-    }
-
-    if (errorMAT == 0 && errorMDP == 0) {
-      return true;
-    } else {
-      return false;
-    }
- }
+}

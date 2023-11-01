@@ -8,3 +8,13 @@
 
 ### Sous le capeau
 - Laravel 10
+- Bootstrap 5
+
+### Fait
+- Login
+ - Responsive
+ - Fonctionne
+ - Validations
+
+### Manque
+- Auth

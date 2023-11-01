@@ -94,7 +94,7 @@ class UsagersController extends Controller
                 Session::put('prenom', $user->prenom);
                 Session::put('nom', $user->nom);
                 $username = $user->prenom.$user->nom;
-                return redirect()->route('dashboard', ['username'=> $username]);
+                return redirect()->route('formulaires.index', ['username'=> $username]);
             }
         }
     }

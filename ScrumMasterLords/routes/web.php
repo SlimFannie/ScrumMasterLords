@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsagersController;
+use App\Http\Controllers\FormulairesController;
 use App\Http\Controllers\SituationDangerController;
 use App\Http\Controllers\DeclarationAccidentsController;
 use App\Http\Controllers\AuditsSSTController;
@@ -22,9 +23,8 @@ Route::get('/', function () {
     return view('connexion');
 })->name('connexion');
 
-Route::get('/{username}', function() {
-    return view('welcome');
-})->name('dashboard');
+Route::get('/{username}', 
+[FormulairesController::class, 'index'])->name('formulaires.index');
 
 Route::POST('/connexion',
 [UsagersController::class, 'login'])->name('usagers.login');
