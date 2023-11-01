@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <form methode="post" action="{{route('formulaires.storeAccident')}}">
+        <form method="POST" action="{{ route('formulaires.accidentStore') }}">
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt mb-2 text-center">
                     <h3 class="titleForm">Identification</h3>
@@ -47,7 +47,7 @@
                     <header class="textForm">Endroit de l'évènement</header>
                     <input name="endroit" type="text" class=" inputForm" id="endroit">
                     <header class="textForm">Secteur d'activité</header>
-                    <input name=secteur"" type="text" class=" inputForm" id="secteur">
+                    <input name="secteur" type="text" class=" inputForm" id="secteur">
                 </div>
 
                 <div class="row g-0 mb-3">

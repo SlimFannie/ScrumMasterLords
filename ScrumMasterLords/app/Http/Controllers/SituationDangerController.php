@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SituationDangereuseRequest;
 use Illuminate\View\View;
-use App\Models\Formulaire_signalement_situation_dangereuses;
+use App\Models\Danger;
 use Illuminate\Support\Facades\Log;
 use DB;
 

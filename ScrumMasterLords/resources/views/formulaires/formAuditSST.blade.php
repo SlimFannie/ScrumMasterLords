@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <form methode="post" action="{{route('audit.store')}}">
+        <form method="post" action="{{route('formulaires.auditStore')}}">
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt">
                     <header class="textForm" for="nomEmploye">nom de l'employé</header>
