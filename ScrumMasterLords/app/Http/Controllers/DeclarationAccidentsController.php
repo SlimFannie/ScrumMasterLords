@@ -15,24 +15,22 @@ class DeclarationAccidentsController extends Controller
     // les formulaires des ses employers
     public function index()
     {
-        // DB::select('select id, nom_formulaire, nom_employer, date_accident where matricule_usager = ? or ? = ANY (select matricule_usager where ');
-
         return View('formulaires.formAccidentTravail');
     }
 
     //requete fait fout avoir les information d'un seul formulaire.
-    public function selectOneForm()
+    public function selectOneForm(string $id)
     {
-        DB::select('select * from formulaire_declaration_accident_travails where id = ?');
+        DB::select('select * from formulaire_declaration_accident_travails where id = :id', ['id' => $id]);
     }
 
     //
-    public function selectForm()
+    public function selectForm( string $matricule)
     {
         DB::select('select id, nom_formulaire, nom_employer, date_accident 
         from formulaire_declaration_accident_travails 
-        where matricule_usager = ? or ? = 
-        ANY (select matricule_usager where ? = matricule_superieur)');
+        where matricule_usager = :matricule or :matricule = 
+        ANY (select matricule_usager where :matricule = matricule_superieur)', ['matricule' => $matricule]);
     }
 
     /**
@@ -49,6 +47,8 @@ class DeclarationAccidentsController extends Controller
     public function store(AccidentRequest $request)
     {
         try {
+
+        /*
         $nom_employer = $request->get('nom');
         $fonction = $request->get('fonction');
         $date_accident = $request->get('datetime-local');
@@ -124,7 +124,8 @@ class DeclarationAccidentsController extends Controller
         $no_poste_superieur = $request->get('no_poste_superieur');
         $date_signature_employer = $request->get('date_signature_employer');
         $etat = $request->get('etat');
-        $date_creation = $request->get('date_creation'); */ 
+        $date_creation = $request->get('date_creation'); */
+        /* 
         DB::insert('insert into formulaire_declaration_accident_travails (
         nom_employer, fonction, date_accident, endroit, secteur,
         nom_temoin1, nom_temoin2, tete, visage, nez, 
@@ -149,6 +150,7 @@ class DeclarationAccidentsController extends Controller
          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
          ?, ?, ?, ?, ?, ?, ?, ?)',/*avis_superieur, nom_superieur, date_avis, signature_superieur, no_poste_superieur, 
         date_signature_employer, etat, date_creation*/ 
+        /*
         [$nom_employer, $fonction, $date_accident, $endroit, $secteur,
         $nom_temoin1, $nom_temoin2, $tete, $visage, $nez, 
         $oeil_gauche, $oeil_droite, $oreille_droite, $oreille_gauche, $torse, 
@@ -162,12 +164,12 @@ class DeclarationAccidentsController extends Controller
         $entorse, $elongation, $contusion, $foulure, $luxation, 
         $fracture, $amputation, $irritation, $infection, $inhalation, 
         $violence_physique, $violence_verbale, $description, $premiers_soins, $nom_secouriste, 
-        $accident_sans_absence, $accident_avec_consultation_medicale, $matricule_usager]); 
+        $accident_sans_absence, $accident_avec_consultation_medicale, $matricule_usager]); */
         //$avis_superieur, $nom_superieur, $date_avis, $signature_superieur, $no_poste_superieur, 
         //$date_signature_employer, $etat, $date_creation
         
-        //$declarationAccident = new Formulaire_declaration_accident_travail($request->all());
-        //$declarationAccident->save();
+        $declarationAccident = new Formulaire_declaration_accident_travail($request->all());
+        $declarationAccident->save();
         }
         catch (\Throwable $e) {
             Log::debug($e);

@@ -20,17 +20,17 @@ class AuditsSSTController extends Controller
     }
 
     //requete fait fout avoir les information d'un seul formulaire.
-    public function selectOneForm()
+    public function selectOneForm(string $id)
     {
-        DB::select('select * from formulaire_grille_audits where id = ?');
+        DB::select('select * from formulaire_grille_audits where id = :id', ['id' => $id]);
     }
 
-    public function selectForm()
+    public function selectForm(string $matricule)
     {
         DB::select('select id, nom_formulaire, nom_employer, date 
         from formulaire_grille_audits 
-        where matricule_usager = ? or ? = 
-        ANY (select matricule_usager where ? = matricule_superieur)');
+        where matricule_usager = :matricule or :matricule = 
+        ANY (select matricule_usager where :matricule = matricule_superieur)', ['matricule' => $matricule]);
     }
 
     /**
