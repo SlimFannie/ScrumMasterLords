@@ -17,7 +17,7 @@
             <p>Bonjour, NomUser. Lorsque vous soumettez ce formulaire, le propriétaire verra votre nom et votre adresse e-mail.</p>
         </div>
 
-        <form methode="post" action="{{route('atelier.store')}}">
+        <form method="post" action="{{route('atelier.store')}}">
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt">
                     <header class="textForm" for="num">Numéro(s) d'unité(s) impliqué(s)</header>
@@ -56,7 +56,7 @@
             <div class="row mb-3">
                 <div class="col-7"></div>
                 <div class="col-5">
-                    <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+                    <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
                 </div>
             </div>
         </form>

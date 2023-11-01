@@ -13,7 +13,8 @@
             </div>
         </div>
 
-        <form methode="post" action="{{route('formulaires.storeAccident')}}">
+        <form method="post" action="{{route('formulaires.storeAccident')}}">
+            @csrf
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt mb-2 text-center">
                     <h3 class="titleForm">Identification</h3>

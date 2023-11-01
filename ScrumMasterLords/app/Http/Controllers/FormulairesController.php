@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Http\Requests\AccidentRequest; //permet d'avoir ce qu'il faut pour les requests pour accident de travail
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
 use App\Models\Usager;
@@ -31,13 +32,18 @@ class FormulairesController extends Controller
     }
 
     public function storeAccident(Request $request) {
+        Log::debug('log avant le try');
         try {
+            Log::debug('test save form');
             $accident = new Accident($request->all());
             $accident->save();
-            return View('welcome')->with('username', self::getUsername());
+            //$declarationAccident = new Formulaire_declaration_accident_travail($request->all());
+            //$declarationAccident->save();
+            
         } catch (\Throwable $e) {
             Log::debug($e);
         }
+        return View('welcome')->with('username', self::getUsername());
     }
 
     public function showAccident() {

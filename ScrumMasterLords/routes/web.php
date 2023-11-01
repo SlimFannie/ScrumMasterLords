@@ -46,7 +46,7 @@ Route::get('/{username}/AccidentTravail',
 [FormulairesController::class, 'accident'])->name('formulaires.accident');
 
 Route::POST('/storeAccidentTravail',
-[FormulairesController::class, 'storeAccident'])->name('formulaires.storeAccident');
+[DeclarationAccidentsController::class, 'store'])->name('accident.store');
 
 /* Audit SST */
 

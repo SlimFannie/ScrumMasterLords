@@ -46,6 +46,7 @@ class DeclarationAccidentsController extends Controller
      */
     public function store(AccidentRequest $request)
     {
+        Log::debug('avant le try');
         try {
             Log::debug('entré dans le requete');
             $declarationAccident = new Formulaire_declaration_accident_travail($request->all());
