@@ -61,16 +61,16 @@
           <div class="bgNav h-100 align-items-end justify-content-center d-none" id="menu">
             <ul class="noBullet">
               <li>
-                <a href="/AccidentTravail">Formulaire SST</a>
+                <a href="{{ route('formulaires.accident', $username) }}">Accident de travail</a>
               </li>
               <li>
-                <a href="/SituationDangereuse">Situation dangereuse</a>
+                <a href="{{ route('formulaires.danger', $username) }}">Situation dangereuse</a>
               </li>
               <li>
-                <a href="/AuditSST">Audit SST</a>
+                <a href="{{ route('formulaires.audit', $username) }}">Audit SST</a>
               </li>
               <li>
-                <a href="/AtelierMecanique">Atelier mécanique</a>
+                <a href="{{ route('formulaires.atelier', $username) }}">Atelier mécanique</a>
               </li>
               <li>
                 <a href="{{ route('formulaires.index', $username) }}">Retour</a>

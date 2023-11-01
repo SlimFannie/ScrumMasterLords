@@ -19,8 +19,28 @@ class FormulairesController extends Controller
      */
     public function index()
     {
-        $username = Session::get('prenom').Session::get('nom');
-        return View('welcome')->with('username', $username);
+        return View('welcome')->with('username', self::getUsername());
+    }
+
+    public function accident() {
+        return View('formulaires.formAccidentTravail')->with('username', self::getUsername());
+    }
+    
+    public function audit() {
+
+        return View('formulaires.formAuditSST')->with('username', self::getUsername());
+    }
+
+    public function atelier() {
+        return View('formulaires.formAtelierMecanique')->with('username', self::getUsername());
+    }
+
+    public function danger() {
+        return View('formulaires.formDanger')->with('username', self::getUsername());
+    }
+
+    public function getUsername() {
+        return $username = Session::get('prenom').Session::get('nom');
     }
 
 }

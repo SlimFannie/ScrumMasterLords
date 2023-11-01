@@ -32,26 +32,34 @@ Route::POST('/connexion',
 Route::POST('/déconnexion',
 [UsagersController::class, 'logout'])->name('usagers.logout');
 
-Route::get('/formSituationDangereuse',
-[SituationDangerController::class, 'index'])->name('danger.index');
+/* Situation dangereuse */
+
+Route::get('/{username}/formSituationDangereuse',
+[FormulairesController::class, 'danger'])->name('formulaires.danger');
 
 Route::post('/storeSituationDanger',
 [SituationDangerController::class, 'store'])->name('danger.store');
 
-Route::get('/formAccidentTravail',
-[DeclarationAccidentsController::class, 'index'])->name('accident.index');
+/* Accident de travail */
+
+Route::get('/{username}/AccidentTravail',
+[FormulairesController::class, 'accident'])->name('formulaires.accident');
 
 Route::POST('/storeAccidentTravail',
 [DeclarationAccidentsController::class, 'store'])->name('accident.store');
 
-Route::get('/formAuditSST',
-[AuditsSSTController::class, 'index'])->name('audit.index');
+/* Audit SST */
+
+Route::get('/{username}/AuditSST',
+[FormulairesController::class, 'audit'])->name('formulaires.audit');
 
 Route::get('/storeAuditSST',
 [AuditsSSTController::class, 'store'])->name('audit.store');
 
-Route::get('/formAtelierMecanique',
-[AtelierMecaniquesController::class, 'index'])->name('atelier.index');
+/* Atelier mécanique */
+
+Route::get('/{username}/formAtelierMecanique',
+[FormulairesController::class, 'atelier'])->name('formulaires.atelier');
 
 Route::get('/storeAtelierMecanique',
 [AtelierMecaniquesController::class, 'store'])->name('atelier.store');
