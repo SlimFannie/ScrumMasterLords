@@ -38,7 +38,7 @@ Route::get('/{username}/formSituationDangereuse',
 [FormulairesController::class, 'danger'])->name('formulaires.danger');
 
 Route::post('/storeSituationDanger',
-[SituationDangerController::class, 'dangerStore'])->name('danger.dangerStore');
+[SituationDangerController::class, 'store'])->name('danger.store');
 
 /* Accident de travail */
 

@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <form method="POST" action="{{ route('formulaires.dangerStore') }}">
+    <form method="POST" action="{{ route('danger.store') }}">
         <div class="container-fluid zoneForm">
             <div class="row g-0 mt mb-2 text-center">
                 <h3 class="titleForm">Identification<h3>
@@ -71,7 +71,7 @@
         <div class="row">
             <div class="col-8"></div>
             <div class="col-4">
-                <button type="button" class="btn btn-outline-light btn-lg">Envoyer</button>
+                <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
             </div>
         </div>
     </form>
