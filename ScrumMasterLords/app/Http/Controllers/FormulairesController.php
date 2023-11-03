@@ -49,7 +49,7 @@ class FormulairesController extends Controller
             'prenom.required' => 'Vous devez entrer votre prénom.',
             'prenom.regex:/^([^0-9]*)$/' => 'Ce champs ne peut pas contenir de chiffres.',
             'matricule.required' => 'Vous devez entrer un matricule.',
-            'matricule.numeric' => 'Ce champs doit contenir des 7 (sept) chiffres.',
+            'matricule.numeric' => 'Ce champs doit contenir 7 (sept) chiffres.',
             'matricule.digits_between:7,7' => 'Ce champs doit contenir 7 (sept) chiffres.',
             'fonction.required' => 'Vous devez entrer votre fonction.',
             'dateHeure' => 'Vous devez entrer une date et une heure.',
@@ -90,6 +90,8 @@ class FormulairesController extends Controller
         }
     }
 
+    /* Atelier mécanique */
+
     public function atelier() {
         return View('formulaires.formAtelierMecanique')->with('username', self::getUsername());
     }
@@ -103,6 +105,8 @@ class FormulairesController extends Controller
             Log::debug($e);
         }
     }
+
+    /* Situation dangereuse */
 
     public function danger() {
         return View('formulaires.formDanger')->with('username', self::getUsername());
