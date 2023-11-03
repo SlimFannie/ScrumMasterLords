@@ -31,21 +31,41 @@ class FormulairesController extends Controller
         return View('formulaires.formAccidentTravail')->with('username', self::getUsername());
     }
 
+    public function ruleAccident() {
+        return [
+            'nom' => 'required|regex:/^([^0-9]*)$/',
+            'prenom' => 'required|regex:/^([^0-9]*)$/',
+            'matricule' => 'required|numeric|digits_between:7,7',
+            'fonction' => 'required',
+            'dateHeure' => 'required',
+            'lieu' => 'required'
+        ];
+    }
+
+    public function messageAccident() {
+        return [
+            'nom.required' => 'Vous devez entrer votre nom.',
+            'nom.regex:/^([^0-9]*)$/' => 'Ce champs ne peut pas contenir de chiffres.',
+            'prenom.required' => 'Vous devez entrer votre prénom.',
+            'prenom.regex:/^([^0-9]*)$/' => 'Ce champs ne peut pas contenir de chiffres.',
+            'matricule.required' => 'Vous devez entrer un matricule.',
+            'matricule.numeric' => 'Ce champs doit contenir des 7 (sept) chiffres.',
+            'matricule.digits_between:7,7' => 'Ce champs doit contenir 7 (sept) chiffres.',
+            'fonction.required' => 'Vous devez entrer votre fonction.',
+            'dateHeure' => 'Vous devez entrer une date et une heure.',
+            'lieu' => 'Vous devez entrer un lieu.'
+        ];
+    }
+
     public function accidentStore(Request $request) {
-            Log::debug("fail");
             $requestAccident = $request->all();
-            $validator = Validator::make($request->all(), [
-                'nom' => 'required|regex:/^([^0-9]*)$/',
-                'prenom' => 'required|regex:/^([^0-9]*)$/',
-                'matricule' => 'required|numeric|digits_between:7,7',
-                'fonction' => 'required',
-                'dateHeure' => 'required',
-                'lieu' => 'required'
-            ]);
+            $rulesAccident = self::ruleAccident();
+            $messagesAccident = self::messageAccident();
+
+            $validator = Validator::make($requestAccident, $rulesAccident, $messagesAccident);
 
             if($validator->fails()) {
-                Log::debug("fail");
-                return back()->withErrors(['invalide' => 'Vos identifiants sont erronés ou invalides. Réessayez de nouveau ou contactez un administrateur.']);
+                return back()->withErrors($validator);
             } else {
                 Log::debug("success");
                 $accident = Accident::create($requestAccident);

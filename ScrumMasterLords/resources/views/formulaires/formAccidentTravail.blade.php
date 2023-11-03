@@ -14,48 +14,79 @@
         </div>
 
         <form method="POST" action="{{ route('formulaires.accidentStore') }}">
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mt mb-2 text-center">
-                    <h3 class="titleForm">Identification</h3>
+            @csrf
+                <div class="container-fluid zoneForm">
+                    <div class="row g-0 mt mb-2 text-center">
+                        <h3 class="titleForm">Identification</h3>
+                    </div>
+       
+                    <div class="row g-0 mb-3">
+                        @if($errors->has('nom'))
+                        <header class="textFormAlert"for="nom">{{ $errors->first('nom') }}</header>
+                        <input name="nom" id="nom" type="text" class="inputFormAlert">
+                        @else
+                        <header class="textForm"for="nom">Nom de famille</header>
+                        <input name="nom" id="nom" type="text" class="inputForm">
+                        @endif
+                        @if($errors->has('prenom'))
+                        <header class="textFormAlert"for="prenom">{{ $errors->first('prenom') }}</header>
+                        <input name="prenom" id="prenom" type="text" class="inputFormAlert">
+                        @else
+                        <header class="textForm"for="prenom">Prénom</header>
+                        <input name="prenom" id="prenom" type="text" class="inputForm">
+                        @endif
+                        @if ($errors->has('matricule'))
+                        <header class="textFormAlert" for="matricule">{{ $errors->first('matricule') }}</header>
+                        <input name="matricule_usager" id="matricule" type="text" class="inputFormAlert">
+                        @else
+                        <header class="textForm" for="matricule">Matricule</header>
+                        <input name="matricule_usager" id="matricule" type="text" class="inputForm">
+                        @endif
+                    </div>
+
+                    <div class="row g-0 mb-3">
+                        @if($errors->has('fonction'))
+                        <header class="textFormAlert" for="fonction">{{ $errors->first('fonction') }}</header>
+                        <input name="fonction" id="fonction" type="text" class="inputFormAlert">
+                        @else
+                        <header class="textForm" for="fonction">Fonction lors de l'évènement</header>
+                        <input name="fonction" id="fonction" type="text" class="inputForm">
+                        @endif
+                    </div>
                 </div>
 
-                <div class="row g-0 mb-3">
-                    <header class="textForm"for="nom">Nom complet</header>
-                    <input name="nom_employer" id="nom" type="text" class="inputForm">
+                <div class="container-fluid zoneForm">
+                    <div class="row g-0 mt mb-2 text-center">
+                        <h3 class="titleForm">Description de l'évènement</h3>
+                    </div>
 
-                    <header class="textForm" for="matricule">Matricule</header>
-                    <input name="matricule_usager" id="matricule" type="text" class="inputForm">
-                </div>
+                    <div class="row g-0 mb-3">
+                        @if($errors->has('dateHeure'))
+                        <header class="textFormAlert" for="date">{{ $errors->first('dateHeure') }}</header>
+                        <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputFormAlert">
+                        @else
+                        <header class="textForm" for="date">Date</header>
+                        <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputForm">
+                        @endif
+                    </div>
 
-                <div class="row g-0 mb-3">
-                    <header class="textForm" for="fonction">Fonction lors de l'évènement</header>
-                    <input name="fonction" id="fonction" type="text" class="inputForm">
+                    <div class="row g-0 mb-3">
+                        @if($errors->has('lieu'))
+                        <header class="textFormAlert">{{ $errors->first('lieu') }}</header>
+                        <input name="endroit" type="text" class="inputFormAlert" id="endroit">
+                        @else
+                        <header class="textForm">Endroit de l'évènement</header>
+                        <input name="endroit" type="text" class=" inputForm" id="endroit">
+                        @endif
+                        <header class="textForm">Secteur d'activité</header>
+                        <input name="secteur" type="text" class=" inputForm" id="secteur">
+                    </div>
+                    <div class="row g-0 mb-3">
+                        <header class="textForm" for="temoin">Témoins(s)</header>
+                        <input name="nom_temoin1" class="mb-1  inputForm" type="text" placeholder="Nom témoin" id="temoin">
+                        <input name="nom_temoin2" class=" inputForm" type="text" placeholder="Nom témoin" id="temoin2">
+                    </div>
                 </div>
-            </div>
-
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mt mb-2 text-center">
-                    <h3 class="titleForm">Description de l'évènement</h3>
-                </div>
-
-                <div class="row g-0 mb-3">
-                    <header class="textForm" for="date">Date</header>
-                    <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputForm">
-                </div>
-
-                <div class="row g-0 mb-3">
-                    <header class="textForm">Endroit de l'évènement</header>
-                    <input name="endroit" type="text" class=" inputForm" id="endroit">
-                    <header class="textForm">Secteur d'activité</header>
-                    <input name="secteur" type="text" class=" inputForm" id="secteur">
-                </div>
-
-                <div class="row g-0 mb-3">
-                    <header class="textForm" for="temoin">Témoins(s)</header>
-                    <input name="nom_temoin1" class="mb-1  inputForm" type="text" placeholder="Nom témoin" id="temoin">
-                    <input name="nom_temoin2" class=" inputForm" type="text" placeholder="Nom témoin" id="temoin2">
-                </div>
-            </div>
 
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt mb-2 text-center">
