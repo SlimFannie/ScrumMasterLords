@@ -8,6 +8,7 @@ use App\Models\Usager;
 use App\Models\Mecanique;
 use App\Models\Accident;
 use App\Models\Danger;
+use App\Models\Audit;
 use Illuminate\View\View;
 use Illuminate\Auth\Middleware;
 use Auth;
@@ -68,7 +69,7 @@ class FormulairesController extends Controller
                 return back()->withErrors($validator);
             } else {
                 Log::debug("success");
-                $accident = Accident::create($requestAccident);
+                $accident = Accident::store($requestAccident);
                 return redirect()->View('welcome')->with('username', self::getUsername());
             }
     }
@@ -83,11 +84,11 @@ class FormulairesController extends Controller
     public function auditStore(Request $request) {
         try {
             $audit = new Audit($request->all());
-            $audit->save();
-            return View('welcome')->with('username', self::getUsername());
+            $audit->save();   
         } catch (\Throwable $e) {
             Log::debug($e);
         }
+        return View('welcome')->with('username', self::getUsername());
     }
 
     /* Atelier mécanique */

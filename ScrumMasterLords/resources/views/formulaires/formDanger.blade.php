@@ -14,6 +14,7 @@
     </div>
 
     <form method="POST" action="{{ route('danger.store') }}">
+        @csrf
         <div class="container-fluid zoneForm">
             <div class="row g-0 mt mb-2 text-center">
                 <h3 class="titleForm">Identification<h3>
@@ -21,21 +22,21 @@
             
             <div class="row g-0 mb-3">
                 <header class="textForm" for="nom" id="header">Nom</header>
-                <input class="inputForm" type="text" id="nom" class="champ">
+                <input name="nom" class="inputForm" type="text" id="nom" class="champ">
 
                 <header class="textForm" for="prenom" id="header">Prénom</header>
-                <input class="inputForm" type="text" id="prenom" class="champ">
+                <input name="prenom" class="inputForm" type="text" id="prenom" class="champ">
 
                 <header class="textForm" for="matricule" id="header">Matricule</header>
-                <input class="inputForm" type="text" id="matricule" class="champ">
+                <input name="user_matricule" class="inputForm" type="text" id="matricule" class="champ">
             </div>
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="fonction" id="header">Fonction au moment de l'évènement</header>
-                <input class="inputForm" type="text" id="fonction" class="champ">
+                <input name="fonction" class="inputForm" type="text" id="fonction" class="champ">
 
                 <header class="textForm" for="secteur" id="header">Secteur d'activité</header>
-                <input class="inputForm" type="text" id="secteur" class="champ">
+                <input name="secteur" class="inputForm" type="text" id="secteur" class="champ">
             </div>
         </div>
 
@@ -46,25 +47,25 @@
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dateHeure" id="header">Date et heure de l'observation :</header>
-                <input class="inputForm" type="text" type="datetime-local" id="dateHeure" class="champ">
+                <input name="date_observation" class="inputForm" type="text" type="datetime-local" id="dateHeure" class="champ">
 
                 <header class="textForm" for="lieu" id="header">Lieu</header>
-                <input class="inputForm" type="text" id="lieu" class="champ">
+                <input name="lieu" class="inputForm" type="text" id="lieu" class="champ">
             </div>
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dTemoin" id="header">Témoins :</header>
-                <textarea id="dTemoin" class="resize inputForm"></textarea>
+                <textarea name="temoin" id="dTemoin" class="resize inputForm"></textarea>
             </div>
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dEvent" id="header">Description :</header>
-                <textarea id="dEvent" class="resize inputForm"></textarea>
+                <textarea name="description" id="dEvent" class="resize inputForm"></textarea>
             </div>
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dCorrection" id="header">Correction(s) ou amélioraions proposées:</header>
-                <textarea id="dCorrection" class="resize inputForm"></textarea>
+                <textarea name="correction_amelioration" id="dCorrection" class="resize inputForm"></textarea>
             </div>
         </div>
 

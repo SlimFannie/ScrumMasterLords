@@ -13,7 +13,8 @@
             </div>
         </div>
 
-        <form method="post" action="{{route('formulaires.auditStore')}}">
+        <form method="post" action="{{route('audit.store')}}">
+            @csrf
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt">
                     <header class="textForm" for="nomEmploye">nom de l'employé</header>

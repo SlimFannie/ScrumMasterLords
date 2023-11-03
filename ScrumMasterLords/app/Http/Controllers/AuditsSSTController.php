@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use App\Models\Formulaire_grille_audit;
 use Illuminate\Support\Facades\Log;
+use Illuminate\support\Str;
 
 class AuditsSSTController extends Controller
 {
@@ -47,14 +48,20 @@ class AuditsSSTController extends Controller
     public function store(AuditSSTRequest $request)
     { 
         try {
+            Log::debug('entré requetes');
+            //$username = $request->get('nom_employer');
+            $username = Str::substr_count($request->get('nom_employer'), ' ');
+            Log::debug($username);
             $AuditSST = new Formulaire_grille_audit($request->all());    
             $AuditSST->save();
+            
             }
             catch (\Throwable $e) {
                 Log::debug($e);
                 
             }
-            return redirect()->route('audit.index');
+            return redirect()->route('formulaires.audit', $username);
+            //return redirect()->route('formulaires.audit');
         /*
         try {
             $nom_employer = $request->get('nomEmploye');
