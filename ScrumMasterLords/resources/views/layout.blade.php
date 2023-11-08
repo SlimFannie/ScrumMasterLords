@@ -16,7 +16,7 @@
 <div class="container-fluid g-0 h-100">
   <nav class="navbar navbar-expand-lg bgWhite h-10">
       <div class="row text-center px-5 w-100 d-flex align-items-center mx-auto">
-        <div class="col-12 col-lg-2 d-inline-flex">
+        <div class="col-11 col-lg-2 d-inline-flex">
           <span class="navbar-brand d-flex align-items-center" href="#">
             <img src="/img/logo_v3r_sans_texte.jpg" class="logoNav" alt="Ville de Trois-Rivières">
             <h5 class="salute offsetTitre d-none d-lg-block">Form3R</h5>
@@ -26,9 +26,15 @@
             <div class="btn-line"></div>
             <div class="btn-line"></div>
           </button>
-          <div class="avatarNav d-lg-none position-absolute">
+          <div class="avatarNav d-lg-none position-absolute"></div>
+          <div class="dropdown posDropD">
+            <button class="btn dropdown-toggle colorDropD" type="button" data-bs-toggle="dropdown" aria-expanded="false">99</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
           </div>
-          <span class="position-absolute z-4 start-100 translate-middle badge rounded-pill bg-danger">99+</span>
         </div>
         <div class="col-12 col-lg-6 justify-content-lg-end d-none d-lg-flex navOpen" id="navigation">
           <ul class="navbar-nav">

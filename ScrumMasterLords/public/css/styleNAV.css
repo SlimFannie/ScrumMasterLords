@@ -38,8 +38,23 @@
     mask-image: url('../img/v3r_mask.png');
     -webkit-mask-size: 70px 70px;
     mask-size: 70px 70px;
+}
 
+.posDropD {
+    position: absolute;
+    right: 0.9%;
+}
 
+.colorDropD {
+    background-color: rgb(229, 0, 77);
+    color: white;
+}
+
+.colorDropD:hover {
+    background-color: rgba(229, 0, 77, 0.1);
+    color: rgb(229, 0, 77);
+    border-width: 1px;
+    border-color:  rgb(229, 0, 77);
 }
 
 a, .noBtn {
