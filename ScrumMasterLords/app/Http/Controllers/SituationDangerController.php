@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SituationDangereuseRequest;
 use Illuminate\View\View;
-use App\Models\Formulaire_signalement_situation_dangereuses;
+use App\Models\Danger;
 use Illuminate\Support\Facades\Log;
 use DB;
 
@@ -32,23 +32,15 @@ class SituationDangerController extends Controller
      */
     public function store(SituationDangereuseRequest $request)
     {
-        //Log::debug('avant procédure');
         try {
-                //Log::debug('début procédure');
-                $username = $request->get('prenom') . $request->get('nom');
-                //Log::debug($username);
-                //$username += $request->get('nom');
-                //Log::debug($username);
-            
-                $situationDangereuse = new Formulaire_signalement_situation_dangereuses($request->all());
-                $situationDangereuse->save();
-                //Log::debug('fin procédure');
+            $situationDangereuse = new Formulaire_signalement_situation_dangereuses($request->all());
+            $situationDangereuse->save();
             }
             catch (\Throwable $e) {
                 Log::debug($e);
                 
             }
-            return redirect()->route('formulaires.danger', $username);
+            return redirect()->route('danger.index');
         
         
         

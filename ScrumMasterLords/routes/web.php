@@ -53,11 +53,8 @@ Route::POST('/storeAccidentTravail',
 Route::get('/{username}/AuditSST',
 [FormulairesController::class, 'audit'])->name('formulaires.audit');
 
-Route::POST('/storeAuditSST',
-[AuditsSSTController::class, 'store'])->name('audit.store');
-
-//Route::POST('/storeAuditSST',
-//[FormulairesController::class, 'auditStore'])->name('formulaires.auditStore');
+Route::get('/storeAuditSST',
+[FormulairesController::class, 'auditStore'])->name('formulaires.auditStore');
 
 /* Atelier mécanique */
 
