@@ -3,6 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Response;
+use App\Models\Usager;
+use Illuminate\View\View;
+use Illuminate\Auth\Middleware;
+use Auth;
+use DB;
+use Session;
+use Validator;
+
 
 class ProceduresTravailController extends Controller
 {
@@ -11,7 +21,7 @@ class ProceduresTravailController extends Controller
      */
     public function index()
     {
-        //
+        return View('procedures')->with('username', self::getUsername());
     }
 
     /**
@@ -33,9 +43,9 @@ class ProceduresTravailController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        return $departements = DB::table('departements')->select('nom')->get()->all();
     }
 
     /**
@@ -60,5 +70,9 @@ class ProceduresTravailController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function getUsername() {
+        return $username = Session::get('prenom').Session::get('nom');
     }
 }

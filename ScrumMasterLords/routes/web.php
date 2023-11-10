@@ -7,6 +7,7 @@ use App\Http\Controllers\SituationDangerController;
 use App\Http\Controllers\DeclarationAccidentsController;
 use App\Http\Controllers\AuditsSSTController;
 use App\Http\Controllers\AtelierMecaniquesController;
+use App\Http\Controllers\ProceduresTravailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::POST('/connexion',
 Route::POST('/déconnexion',
 [UsagersController::class, 'logout'])->name('usagers.logout');
 
+
 /* Situation dangereuse */
 
 Route::get('/{username}/formSituationDangereuse',
@@ -39,6 +41,7 @@ Route::get('/{username}/formSituationDangereuse',
 
 Route::post('/storeSituationDanger',
 [SituationDangerController::class, 'store'])->name('danger.store');
+
 
 /* Accident de travail */
 
@@ -48,6 +51,7 @@ Route::get('/{username}/AccidentTravail',
 Route::POST('/storeAccidentTravail',
 [DeclarationAccidentsController::class, 'store'])->name('accident.store');
 
+
 /* Audit SST */
 
 Route::get('/{username}/AuditSST',
@@ -56,6 +60,7 @@ Route::get('/{username}/AuditSST',
 Route::get('/storeAuditSST',
 [AuditsSSTController::class, 'store'])->name('audit.store');
 
+
 /* Atelier mécanique */
 
 Route::get('/{username}/formAtelierMecanique',
@@ -63,3 +68,10 @@ Route::get('/{username}/formAtelierMecanique',
 
 Route::get('/storeAtelierMecanique',
 [AtelierMecaniquesController::class, 'store'])->name('atelier.store');
+
+
+/* Procédures de travail */
+
+Route::get('/{username}/procedures',
+[ProceduresTravailController::class, 'index'])->name('procedures.index');
+
