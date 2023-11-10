@@ -27,9 +27,9 @@
             <div class="btn-line"></div>
           </button>
           <div class="avatarNav d-lg-none position-absolute"></div>
-          <div class="dropdown posDropD">
-            <button class="btn dropdown-toggle colorDropD" type="button" data-bs-toggle="dropdown" aria-expanded="false">99</button>
-            <ul class="dropdown-menu">
+          <div class="dropdown posBtnDropD">
+            <button class="btn btn-sm dropdown-toggle colorBtnDropD" type="button" data-bs-toggle="dropdown" aria-expanded="false">99</button>
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
