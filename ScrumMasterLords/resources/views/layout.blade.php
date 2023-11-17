@@ -82,6 +82,9 @@
                 <a href="{{ route('formulaires.atelier', $username) }}">Atelier mécanique</a>
               </li>
               <li>
+                <a href="{{ route('procedures.index', $username) }}">Procédures de travail</a>
+              </li>
+              <li>
                 <a href="{{ route('formulaires.index', $username) }}">Retour</a>
               </li>
             </ul>
