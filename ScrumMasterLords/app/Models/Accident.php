@@ -10,7 +10,7 @@ class Accident extends Model
     use HasFactory;
 
     Protected $fillable = [
-        'nom_employer', 'fonction', 'date_accident', 'endroit', 'secteur',
+        'nom', 'prenom', 'fonction', 'date_accident', 'endroit', 'secteur',
         'nom_temoin1', 'nom_temoin2', 'tete', 'visage', 'nez', 
         'oeil_gauche', 'oeil_droit', 'oreille_gauche', 'oreille_droite', 'torse', 
         'poumon', 'bras_gauche', 'bras_droite', 'epaule_gauche', 'epaule_droite', 

@@ -15,37 +15,30 @@
 </head>
 <body>
 <div class="container-fluid g-0 h-100">
-  <nav class="navbar navbar-expand-lg bgWhite h-10">
-      <div class="row text-center px-5 w-100 d-flex align-items-center mx-auto">
-        <div class="col-11 col-lg-2 d-inline-flex">
-          <span class="navbar-brand d-flex align-items-center" href="#">
-            <img src="/img/logo_v3r_sans_texte.jpg" class="logoNav" alt="Ville de Trois-Rivières">
-            <h5 class="salute offsetTitre d-none d-lg-block">Form3R</h5>
-          </span>
-          <button class="menu-btn noBtn d-inline d-lg-none px-2 pt-2" onclick="toggleNav()">
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
-          </button>
-          <div class="avatarNav d-lg-none position-absolute"></div>
-          <div class="dropdown posBtnDropD">
-            <button class="btn btn-sm dropdown-toggle colorBtnDropD" type="button" data-bs-toggle="dropdown" aria-expanded="false">99</button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+<div class="container-fluid g-0">
+        <div class="row p-lg-3 bg-light g-0">
+            <div class="col-3 g-0 d-flex align-items-center">
+                <img src="{{ asset('img/logo_v3r_sans_texte.jpg') }}" class="logoNav me-3">
+                <h2>Form3R</h2>
+            </div>
+            <div class="col-4 g-0 d-flex align-items-center">
+                <div class="dropdown mx-auto">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Remplir un formulaire
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('formulaires.danger', $username) }}">Accident de travail</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <a href="{{ route('usagers.logout') }}"><i class="fa-solid fa-power-off fa-lg"></i></a>
+            </div>
         </div>
-        <div class="col-12 col-lg-6 justify-content-lg-end d-none d-lg-flex navOpen" id="navigation">
-          <ul class="navbar-nav">
-            <li>
-              <button class="noBtn d-flex align-items-center" type="button" onclick="navControl()"><span class="line">Nouveau formulaire</span><i class="fa-solid fa-pen-to-square ps-2 noLine"></i></button>
-            </li>
-            <li>
-              <a href="{{ route('formulaires.index', $username) }}" class="d-flex align-items-center" id="mesForms"><span class="line">Mes formulaires</span><i class="fa-solid fa-list-check ps-2 noLine"></i></a>
-            </li>
-          </ul>
+        <div class="row g-0">
+            <div class="col-12 g-0">
+                @yield('contenu')
+            </div>
         </div>
         <div class="col-4 d-flex align-items-center justify-content-end d-none d-lg-flex">
           <form method="POST" action="{{ route('usagers.logout') }}">
@@ -82,12 +75,16 @@
                 <a href="{{ route('formulaires.atelier', $username) }}">Atelier mécanique</a>
               </li>
               <li>
+                <a href="{{ route('procedures.index', $username) }}">Procédures de travail</a>
+              </li>
+              <li>
                 <a href="{{ route('formulaires.index', $username) }}">Retour</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
+    </div>
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

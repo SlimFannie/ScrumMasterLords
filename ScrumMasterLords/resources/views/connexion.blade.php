@@ -30,11 +30,8 @@
                     <form method="POST" id="FormUsager" action="{{ route('usagers.login') }}" onsubmit="return requiredConnexion()">
                         @csrf
                             @if ($errors->any())
-                                @foreach ($errors->all() as $error)
-                                <div class="alertConnexion m-auto mb-3"><i class="fa-solid fa-triangle-exclamation"></i> {{$error}}</div>
-                                @endforeach
+                                <div class="alertConnexion m-auto mb-3"><i class="fa-solid fa-triangle-exclamation"></i> {{$errors->first()}}</div>
                             @endif
-                        <div id="alertMatricule" class="alert alert-primary alertPosition d-none"></div>
                         <div class="form-floating inputWidth m-auto text-center">
                             <input type="text" class="form-control inputWidth m-auto" name="inputMatricule" id="inputMatricule" placeholder="#">
                             <label for="inputMatricule" id="labelMatricule" class="px-4">Votre numéro d'employé</label>
