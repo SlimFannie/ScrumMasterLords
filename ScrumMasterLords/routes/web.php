@@ -34,7 +34,7 @@ Route::POST('/déconnexion',
 
 /* Situation dangereuse */
 
-Route::get('/{username}/formSituationDangereuse',
+Route::get('/{username}/SituationDangereuse',
 [FormulairesController::class, 'danger'])->name('formulaires.danger');
 
 Route::post('/storeSituationDanger',

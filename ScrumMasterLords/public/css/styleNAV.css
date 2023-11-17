@@ -14,11 +14,6 @@
 .logoNav {
     height: 70px;
     width: 70px;
-
-    position: absolute;
-    top: 15%;
-    left: 4.5%;
-    z-index: 2;
 }
 
 .offsetTitre {
