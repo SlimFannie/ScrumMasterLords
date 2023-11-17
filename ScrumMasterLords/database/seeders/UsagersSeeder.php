@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use DB;
 
 class UsagersSeeder extends Seeder
 {
@@ -14,17 +14,15 @@ class UsagersSeeder extends Seeder
     /**
      * Run the database seeds.
      * 
-     *      $table->id()->autoIncrement();
         *   $table->Integer('matricule');
         *   $table->string('nom');
         *   $table->string('prenom');
         *   $table->string('image')->nullable();
             *$table->string('courriel');
             *$table->string('mdp');
-            *$table->string('departement')->nullable();
+            *$table->string('departement_id')->nullable();
             *$table->boolean('admin')->default(false);
-            *$table->Integer('matricule_superieur')->nullable();
-            *$table->string('date-creation');
+            *$table->Integer('matriculeSuperieur')->nullable();
      */
     public function run(): void
     {
@@ -36,11 +34,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Marc',
             'courriel' => 'pepin.marc@v3r.com',
             'mdp' => 'password',
-            'departement' => 2,
-            'matricule_superieur' => 1000004, 
-            'supp' => false,
+            'departement_id' => 2,
+            'matriculeSuperieur' => 1000004, 
+            'superieur' => false,
             'admin' => false,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
         [
             'matricule' => 1000002,
@@ -48,11 +45,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Claudine',
             'courriel' => 'reid.claudine@v3r.com',
             'mdp' => 'password',
-            'departement' => 2,
-            'matricule_superieur' => 1000004, 
-            'supp' => false,
+            'departement_id' => 2,
+            'matriculeSuperieur' => 1000004, 
+            'superieur' => false,
             'admin' => false,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
         [
             'matricule' => 1000003,
@@ -60,11 +56,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Paul',
             'courriel' => 'temps.paul@v3r.com',
             'mdp' => 'password',
-            'departement' => 2,
-            'matricule_superieur' => 1000004, 
-            'supp' => false,
+            'departement_id' => 2,
+            'matriculeSuperieur' => 1000004, 
+            'superieur' => false,
             'admin' => false,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
         [
             'matricule' => 1000004,
@@ -72,11 +67,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Jane',
             'courriel' => 'dow.jane@v3r.com',
             'mdp' => 'password',
-            'departement' => 2,
-            'matricule_superieur' => 1000005, 
-            'supp' => true,
+            'departement_id' => 2,
+            'matriculeSuperieur' => 1000005, 
+            'superieur' => true,
             'admin' => false,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
         [
             'matricule' => 1000005,
@@ -84,11 +78,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Jonathan',
             'courriel' => 'morinville.jonathan@v3r.com',
             'mdp' => 'password',
-            'departement' => 1,
-            'matricule_superieur' => 1000006, 
-            'supp' => true,
+            'departement_id' => 1,
+            'matriculeSuperieur' => 1000006, 
+            'superieur' => true,
             'admin' => true,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
         [
             'matricule' => 1000006,
@@ -96,11 +89,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Alain',
             'courriel' => 'lizotte.alain@v3r.com',
             'mdp' => 'password',
-            'departement' => 1,
-            'matricule_superieur' => null, 
-            'supp' => true,
+            'departement_id' => 1,
+            'matriculeSuperieur' => null, 
+            'superieur' => true,
             'admin' => false,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
         [
             'matricule' => 1000007,
@@ -108,11 +100,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Michèle',
             'courriel' => 'levesque.michele@v3r.com',
             'mdp' => 'password',
-            'departement' => 6,
-            'matricule_superieur' => 1000008, 
-            'supp' => false,
+            'departement_id' => 6,
+            'matriculeSuperieur' => 1000008, 
+            'superieur' => false,
             'admin' => false,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
         [
             'matricule' => 1000008,
@@ -120,11 +111,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Josée',
             'courriel' => 'stlaurent.josee@v3r.com',
             'mdp' => 'password',
-            'departement' => 6,
-            'matricule_superieur' => 1000009, 
-            'supp' => true,
+            'departement_id' => 6,
+            'matriculeSuperieur' => 1000009, 
+            'superieur' => true,
             'admin' => true,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
         [
             'matricule' => 1000009,
@@ -132,11 +122,10 @@ class UsagersSeeder extends Seeder
             'prenom' => 'Claude',
             'courriel' => 'belisle.claude@v3r.com',
             'mdp' => 'password',
-            'departement' => 6,
-            'matricule_superieur' => null, 
-            'supp' => true,
+            'departement_id' => 6,
+            'matriculeSuperieur' => null, 
+            'superieur' => true,
             'admin' => false,
-            'date_creation' => date("Y-m-d H-i-s"),
         ],
     ]);
         

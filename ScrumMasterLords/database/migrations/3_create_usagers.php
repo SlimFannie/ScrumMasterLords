@@ -19,11 +19,11 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('courriel');
             $table->string('mdp');
-            $table->Integer('departement')->nullable();
-            $table->boolean('supp')->default(false);
+            $table->foreignId('departement_id')->constrained();
+            $table->boolean('superieur')->default(false);
             $table->boolean('admin')->default(false);
-            $table->Integer('matricule_superieur')->nullable();
-            $table->dateTime('date_creation');
+            $table->Integer('matriculeSuperieur')->nullable();
+            $table->timestamps();
         });
     }
 

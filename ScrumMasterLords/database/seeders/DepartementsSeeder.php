@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use DB;
 
 class DepartementsSeeder extends Seeder
 {
@@ -31,6 +31,7 @@ class DepartementsSeeder extends Seeder
             ['nom'=>'Sécurité incendie et sécurité civile'],
             ['nom'=>'Services juridiques'],
             ['nom'=>'Travaux publics'],
+            ['nom'=>'Aucun'],
         ]);
     }
 }

@@ -3,27 +3,29 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Formulaire;
+use Departement;
+use Session;
 
-class Usager extends Model
+class Usager extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
 
-    protected $fillable = [
-        'matricule',
-        'mdp'
-    ];
+    protected $fillable = ['matricule', 'motdepasse'];
 
-    public function getAuthPassword()
+    public function departement(): HasOne
     {
-        return $this->mdp;
-    }
-
-    public function departement() {
         return $this->hasOne(Departement::class);
     }
 
-    public $timestamps = false;
+    public function formulaires()
+    {
+        return $this->belongsToMany(Formulaire::class, 'formulaire_usager', 'usager_id', 'formulaire_id');
+    }
+
+    use HasFactory;
 }

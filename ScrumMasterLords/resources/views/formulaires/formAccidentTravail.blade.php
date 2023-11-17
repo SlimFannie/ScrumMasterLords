@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <form method="POST" action="{{ route('formulaires.accidentStore') }}">
+        <form method="POST" action="{{ route('store.accident', Session::get('username')) }}">
             @csrf
                 <div class="container-fluid zoneForm">
                     <div class="row g-0 mt mb-2 text-center">

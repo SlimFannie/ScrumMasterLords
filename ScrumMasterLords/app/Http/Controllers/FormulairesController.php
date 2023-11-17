@@ -30,7 +30,7 @@ class FormulairesController extends Controller
 
     public function accident() {
         $superieurs = Usager::where('superieur', true)->get();
-        return view('formulaires.accident', ['username'=>Session::get('username'), 'superieurs'=>$superieurs]);
+        return view('formulaires.formAccidentTravail', ['username'=>Session::get('username'), 'superieurs'=>$superieurs]);
     }
 
     public function storeAccident(Request $request): RedirectResponse {

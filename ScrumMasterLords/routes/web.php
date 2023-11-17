@@ -3,11 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsagersController;
 use App\Http\Controllers\FormulairesController;
-use App\Http\Controllers\SituationDangerController;
-use App\Http\Controllers\DeclarationAccidentsController;
-use App\Http\Controllers\AuditsSSTController;
-use App\Http\Controllers\AtelierMecaniquesController;
-use App\Http\Controllers\ProceduresTravailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,54 +15,28 @@ use App\Http\Controllers\ProceduresTravailController;
 |
 */
 
+/* Connexion */
+
 Route::get('/', function () {
     return view('connexion');
 })->name('connexion');
 
-Route::get('/{username}', 
-[FormulairesController::class, 'index'])->name('formulaires.index');
-
 Route::POST('/connexion',
 [UsagersController::class, 'login'])->name('usagers.login');
 
-Route::POST('/déconnexion',
+Route::get('/déconnexion',
 [UsagersController::class, 'logout'])->name('usagers.logout');
 
-
-/* Situation dangereuse */
-
-Route::get('/{username}/SituationDangereuse',
-[FormulairesController::class, 'danger'])->name('formulaires.danger');
-
-Route::post('/storeSituationDanger',
-[SituationDangerController::class, 'store'])->name('danger.store');
-
+Route::get('/{username}',
+[FormulairesController::class, 'index'])->name('dashboard');
 
 /* Accident de travail */
 
-Route::get('/{username}/AccidentTravail',
+Route::get('/{username}/AccidentDeTravail',
 [FormulairesController::class, 'accident'])->name('formulaires.accident');
 
-Route::POST('/storeAccidentTravail',
-[FormulairesController::class, 'accidentStore'])->name('formulaires.accidentStore');
-
-
-/* Audit SST */
-
-Route::get('/{username}/AuditSST',
-[FormulairesController::class, 'audit'])->name('formulaires.audit');
-
-Route::get('/storeAuditSST',
-[FormulairesController::class, 'auditStore'])->name('formulaires.auditStore');
-
-
-/* Atelier mécanique */
-
-Route::get('/{username}/formAtelierMecanique',
-[FormulairesController::class, 'atelier'])->name('formulaires.atelier');
-
-Route::get('/storeAtelierMecanique',
-[AtelierMecaniquesController::class, 'store'])->name('atelier.store');
+Route::POST('/{username}/AccidentDeTravail/Envoi',
+[FormulairesController::class, 'storeAccident'])->name('store.accident');
 
 
 /* Procédures de travail */
