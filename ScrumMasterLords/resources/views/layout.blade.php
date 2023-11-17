@@ -17,11 +17,10 @@
 <div class="container-fluid g-0">
         <div class="row p-lg-3 bg-light g-0">
             <div class="col-2 g-0 d-flex align-items-center">
-                <img src="{{ asset('img/logo_v3r_sans_texte.jpg') }}" class="logoNav pe-2">
-                <h2 class="blackText">Form3R</h2>
+                <img src="{{ asset('img/logo_v3r_sans_texte.jpg') }}" class="logoNav me-2">
+                <h2 class="blackText my-auto">Form3R</h2>
             </div>
-            <div class="col-4 g-0 d-flex align-items-center">
-                <a href="{{ route('usagers.logout') }}">Logout</a>
+            <div class="col-8 g-0 d-flex align-items-center justify-content-center">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Remplir un formulaire
@@ -32,6 +31,9 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="col-2 g-0 d-flex justify-content-end">
+                <a href="{{ route('usagers.logout') }}"><i class="fa-solid fa-power-off fa-lg"></i></a>
             </div>
         </div>
         <div class="row g-0">
