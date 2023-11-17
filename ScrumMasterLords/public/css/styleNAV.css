@@ -33,8 +33,24 @@
     mask-image: url('../img/v3r_mask.png');
     -webkit-mask-size: 70px 70px;
     mask-size: 70px 70px;
+}
 
+.posBtnDropD {
+    position: absolute;
+    right: 1%;
+    bottom: 16%;
+}
 
+.colorBtnDropD {
+    background-color: rgb(229, 0, 77)!important;
+    color: white!important;
+}
+
+.colorBtnDropD:hover {
+    background-color: rgba(229, 0, 77, 0.1)!important;
+    color: rgb(229, 0, 77)!important;
+    border-width: 1px!important;
+    border-color:  rgb(229, 0, 77)!important;
 }
 
 a, .noBtn {
@@ -89,6 +105,12 @@ ul li {
 
 i {
     margin: 0px;
+}
+
+.badge {
+    z-index: 4;
+    position: absolute;
+    
 }
 
 /* Shape de vague */
