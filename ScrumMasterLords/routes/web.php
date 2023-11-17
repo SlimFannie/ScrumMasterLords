@@ -36,7 +36,7 @@ Route::POST('/déconnexion',
 
 /* Situation dangereuse */
 
-Route::get('/{username}/formSituationDangereuse',
+Route::get('/{username}/SituationDangereuse',
 [FormulairesController::class, 'danger'])->name('formulaires.danger');
 
 Route::post('/storeSituationDanger',
@@ -49,7 +49,7 @@ Route::get('/{username}/AccidentTravail',
 [FormulairesController::class, 'accident'])->name('formulaires.accident');
 
 Route::POST('/storeAccidentTravail',
-[DeclarationAccidentsController::class, 'store'])->name('accident.store');
+[FormulairesController::class, 'accidentStore'])->name('formulaires.accidentStore');
 
 
 /* Audit SST */
@@ -58,7 +58,7 @@ Route::get('/{username}/AuditSST',
 [FormulairesController::class, 'audit'])->name('formulaires.audit');
 
 Route::get('/storeAuditSST',
-[AuditsSSTController::class, 'store'])->name('audit.store');
+[FormulairesController::class, 'auditStore'])->name('formulaires.auditStore');
 
 
 /* Atelier mécanique */
