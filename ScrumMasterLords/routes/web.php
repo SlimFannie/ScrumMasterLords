@@ -38,6 +38,30 @@ Route::get('/{username}/AccidentDeTravail',
 Route::POST('/{username}/AccidentDeTravail/Envoi',
 [FormulairesController::class, 'storeAccident'])->name('store.accident');
 
+/* Audit SST */
+
+Route::get('/{username}/AuditSST',
+[FormulairesController::class, 'auditSST'])->name('formulaires.auditSST');
+
+Route::POST('/{username}/AuditSST/Envoi',
+[FormulairesController::class, 'storeAuditSST'])->name('store.auditSST');
+
+/* Danger */
+
+Route::get('/{username}/Danger',
+[FormulairesController::class, 'danger'])->name('formulaires.danger');
+
+Route::POST('/{username}/Danger/Envoi',
+[FormulairesController::class, 'storeDanger'])->name('store.danger');
+
+/* Atelier mécanique */
+
+Route::get('/{username}/AtelierMecanique',
+[FormulairesController::class, 'atelierMecanique'])->name('formulaires.atelierMecanique');
+
+Route::POST('/{username}/AtelierMecanique/Envoi',
+[FormulairesController::class, 'storeAtelierMecanique'])->name('store.atelierMecanique');
+
 
 /* Procédures de travail */
 
