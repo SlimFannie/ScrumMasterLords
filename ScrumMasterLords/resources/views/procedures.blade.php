@@ -2,22 +2,24 @@
 @section ('titre','Procédures')
 @section('contenu')
 
-    <div class="container-fluid">
+    <div class="container-fluid marginNav">
         <div class="row g-0">
             <div class="col-8">
+                <div class="container-fluid bgProc h-100">
 
+                </div>
             </div>
             <div class="col-4">
-                @foreach($departements as $departement)
+                <div class="container-fluid h-100">
                     <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{ $departement }</button>
+                        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Départements</button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          @foreach($departements as $departement)
+                            <li><a class="dropdown-item" href="#">{{ $departement->nom }}</a></li>
+                          @endforeach
                         </ul>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
     </div>

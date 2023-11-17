@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
 use App\Models\Usager;
+use App\Models\Departement;
 use Illuminate\View\View;
 use Illuminate\Auth\Middleware;
 use Auth;
@@ -21,7 +22,9 @@ class ProceduresTravailController extends Controller
      */
     public function index()
     {
-        return View('procedures')->with('username', self::getUsername());
+        $departements = Departement::all();
+        $username = Session::get('username');
+        return View('procedures', ['departements'=>$departements])->with('username', self::getUsername());
     }
 
     /**
@@ -45,7 +48,8 @@ class ProceduresTravailController extends Controller
      */
     public function show()
     {
-        return $departements = DB::table('departements')->select('nom')->get()->all();
+
+
     }
 
     /**
