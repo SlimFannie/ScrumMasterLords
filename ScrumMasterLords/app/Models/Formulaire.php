@@ -12,6 +12,11 @@ use App\Models\Usager;
 class Formulaire extends Model
 {
     use HasFactory;
+
+    public function getDateFormat()
+    {
+        return 'Y-m-d H:i:s';
+    }
     
     public function blessures(): HasMany
     {

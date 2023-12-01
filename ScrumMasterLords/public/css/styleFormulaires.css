@@ -3,6 +3,10 @@
     color: white;
 }
 
+.underlineForm {
+    text-decoration: underline;
+}
+
 .textFormAlert {
     color: red;
 }

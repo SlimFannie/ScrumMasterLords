@@ -7,34 +7,24 @@
         <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0">
             <div class="row g-0">
                 <div class="col-12">
+                    @if ($formulaires->count())
                     <h1 class="pb-3">Formulaires en cours</h1>
-
+                        @foreach ($formulaires as $formulaire)
                         <div class="card d-inline-flex">
                             <div class="card-header">
-                                <h5 class="card-title m-0">Type de formulaire</h5>
+                                <h5 class="card-title m-0">{{ $formulaire->titre }}</h5>
                             </div>
                             <div class="card-body">
-                                Description    
+                                <a href="">Voir le formulaire.</a>  
                             </div>
                             <div class="card-footer text-muted">
-                                Date
+                                {{ $formulaire->created_at->format('d/m/Y') }}
                             </div>
                         </div>
-
+                        @endforeach
+                    @else
                     <h4>Il n'y a aucun formulaire en attente de traitement.</h4>
-
-                    <h1 class="py-3">Formulaires traités</h1>
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title m-0">Type de formulaire</h5>
-                        </div>
-                        <div class="card-body">
-                            Description    
-                        </div>
-                        <div class="card-footer text-muted">
-                            Date
-                        </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>

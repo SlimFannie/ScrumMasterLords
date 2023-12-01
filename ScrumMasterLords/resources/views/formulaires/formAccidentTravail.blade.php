@@ -12,7 +12,6 @@
                 </div>
             </div>
         </div>
-
         <form method="POST" action="{{ route('store.accident', Session::get('username')) }}">
             @csrf
                 <div class="container-fluid zoneForm">
@@ -21,36 +20,26 @@
                     </div>
        
                     <div class="row g-0 mb-3">
-                        @if($errors->has('nom'))
-                        <header class="textFormAlert"for="nom">{{ $errors->first('nom') }}</header>
-                        <input name="nom" id="nom" type="text" class="inputFormAlert">
-                        @else
-                        <header class="textForm"for="nom">Nom de famille</header>
-                        <input name="nom" id="nom" type="text" class="inputForm">
-                        @endif
-                        @if($errors->has('prenom'))
-                        <header class="textFormAlert"for="prenom">{{ $errors->first('prenom') }}</header>
-                        <input name="prenom" id="prenom" type="text" class="inputFormAlert">
-                        @else
-                        <header class="textForm"for="prenom">Prénom</header>
-                        <input name="prenom" id="prenom" type="text" class="inputForm">
-                        @endif
-                        @if ($errors->has('matricule'))
-                        <header class="textFormAlert" for="matricule">{{ $errors->first('matricule') }}</header>
-                        <input name="matricule_usager" id="matricule" type="text" class="inputFormAlert">
-                        @else
-                        <header class="textForm" for="matricule">Matricule</header>
-                        <input name="matricule_usager" id="matricule" type="text" class="inputForm">
-                        @endif
+                        <h5 class="textForm">
+                            Votre nom est <span class="underlineForm">{{$usager->prenom}} {{$usager->nom}}</span>
+                            <br>
+                            Votre numéro d'employé est <span class="underlineForm">{{$usager->matricule}}­</span>
+                        </h5>
+                        <label class="textForm">Est-ce exact?</label>
+                        <div class="form-check">
+                            <label class="textForm form-check-label" for="checkNom">Oui</label>
+                            <input type="checkbox" id="checkNom" name="checkNom" class="form-check-input" value="{{ old('checkNom') }}">
+                            <button class="btn btn-danger">Non</button>
+                        </div>
                     </div>
 
                     <div class="row g-0 mb-3">
                         @if($errors->has('fonction'))
                         <header class="textFormAlert" for="fonction">{{ $errors->first('fonction') }}</header>
-                        <input name="fonction" id="fonction" type="text" class="inputFormAlert">
+                        <input name="fonction" id="fonction" type="text" class="inputFormAlert" value="{{ old('fonction') }}">
                         @else
                         <header class="textForm" for="fonction">Fonction lors de l'évènement</header>
-                        <input name="fonction" id="fonction" type="text" class="inputForm">
+                        <input name="fonction" id="fonction" type="text" class="inputForm" value="{{ old('fonction') }}">
                         @endif
                     </div>
                 </div>
@@ -63,28 +52,28 @@
                     <div class="row g-0 mb-3">
                         @if($errors->has('dateHeure'))
                         <header class="textFormAlert" for="date">{{ $errors->first('dateHeure') }}</header>
-                        <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputFormAlert">
+                        <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputFormAlert" value="{{ old('date_accident') }}">
                         @else
                         <header class="textForm" for="date">Date</header>
-                        <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputForm">
+                        <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputForm" value="{{ old('date_accident') }}">
                         @endif
                     </div>
 
                     <div class="row g-0 mb-3">
                         @if($errors->has('lieu'))
                         <header class="textFormAlert">{{ $errors->first('lieu') }}</header>
-                        <input name="endroit" type="text" class="inputFormAlert" id="endroit">
+                        <input name="endroit" type="text" class="inputFormAlert" id="endroit" value="{{ old('endroit') }}">
                         @else
                         <header class="textForm">Endroit de l'évènement</header>
-                        <input name="endroit" type="text" class=" inputForm" id="endroit">
+                        <input name="endroit" type="text" class=" inputForm" id="endroit" value="{{ old('endroit') }}">
                         @endif
                         <header class="textForm">Secteur d'activité</header>
-                        <input name="secteur" type="text" class=" inputForm" id="secteur">
+                        <input name="secteur" type="text" class=" inputForm" id="secteur" value="{{ old('secteur') }}">
                     </div>
                     <div class="row g-0 mb-3">
                         <header class="textForm" for="temoin">Témoins(s)</header>
-                        <input name="nom_temoin1" class="mb-1  inputForm" type="text" placeholder="Nom témoin" id="temoin">
-                        <input name="nom_temoin2" class=" inputForm" type="text" placeholder="Nom témoin" id="temoin2">
+                        <input name="nom_temoin1" class="mb-1  inputForm" type="text" placeholder="Nom témoin" id="temoin" value="{{ old('nom_temoin1') }}">
+                        <input name="nom_temoin2" class=" inputForm" type="text" placeholder="Nom témoin" id="temoin2" value="{{ old('nom_temoin2') }}">
                     </div>
                 </div>
 

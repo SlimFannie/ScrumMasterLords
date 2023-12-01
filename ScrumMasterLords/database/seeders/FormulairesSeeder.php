@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use DB;
+use Carbon;
 
 class FormulairesSeeder extends Seeder
 {
@@ -43,6 +44,7 @@ class FormulairesSeeder extends Seeder
                         'question23'=>null,
                         'question24'=>null,
                         'question25'=>null,
+                        'created_at' =>  \Carbon\Carbon::now()
                     ],
                     // Situation dangereuse
                     [
@@ -73,6 +75,7 @@ class FormulairesSeeder extends Seeder
                         'question23'=>null,
                         'question24'=>null,
                         'question25'=>null,
+                        'created_at' =>  \Carbon\Carbon::now()
                     ],
                     // Grille audit - formulaire simplifié
                     [
@@ -103,6 +106,7 @@ class FormulairesSeeder extends Seeder
                         'question23'=>null,
                         'question24'=>null,
                         'question25'=>null,
+                        'created_at' =>  \Carbon\Carbon::now()
                     ],
                     // Atelier mécanique - Rapport d'accident
                     [
@@ -133,6 +137,7 @@ class FormulairesSeeder extends Seeder
                         'question23'=>null,
                         'question24'=>null,
                         'question25'=>null,
+                        'created_at' =>  \Carbon\Carbon::now()
                     ],
                 ]);
             }
