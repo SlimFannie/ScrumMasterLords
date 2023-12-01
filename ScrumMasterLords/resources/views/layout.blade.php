@@ -36,7 +36,20 @@
                 </div>
             </div>
             <div class="col-2 g-0 d-flex justify-content-end">
-                <img src="" class="avatarNav">
+                <div class="btn-group dropstart">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="position-absolute top-0  translate-middle badge rounded-pill bg-danger">
+                            99
+                        <span class="visually-hidden">unread messages</span>
+                        </span>
+                        <img src="" class="avatarNav">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                </div>
                 <a href="{{ route('usagers.logout') }}"><i class="fa-solid fa-power-off fa-lg"></i></a>
             </div>
         </div>

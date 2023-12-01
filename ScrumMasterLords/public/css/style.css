@@ -55,7 +55,8 @@ h1, h2, h3, h4, h5, label, input
 
 input[type=text]
 {
-    width: max-content;
+    width: 100%;
+    max-width: 400px;
     height: 40px;
 }
 
