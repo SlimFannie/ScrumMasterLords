@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <form method="POST" action="{{ route('danger.store') }}">
+    <form method="POST" action="{{ route('store.danger', $username) }}">
         <div class="container-fluid zoneForm">
             <div class="row g-0 mt mb-2 text-center">
                 <h3 class="titleForm">Identification<h3>

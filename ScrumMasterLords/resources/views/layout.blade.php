@@ -27,12 +27,16 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('formulaires.accident', Session::get('username')) }}">Accident de travail</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="{{ route('formulaires.danger', Session::get('username')) }}">Situation dangereuse</a></li>
+                        @if (Session::get('user.superieur') == true)
+                        <li><a class="dropdown-item" href="{{ route('formulaires.atelier', Session::get('username')) }}">Atelier mécanique</a></li>
+                        <li><a class="dropdown-item" href="{{ route('formulaires.audit', Session::get('username')) }}">Audit SST</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
             <div class="col-2 g-0 d-flex justify-content-end">
+                <img src="" class="avatarNav">
                 <a href="{{ route('usagers.logout') }}"><i class="fa-solid fa-power-off fa-lg"></i></a>
             </div>
         </div>

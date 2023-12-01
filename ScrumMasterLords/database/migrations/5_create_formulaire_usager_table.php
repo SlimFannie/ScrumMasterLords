@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->foreignId('usager_id')->constrained();
             $table->foreignId('formulaire_id')->constrained();
+            $table->boolean('lu')->default(false);
             $table->string('reponse1');
             $table->string('reponse2')->nullable();
             $table->string('reponse3')->nullable();

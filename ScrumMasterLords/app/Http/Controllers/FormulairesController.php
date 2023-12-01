@@ -51,4 +51,28 @@ class FormulairesController extends Controller
         }
 
     }
+
+    public function danger() {
+        return view('formulaires.formDanger', ['username'=>Session::get('username'), 'usager'=>Session::get('user')]);
+    }
+
+    public function storeDanger(Request $request): RedirectResponse {
+        $validator = Validator::make($request->all(), [
+            'fonction' => ['required'],
+            'dateHeure' => ['required'],
+            'endroit' => ['required'],
+            'endroitBlessure' => ['required'],
+            'descriptionBlessure' => ['required'],
+            'histoire' => ['required'],
+            'superieur' => ['required']
+        ]);
+
+        if($validator->fails()) {
+            return redirect()->route('formulaires.formDanger', ['username'=>Session::get('username')])->withErrors($validator)->withInput();
+        } else {
+            return redirect()->route('dashboard', ['username'=>Session::get('username')]);
+        }
+
+    }
+
 }

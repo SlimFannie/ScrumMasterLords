@@ -2,668 +2,266 @@
 @section ('titre','Accident de travail')
 @section ('contenu')
 
-    <div class="container-fluid">
-        <div class="container-fluid g-0 mb-2 sign mb-3 marginNav">
-            <div class="mt-3 bigTitleForm">
-                <div class="row g-0 mb-2">
-                    <div class="col-10 offset-col-3 text-center m-4 g-0 mb-2">
-                        <h3>Déclaration d'un accident de travail<h3>
+<div class="container-fluid g-0">
+    <div class="row g-0">
+        <div class="col-12 g-0">
+            <h2>Déclarer un accident de travail</h2>
+            <form method="POST" action="{{ route('store.accident', $username) }}">
+                @csrf
+                <div>
+                    @if ($errors->any())
+                    <div class="alert alert-warning" role="alert">
+                        <h5>{{$errors->first()}}</h5>
                     </div>
+                    @endif
                 </div>
-            </div>
-        </div>
-        <form method="POST" action="{{ route('store.accident', Session::get('username')) }}">
-            @csrf
-                <div class="container-fluid zoneForm">
-                    <div class="row g-0 mt mb-2 text-center">
-                        <h3 class="titleForm">Identification</h3>
-                    </div>
-       
-                    <div class="row g-0 mb-3">
-                        <h5 class="textForm">
-                            Votre nom est <span class="underlineForm">{{$usager->prenom}} {{$usager->nom}}</span>
-                            <br>
-                            Votre numéro d'employé est <span class="underlineForm">{{$usager->matricule}}­</span>
-                        </h5>
-                        <label class="textForm">Est-ce exact?</label>
-                        <div class="form-check">
-                            <label class="textForm form-check-label" for="checkNom">Oui</label>
-                            <input type="checkbox" id="checkNom" name="checkNom" class="form-check-input" value="{{ old('checkNom') }}">
-                            <button class="btn btn-danger">Non</button>
+                <h4>Identification</h4>
+                <p><span class="underline">Nom complet:</span> {{Session::get('user.prenom')}} {{Session::get('user.nom')}}</p>
+                <p><span class="underline">Numéro d'employé:</span> {{Session::get('user.matricule')}}</p>
+                <!-- Bouton modal identifiant inexacte -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Ces identifiants sont inexactes?  
+                </button>
+                <!---->
+                <div class="form-floating text-center">
+                    <input type="text" class="form-control" name="fonction" id="fonction" placeholder="Menuisier" value="{{ old('fonction') }}">
+                    <label for="fonction" id="labelFonction" class="px-4">Fonction lors de l'accident</label>
+                </div>
+
+                <h4>Description de l'accident</h4>
+                <div class="form-floating text-center">
+                    <input type="datetime-local" class="form-control" name="dateHeure" id="dateHeure" value="{{ old('dateHeure') }}">
+                    <label for="dateHeure" id="labelDateHeure" class="px-4">Date et heure de l'accident</label>
+                </div>
+                <div class="form-floating text-center">
+                    <input type="text" class="form-control" name="endroit" id="endroit" value="{{ old('endroit') }}" placeholder="Dans l'entrée de l'hôtel de ville.">
+                    <label for="endroit" id="labelEndroit" class="px-4">Endroit où l'accident s'est produit</label>
+                </div>
+                <div class="form-floating text-center">
+                    <input type="text" class="form-control" name="secteur" id="secteur" value="{{ old('secteur') }}" placeholder="Secteur">
+                    <label for="secteur" id="labelSecteur" class="px-4">Secteur d'activité</label>
+                </div>
+                <div class="input-group text-center">
+                    <span class="input-group-text">
+                        <label for="temoins" id="labelTemoins" class="px-4">Témoins(s)</label>
+                        <input type="text" class="form-control" name="temoins1" id="temoin1" placeholder="Témoin 1" value="{{ old('temoins') }}">
+                        <input type="text" class="form-control" name="temoins2" id="temoin2" placeholder="Témoin 2" value="{{ old('temoins') }}">    
+                    </span>
+                </div>
+                <div class="container-fluid g-0">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <h4>Nature et site de la blessure</h4>
+                            <p>Cochez, s'il y a lieu, le côté droit ou le côté gauche.</p>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <div class="input-group" name="latete">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="tete" name="tete" value="tete">
+                                            <label class="form-check-label" for="tete">Tête, visage, yeux, oreille</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="directionGauche" name="tete" value="gauche">
+                                            <label class="form-check-label" for="directionGauche">Gauche</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="directionDroite" name="tete" value="droite">
+                                            <label class="form-check-label" for="directionDroite">Droite</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="torse" name="torse" value="1">
+                                        <label class="form-check-label" for="torse">Torse</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="poumon" name="poumon" value="1">
+                                        <label class="form-check-label" for="poumon">Poumon</label>
+                                    </div>
+                                    <div class="input-group" name="lesbras">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="bras" name="bras" value="1">
+                                            <label class="form-check-label" for="bras">Bras, épaule, coude</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="directionGauche" name="bras" value="1">
+                                            <label class="form-check-label" for="directionGauche">Gauche</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="directionDroite" name="bras" value="1">
+                                            <label class="form-check-label" for="directionDroite">Droite</label>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="input-group" name="lesmains">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="main" name="main" value="1">
+                                        <label class="form-check-label" for="main">Poignet, main, doigt</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="directionGauche" name="main" value="1">
+                                        <label class="form-check-label" for="directionGauche">Gauche</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="directionDroite" name="main" value="1">
+                                        <label class="form-check-label" for="directionDroite">Droite</label>
+                                    </div>
+                                </div>
+                                <div class="input-group" name="ledos">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="dos" name="dos" value="1">
+                                        <label class="form-check-label" for="main">Dos</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="haut" name="dos" value="1">
+                                        <label class="form-check-label" for="haut">Haut</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="bas" name="dos" value="1">
+                                        <label class="form-check-label" for="directionDroite">Bas</label>
+                                    </div>
+                                </div>
+                                <div class="input-group" name="leshanches">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="hanche" name="hanche" value="1">
+                                        <label class="form-check-label" for="hanche">Hanche</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="directionGauche" name="hanche" value="1">
+                                        <label class="form-check-label" for="directionGauche">Gauche</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="directionDroite" name="hanche" value="1">
+                                        <label class="form-check-label" for="directionDroite">Droite</label>
+                                    </div>
+                                </div>
+                                <div class="input-group" name="lesjambes">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="jambe" name="jambe" value="1">
+                                        <label class="form-check-label" for="jambe">Jambe, genou</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="directionGauche" name="jambe" value="1">
+                                        <label class="form-check-label" for="directionGauche">Gauche</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="directionDroite" name="jambe" value="1">
+                                        <label class="form-check-label" for="directionDroite">Droite</label>
+                                    </div>
+                                </div>
+                                <div class="input-group" name="autre">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="autre" name="autre" value="1">
+                                        <label class="form-check-label" for="autre">Autre</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-input" type="radio" id="directionGauche" name="jambe" value="1">
+                                        <label class="form-check-label" for="directionGauche">Gauche</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <h4>Description de la blessure (à cocher)</h4>
+                            <div class="input-group" name="descriptionBlessure">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="brulure" name="brulure" value="1">
+                                    <label class="form-check-label" for="brulure">Brûlure, engelure</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="commotion" name="commotion" value="1">
+                                    <label class="form-check-label" for="commotion">Commotion cérébrale</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="corpsEtranger" name="corpsEtranger" value="1">
+                                    <label class="form-check-label" for="corpsEtranger">Corps étranger</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="coupure" name="coupure" value="1">
+                                    <label class="form-check-label" for="coupure">Coupure, lacération, déchirure</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="dos" name="dos" value="1">
+                                    <label class="form-check-label" for="dos">Douleur au dos</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="egratignure" name="egratignure" value="1">
+                                    <label class="form-check-label" for="egratignure">Égratignure, élongation, contusion, foulure, luxation</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="fracture" name="fracture" value="1">
+                                    <label class="form-check-label" for="fracture">Fracture, amputation</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="irritation" name="irritation" value="1">
+                                    <label class="form-check-label" for="irritation">Irritation, infection</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="inhalation" name="inhalation" value="1">
+                                    <label class="form-check-label" for="inhalation">Inhalation</label>
+                                </div>
+                                <div class="form-check input-group">
+                                    <input class="form-check-input" type="checkbox" id="autre" name="autre" value="1">
+                                    <label class="form-check-label" for="autre">Autre</label>
+                                    <input class="form-control" type="text" id="autreText" name="autreText" placeholder="Décrivez">
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="row g-0 mb-3">
-                        @if($errors->has('fonction'))
-                        <header class="textFormAlert" for="fonction">{{ $errors->first('fonction') }}</header>
-                        <input name="fonction" id="fonction" type="text" class="inputFormAlert" value="{{ old('fonction') }}">
-                        @else
-                        <header class="textForm" for="fonction">Fonction lors de l'évènement</header>
-                        <input name="fonction" id="fonction" type="text" class="inputForm" value="{{ old('fonction') }}">
-                        @endif
-                    </div>
                 </div>
 
-                <div class="container-fluid zoneForm">
-                    <div class="row g-0 mt mb-2 text-center">
-                        <h3 class="titleForm">Description de l'évènement</h3>
+                <h4>Violence (à cocher)</h4>
+                    <div class="form-check input-group" name="violence">
+                        <input class="form-check-input" type="checkbox" id="physique" name="physique" value="1">
+                        <label class="form-check-label" for="physique">Physique</label>
+                        <input class="form-check-input" type="checkbox" id="verbale" name="verbale" value="1">
+                        <label class="form-check-label" for="verbale">Verbale</label>
                     </div>
 
-                    <div class="row g-0 mb-3">
-                        @if($errors->has('dateHeure'))
-                        <header class="textFormAlert" for="date">{{ $errors->first('dateHeure') }}</header>
-                        <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputFormAlert" value="{{ old('date_accident') }}">
-                        @else
-                        <header class="textForm" for="date">Date</header>
-                        <input name="date_accident" type="datetime-local" id="date" style="width: 150px;" class="inputForm" value="{{ old('date_accident') }}">
-                        @endif
-                    </div>
-
-                    <div class="row g-0 mb-3">
-                        @if($errors->has('lieu'))
-                        <header class="textFormAlert">{{ $errors->first('lieu') }}</header>
-                        <input name="endroit" type="text" class="inputFormAlert" id="endroit" value="{{ old('endroit') }}">
-                        @else
-                        <header class="textForm">Endroit de l'évènement</header>
-                        <input name="endroit" type="text" class=" inputForm" id="endroit" value="{{ old('endroit') }}">
-                        @endif
-                        <header class="textForm">Secteur d'activité</header>
-                        <input name="secteur" type="text" class=" inputForm" id="secteur" value="{{ old('secteur') }}">
-                    </div>
-                    <div class="row g-0 mb-3">
-                        <header class="textForm" for="temoin">Témoins(s)</header>
-                        <input name="nom_temoin1" class="mb-1  inputForm" type="text" placeholder="Nom témoin" id="temoin" value="{{ old('nom_temoin1') }}">
-                        <input name="nom_temoin2" class=" inputForm" type="text" placeholder="Nom témoin" id="temoin2" value="{{ old('nom_temoin2') }}">
-                    </div>
+                <h4>Décrivez la tâcher effectuée et comment s'est produit la blessure.</h4>
+                <input class="form-control" type="textarea" id="histoire" name="histoire">
+                <div class="form-check input-group">
+                    <input class="form-check-input" type="checkbox" id="secouriste" name="secouriste" value="1">
+                    <label class="form-check-label" for="autre">Secouriste</label>
+                    <input class="form-control" type="text" id="secouristeText" name="secouristeText" placeholder="Nom">
                 </div>
 
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mt mb-2 text-center">
-                    <h3 class="titleForm">Nature et site de la blessure</h3>
+                <h4>Détails sur la durée de l'absence</h4>
+                <div class="form-check input-group" name="absence">
+                    <input class="form-check-input" type="checkbox" id="aucune" name="aucune" value="1">
+                    <label class="form-check-label" for="aucune">Accident de nécessitant aucune absence</label>
+                    <input class="form-check-input" type="checkbox" id="consultation" name="consultation" value="1">
+                    <label class="form-check-label" for="consultation">Accident nécessitant une consultation médicale</label>
                 </div>
 
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="tete" class="form-check-input inputForm" type="checkbox" value=1 id="tete">
-                    </div>
-                    <div class="col-10">
-                        <label for="tete" class="textForm">Tête</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="visage" class="form-check-input inputForm" type="checkbox" value=1 id="visage">
-                    </div>
-                    <div class="col-10">
-                        <label for="visage" class="textForm">Visage</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="nez" class="form-check-input inputForm" type="checkbox" value=1 id="nez">
-                    </div>
-                    <div class="col-10">
-                        <label for="nez" class="textForm">Nez</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="yeux" class="form-check-input inputForm" type="checkbox" value=1 id="yeux">
-                    </div>
-                    <div class="col-5">
-                        <label for="yeux" class="textForm">Yeux</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="oeil_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="oeilG">
-                    </div>
-                    <div class="col-2">
-                        <label for="oeilG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="oeil_droit" class="form-check-input inputForm" type="checkbox" value=1 id="oeilD">
-                    </div>
-                    <div class="col-1">
-                        <label for="oeilD" class="textForm">D</label>
+                <h4>Qui était votre supérieur au moment de l'accident?</h4>
+                <select class="form-select" name="superieur" id="superieur">
+                    <option selected>Choisissez...</option>
+                    @if (count((array)$superieurs))
+                        @foreach ($superieurs as $superieur)
+                        <option value="{{$superieur->matricule}}">{{$superieur->prenom}} {{$superieur->nom}}</option>
+                        @endforeach
+                    @else
+                        <option>Erreur, veuillez contacter un administrateur.</option>
+                    @endif
+                </select>
+                <button type="submit" class="btn btn-primary">Envoyer le formulaire</button>
+                <!-- Modal identifiant inexacte -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4>Ces identifiants sont inexactes?</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p id="exampleModalLabel">Veuillez contacter un administrateur afin de procéder à la mise à jour de vos identifiants.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="oreilles" class="form-check-input inputForm" type="checkbox" value=1 id="oreilles">
-                    </div>
-                    <div class="col-5">
-                        <label for="oreilles" class="textForm">Oreilles</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="oreille_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="oreilleG">
-                    </div>
-                    <div class="col-2">
-                        <label for="oreilleG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="oreille_droite" class="form-check-input inputForm" type="checkbox" value=1 id="oreilleD">
-                    </div>
-                    <div class="col-1">
-                        <label for="oreilleD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="torse" class="form-check-input inputForm" type="checkbox" value=1 id="torse">
-                    </div>
-                    <div class="col-10">
-                        <label for="torse" class="textForm">Torse</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="poumon" class="form-check-input inputForm" type="checkbox" value=1 id="poumon">
-                    </div>
-                    <div class="col-10">
-                        <label for="poumon" class="textForm">Poumon</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="bras" class="form-check-input inputForm" type="checkbox" value=1 id="bras">
-                    </div>
-                    <div class="col-5">
-                        <label for="bras" class="textForm">Bras</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="bras_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="brasG">
-                    </div>
-                    <div class="col-2">
-                        <label for="brasG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="bras_droite" class="form-check-input inputForm" type="checkbox" value=1 id="brasD">
-                    </div>
-                    <div class="col-1">
-                        <label for="brasD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="epaules" class="form-check-input inputForm" type="checkbox" value=1 id="epaules">
-                    </div>
-                    <div class="col-5">
-                        <label for="epaules" class="textForm">Épaules</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="epaule_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="epauleG">
-                    </div>
-                    <div class="col-2">
-                        <label for="epauleG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="epaule_droite" class="form-check-input inputForm" type="checkbox" value=1 id="epauleD">
-                    </div>
-                    <div class="col-1">
-                        <label for="epauleD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="coudes" class="form-check-input inputForm" type="checkbox" value=1 id="coudes">
-                    </div>
-                    <div class="col-5">
-                        <label for="coudes" class="textForm">Coudes</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="coude_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="coudeG">
-                    </div>
-                    <div class="col-2">
-                        <label for="coudeG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="coude_droite" class="form-check-input inputForm" type="checkbox" value=1 id="coudeD">
-                    </div>
-                    <div class="col-1">
-                        <label for="coudeD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="poignets" class="form-check-input inputForm" type="checkbox" value=1 id="poignets">
-                    </div>
-                    <div class="col-5">
-                        <label for="poignets" class="textForm">Poignets</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="poignet_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="poignetG">
-                    </div>
-                    <div class="col-2">
-                        <label for="poignetG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="poignet_droite" class="form-check-input inputForm" type="checkbox" value=1 id="poignetD">
-                    </div>
-                    <div class="col-1">
-                        <label for="poignetD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="mains" class="form-check-input inputForm" type="checkbox" value=1 id="mains">
-                    </div>
-                    <div class="col-5">
-                        <label for="mains" class="textForm">Mains</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="main_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="mainG">
-                    </div>
-                    <div class="col-2">
-                        <label for="mainG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="main_droite" class="form-check-input inputForm" type="checkbox" value=1 id="mainD">
-                    </div>
-                    <div class="col-1">
-                        <label for="mainD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="doigt" class="form-check-input inputForm" type="checkbox" value=1 id="doigts">
-                    </div>
-                    <div class="col-10">
-                        <label for="doigts" class="textForm">Doigts</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="dos" class="form-check-input inputForm" type="checkbox" value=1 id="dos">
-                    </div>
-                    <div class="col-10">
-                        <label for="dos" class="textForm">Dos</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="hanche" class="form-check-input inputForm" type="checkbox" value=1 id="hanche">
-                    </div>
-                    <div class="col-10">
-                        <label for="hanche" class="textForm">Hanche</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="jambes" class="form-check-input inputForm" type="checkbox" value=1 id="jambes">
-                    </div>
-                    <div class="col-5">
-                        <label for="jambes" class="textForm">Jambes</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="jambe_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="jambeG">
-                    </div>
-                    <div class="col-2">
-                        <label for="jambeG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="jambe_droite" class="form-check-input inputForm" type="checkbox" value=1 id="jambeD">
-                    </div>
-                    <div class="col-1">
-                        <label for="jambeD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="genoux" class="form-check-input inputForm" type="checkbox" value=1 id="genoux">
-                    </div>
-                    <div class="col-5">
-                        <label for="genoux" class="textForm">Genoux</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="genoux_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="genouG">
-                    </div>
-                    <div class="col-2">
-                        <label for="genouG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="genoux_droite" class="form-check-input inputForm" type="checkbox" value=1 id="genouD">
-                    </div>
-                    <div class="col-1">
-                        <label for="genouD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="pieds" class="form-check-input inputForm" type="checkbox" value=1 id="pieds">
-                    </div>
-                    <div class="col-5">
-                        <label for="pieds" class="textForm">Pieds</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="pied_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="piedG">
-                    </div>
-                    <div class="col-2">
-                        <label for="piedG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="pied_droite" class="form-check-input inputForm" type="checkbox" value=1 id="piedD">
-                    </div>
-                    <div class="col-1">
-                        <label for="piedD" class="textForm">D</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="orteils" class="form-check-input inputForm" type="checkbox" value=1 id="orteils">
-                    </div>
-                    <div class="col-10">
-                        <label for="orteils" class="textForm">Orteils</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-3">
-                    <div class="col-2">
-                        <input name="chevilles" class="form-check-input inputForm" type="checkbox" value=1 id="chevilles">
-                    </div>
-                    <div class="col-5">
-                        <label for="chevilles" class="textForm">Chevilles</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="cheville_gauche" class="form-check-input inputForm" type="checkbox" value=1 id="chevilleG">
-                    </div>
-                    <div class="col-2">
-                        <label for="chevilleG" class="textForm">G</label>
-                    </div>
-                    <div class="col-1">
-                        <input name="cheville_droite" class="form-check-input inputForm" type="checkbox" value=1 id="chevilleD">
-                    </div>
-                    <div class="col-1">
-                        <label for="chevilleD" class="textForm">D</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mt mb-2 text-center">
-                    <h3 class="titleForm">Description de la blessure</h3>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="brulure" class="form-check-input inputForm" type="checkbox" value=1 id="brulure">
-                    </div>
-                    <div class="col-10">
-                        <label for="brulure" class="textForm">Brûlure</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="engelure" class="form-check-input inputForm" type="checkbox" value=1 id="engelure">
-                    </div>
-                    <div class="col-10">
-                        <label for="engelure" class="textForm">Engelure</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="commotion_cerebrale" class="form-check-input inputForm" type="checkbox" value=1 id="commotion">
-                    </div>
-                    <div class="col-10">
-                        <label for="commotion" class="textForm">Commotion cérébrale</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="corps_etranger" class="form-check-input inputForm" type="checkbox" value=1 id="corpsEtranger">
-                    </div>
-                    <div class="col-10">
-                        <label for="corpsEtranger" class="textForm">Corps étranger</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="coupure" class="form-check-input inputForm" type="checkbox" value=1 id="coupure">
-                    </div>
-                    <div class="col-10">
-                        <label for="coupure" class="textForm">Coupure</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="laceration" class="form-check-input inputForm" type="checkbox" value=1 id="laceration">
-                    </div>
-                    <div class="col-10">
-                        <label for="laceration" class="textForm">Lacération</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="dechirure" class="form-check-input inputForm" type="checkbox" value=1 id="dechirure">
-                    </div>
-                    <div class="col-10">
-                        <label for="dechirure" class="textForm">Déchirure</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="douleur_dos" class="form-check-input inputForm" type="checkbox" value=1 id="douleurDos">
-                    </div>
-                    <div class="col-10">
-                        <label for="douleurDos" class="textForm">Douleur au dos</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="egratignure" class="form-check-input inputForm" type="checkbox" value=1 id="egratignure">
-                    </div>
-                    <div class="col-10">
-                        <label for="egratignure" class="textForm">Égratignure</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="eraflure" class="form-check-input inputForm" type="checkbox" value=1 id="eraflure">
-                    </div>
-                    <div class="col-10">
-                        <label for="eraflure" class="textForm">Éraflure</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="piqure" class="form-check-input inputForm" type="checkbox" value=1 id="piqure">
-                    </div>
-                    <div class="col-10">
-                        <label for="piqure" class="textForm">Piqûre</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="echarde" class="form-check-input inputForm" type="checkbox" value=1 id="echarde">
-                    </div>
-                    <div class="col-10">
-                        <label for="echarde" class="textForm">Écharde</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="entorse" class="form-check-input inputForm" type="checkbox" value=1 id="entorse">
-                    </div>
-                    <div class="col-10">
-                        <label for="entorse" class="textForm">Entorse</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="elongation" class="form-check-input inputForm" type="checkbox" value=1 id="elongation">
-                    </div>
-                    <div class="col-10">
-                        <label for="elongation" class="textForm">Élongation</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="contusion" class="form-check-input inputForm" type="checkbox" value=1 id="contusion">
-                    </div>
-                    <div class="col-10">
-                        <label for="contusion" class="textForm">Contusion</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="foulure" class="form-check-input inputForm" type="checkbox" value=1 id="foulure">
-                    </div>
-                    <div class="col-10">
-                        <label for="foulure" class="textForm">Foulure</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="luxation" class="form-check-input inputForm" type="checkbox" value=1 id="luxation">
-                    </div>
-                    <div class="col-10">
-                        <label for="luxation" class="textForm">Luxation</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="fracture" class="form-check-input inputForm" type="checkbox" value=1 id="fracture">
-                    </div>
-                    <div class="col-10">
-                        <label for="fracture" class="textForm">Fracture</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="amputation" class="form-check-input inputForm" type="checkbox" value=1 id="amputation">
-                    </div>                    <div class="col-10">
-                        <label for="amputation" class="textForm">Amputation</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="irritation" class="form-check-input inputForm" type="checkbox" value=1 id="irritation">
-                    </div>
-                    <div class="col-10">
-                        <label for="irritation" class="textForm">Irritation</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-2">
-                    <div class="col-2">
-                        <input name="infection" class="form-check-input inputForm" type="checkbox" value=1 id="infection">
-                    </div>
-                    <div class="col-10">
-                        <label for="infection" class="textForm">Infection</label>
-                    </div>
-                </div>
-
-                <div class="row g-0 mb-3">
-                    <div class="col-2">
-                        <input name="inhalation" class="form-check-input inputForm" type="checkbox" value=1 id="inhalation">
-                    </div>
-                    <div class="col-10">
-                        <label for="inhalation" class="textForm">Inhalation</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mt mb-2 text-center">
-                    <h3 class="titleForm">Avez-vous subis de la violence</h3>
-                </div>
-
-                <div class="row g-0 mb-3">
-                    <div class="col-2">
-                        <input name="violence_physique" class="form-check-input inputForm" type="checkbox" value=1 id="physique">
-                    </div>
-                    <div class="col-10 mb-2">
-                        <label for="physique" class="textForm">Physique</label>
-                    </div>
-                    <div class="col-2">
-                        <input name="violence_verbale" class="form-check-input inputForm" type="checkbox" value=1 id="verbale">
-                    </div>
-                    <div class="col-10">
-                        <label for="verbale" class="textForm">Verbale</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mb-2 mt text-center">
-                    <h3 class="titleForm">Décriver la tâche effectuée et comment s'est produit la blessure</h3>
-                </div>
-
-                <div class="row g-0 mb-3">
-                    <textarea name="description" class="resize inputForm" aria-label="With textarea" id="tache"></textarea>
-                </div>
-            </div>
-
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mb-3 mt">
-                    <header class="textForm" for="premierSoin">Premier soins</header>
-                    <input name="premiers_soins" class=" inputForm mb-2" type="text" placeholder="Nom" id="premierSoin">
-                    <header class="textForm" for="secouriste">Secouriste</header>
-                    <input name="nom_secouriste" class=" inputForm" type="text" placeholder="Nom" id="secouriste">
-                </div>
-            </div>
-
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mb-2 mt">
-                    <div class="col-2">
-                        <input name="accident_sans_absence" class="form-check-input inputForm" type="checkbox" value=1 id="aucuneAbsence" style="vertical-align:-webkit-baseline-middle;">
-                    </div>
-                    <div class="col-10">
-                        <label for="aucuneAbsence" class="textForm">Accident ne nécessitant aucune absence</label>
-                    </div>
-                </div>
-                <div class="row g-0 mb-3">
-                    <div class="col-2">
-                        <input name="accident_avec_consultation_medicale" class="form-check-input inputForm" type="checkbox" value=1 id="consultation" style="vertical-align:-webkit-baseline-middle;">
-                    </div>
-                    <div class="col-10">
-                        <label for="consultation" class="textForm">Accident nécessitant une consultation médicale</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-7"></div>
-                <div class="col-5">
-                    <button type="submit" class="btn btn-outline-light btn-lg">Envoyer</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+</div>
     
 @endsection
