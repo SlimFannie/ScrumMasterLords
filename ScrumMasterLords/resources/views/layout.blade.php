@@ -23,7 +23,7 @@
             <div class="col-8 g-0 d-flex align-items-center justify-content-center">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Remplir un formulaire
+                        <h3 class="d-inline">Remplir un formulaire</h3>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('formulaires.accident', Session::get('username')) }}">Accident de travail</a></li>
@@ -32,12 +32,13 @@
                         <li><a class="dropdown-item" href="{{ route('formulaires.atelier', Session::get('username')) }}">Atelier mécanique</a></li>
                         <li><a class="dropdown-item" href="{{ route('formulaires.audit', Session::get('username')) }}">Audit SST</a></li>
                         @endif
+                        <li><a class="dropdown-item" href="{{ route('procedures.index', Session::get('username')) }}">Procédures de travail</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-2 g-0 d-flex justify-content-end">
-                <img src="" class="avatarNav">
-                <a href="{{ route('usagers.logout') }}"><i class="fa-solid fa-power-off fa-lg"></i></a>
+                <img class="avatarNav">
+                <a href="{{ route('usagers.logout') }}" class="my-auto"><i class="fa-solid fa-power-off fa-lg"></i></a>
             </div>
         </div>
         <div class="row g-0">

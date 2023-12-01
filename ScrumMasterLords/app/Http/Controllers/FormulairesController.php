@@ -21,9 +21,9 @@ class FormulairesController extends Controller
     public function index() {
         $usager = Usager::find(Session::get('user.id'));
         $formulaires = $usager->formulaires;
+        $notifications = self::getNotif();
 
-
-        return View('welcome', ['formulaires'=>$formulaires]);
+        return View('welcome', ['formulaires'=>$formulaires, 'notifications'=>$notifications]);
     }
 
     // Accident de travail
@@ -52,6 +52,8 @@ class FormulairesController extends Controller
 
     }
 
+    // Danger
+
     public function danger() {
         return view('formulaires.formDanger', ['username'=>Session::get('username'), 'usager'=>Session::get('user')]);
     }
@@ -68,11 +70,22 @@ class FormulairesController extends Controller
         ]);
 
         if($validator->fails()) {
-            return redirect()->route('formulaires.formDanger', ['username'=>Session::get('username')])->withErrors($validator)->withInput();
+            return redirect()->route('formulaires.danger', ['username'=>Session::get('username')])->withErrors($validator)->withInput();
         } else {
             return redirect()->route('dashboard', ['username'=>Session::get('username')]);
         }
 
+    }
+
+    // Audit
+
+    // Atelier
+
+    // Général
+
+    public function getNotif() {
+        $usager = Usager::find(Session::get('user.id'));
+        $formulaires = $usager->formulaires->contains('superieur', true);
     }
 
 }
