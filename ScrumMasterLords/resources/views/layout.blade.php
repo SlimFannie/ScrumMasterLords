@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid g-0 h-100">
+<div class="container-fluid g-0">
         <div class="row p-lg-3 bg-light g-0 sticky-top blackText h-15">
             <div class="col-lg-2 col-4 g-0 ps-3 p-lg-0 d-flex align-items-center">
                 <a class="d-inline" href="{{ route('dashboard', Session::get('username')) }}">
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="row g-0 h-85 bgForm3R">
+        <div class="row g-0 bgForm3R">
             <div class="col-12 g-0">
                 @yield('contenu')
             </div>

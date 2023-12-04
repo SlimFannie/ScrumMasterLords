@@ -6,11 +6,11 @@ html {
 
 body {
     height: 100%;
-}
 
-.bgForm3R {
     background-image: linear-gradient(rgba(0, 118, 213, .5), rgba(0, 118, 213, .5)), url('../img/bgFrida.jpg');
+    
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
 }

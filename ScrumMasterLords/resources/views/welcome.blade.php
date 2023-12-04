@@ -3,7 +3,7 @@
 @section('titre', 'ScrumMasterLords')
 
 @section('contenu')
-        <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0">
+        <div class="container-fluid d-flex align-items-center justify-content-center g-0">
             <div class="row g-0">
                 <div class="col-12">
                     <h1 class="pb-3">Vos formulaires en attente.</h1>

@@ -85,6 +85,14 @@ class FormulairesController extends Controller
 
     // Audit
 
+    public function audit() {
+        return view('formulaires.formAuditSST', ['username'=>Session::get('username'), 'usager'=>Session::get('user')]);
+    }
+
+    public function storeAudit() {
+        
+    }
+
     // Atelier
 
 }

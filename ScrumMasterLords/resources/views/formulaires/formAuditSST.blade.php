@@ -3,7 +3,7 @@
 @section('contenu')
 
     <div class="container-fluid">
-        <div class="container-fluid g-0 sign mb-3 marginNav">
+        <div class="container-fluid g-0 sign mb-3">
             <div class="mt-3 bigTitleForm">
                 <div class="row g-0">
                     <div class="col-10 offset-col-3 text-center m-4 g-0">
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <form method="post" action="{{route('formulaires.auditStore')}}">
+        <form method="post" action="{{route('store.audit', Session::get('username'))}}">
             <div class="container-fluid zoneForm">
                 <div class="row g-0 mt">
                     <header class="textForm" for="nomEmploye">nom de l'employé</header>
