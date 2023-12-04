@@ -3,11 +3,10 @@
 @section('titre', 'ScrumMasterLords')
 
 @section('contenu')
-    <div class="container-fluid h-100 g-0">
         <div class="container-fluid d-flex align-items-center justify-content-center h-100 g-0">
             <div class="row g-0">
                 <div class="col-12">
-                    <h1 class="pb-3">Vos formulaires en attente</h1>
+                    <h1 class="pb-3">Vos formulaires en attente.</h1>
                     @if ($formulaires->count())
                         @foreach ($formulaires as $formulaire)
                         <div class="card d-inline-flex">
@@ -23,7 +22,7 @@
                         </div>
                         @endforeach
                     @else
-                    <h4>Il n'y a aucun formulaire en attente de traitement.</h4>
+                    <h4>Vous n'avez aucun formulaire en attente de traitement.</h4>
                     @endif
                     @if (Session::get('user.superieur') == true)
                     <h1>Ces formulaires sont en attente de traitement.</h1>
@@ -48,5 +47,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

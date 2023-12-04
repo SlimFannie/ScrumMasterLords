@@ -51,8 +51,11 @@ class FormulairesController extends Controller
 
     }
 
-    public function showAccident(Formulaire $formulaire) {
-        return view('show.accident', compact('formulaire'));
+    public function showAccident(string $id): View
+    {
+        return view('show.Accident', [
+            'formulaire' => Formulaire::findOrFail($id)
+        ]);
     }
 
     // Danger
