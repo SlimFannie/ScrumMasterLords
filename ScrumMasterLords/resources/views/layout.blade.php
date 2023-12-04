@@ -15,15 +15,17 @@
 </head>
 <body>
 <div class="container-fluid g-0">
-        <div class="row p-lg-3 bg-light g-0">
+        <div class="row p-lg-3 bg-light g-0 sticky-top blackText">
             <div class="col-2 g-0 d-flex align-items-center">
-                <img src="{{ asset('img/logo_v3r_sans_texte.jpg') }}" class="logoNav me-2">
-                <h2 class="blackText my-auto">Form3R</h2>
+                <a class="d-inline-flex" href="{{ route('dashboard', Session::get('username')) }}">
+                    <img src="{{ asset('img/logo_v3r_sans_texte.jpg') }}" class="logoNav me-2">
+                    <h2 class="my-auto">Form3R</h2>
+                </a>
             </div>
-            <div class="col-8 g-0 d-flex align-items-center justify-content-center">
+            <div class="col-6 g-0 d-flex align-items-center justify-content-end">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <h3 class="d-inline">Remplir un formulaire</h3>
+                    <button class="btn noBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <h2 class="d-inline"><i class="fa-solid fa-file-pen"></i> <span class="line">Nouveau formulaire</span> <i class="fa-solid fa-chevron-down"></i></h2>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{ route('formulaires.accident', Session::get('username')) }}">Accident de travail</a></li>
@@ -32,26 +34,41 @@
                         <li><a class="dropdown-item" href="{{ route('formulaires.atelier', Session::get('username')) }}">Atelier mécanique</a></li>
                         <li><a class="dropdown-item" href="{{ route('formulaires.audit', Session::get('username')) }}">Audit SST</a></li>
                         @endif
-                        <li><a class="dropdown-item" href="{{ route('procedures.index', Session::get('username')) }}">Procédures de travail</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown ms-4">
+                    <button class="btn noBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <h2 class="d-inline"><i class="fa-solid fa-clipboard-list"></i> <span class="line">Procédure de travail</span> <i class="fa-solid fa-chevron-down"></i></h2>
+                    </button>
+                    <ul class="dropdown-menu">
+                        @foreach(Helper::getDepartement() as $departement)
+                            <li><a class="dropdown-item" href="#"><h5 class="mb-0">{{ $departement->nom }}</h5></a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
-            <div class="col-2 g-0 d-flex justify-content-end">
-                <div class="btn-group dropstart">
-                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="position-absolute top-0  translate-middle badge rounded-pill bg-danger">
-                            99
-                        <span class="visually-hidden">unread messages</span>
+            <div class="col-4 g-0 d-flex justify-content-end">
+                <h2 class="d-inline-flex my-auto">Bienvenue <span class="line">{{Session::get('user.prenom')}} {{Session::get('user.nom')}}</span></h2>
+                <div class="btn-group dropstart m-0">
+                    <button type="button" class="btn dropdown-toggle p-0" data-bs-toggle="dropdown" aria-expanded="false">
+                        @if (count(Helper::getNotif()))
+                        <span class="position-absolute translate-middle badge rounded-pill bg-danger">
+                            {{count(Helper::getNotif())}}
                         </span>
-                        <img src="" class="avatarNav">
+                        @endif
+                        <img class="avatarNav me-1">
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
-                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                        @if (count(Helper::getNotif()))
+                            @foreach (Helper::getNotif() as $notification)
+                            <li><a class="dropdown-item" href="#">Menu item</a></li>
+                            @endforeach
+                        @else
+                        <li><a class="dropdown-item">Rien ne nécéssite votre attention.</a></li>
+                        @endif
                     </ul>
                 </div>
-                <a href="{{ route('usagers.logout') }}"><i class="fa-solid fa-power-off fa-lg"></i></a>
+                <a href="{{ route('usagers.logout') }}" class="my-auto"><i class="fa-solid fa-power-off fa-lg"></i></a>
             </div>
         </div>
         <div class="row g-0">

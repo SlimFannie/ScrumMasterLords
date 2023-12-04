@@ -21,9 +21,8 @@ class FormulairesController extends Controller
     public function index() {
         $usager = Usager::find(Session::get('user.id'));
         $formulaires = $usager->formulaires;
-        $notifications = self::getNotif();
 
-        return View('welcome', ['formulaires'=>$formulaires, 'notifications'=>$notifications]);
+        return View('welcome', ['formulaires'=>$formulaires]);
     }
 
     // Accident de travail
@@ -50,6 +49,10 @@ class FormulairesController extends Controller
             return redirect()->route('dashboard', ['username'=>Session::get('username')]);
         }
 
+    }
+
+    public function showAccident(Formulaire $formulaire) {
+        return view('show.accident', compact('formulaire'));
     }
 
     // Danger
@@ -80,12 +83,5 @@ class FormulairesController extends Controller
     // Audit
 
     // Atelier
-
-    // Général
-
-    public function getNotif() {
-        $usager = Usager::find(Session::get('user.id'));
-        $formulaires = $usager->formulaires->contains('superieur', true);
-    }
 
 }

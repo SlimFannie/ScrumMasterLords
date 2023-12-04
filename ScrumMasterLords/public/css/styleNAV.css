@@ -35,24 +35,6 @@
     mask-size: 70px 70px;
 }
 
-.posBtnDropD {
-    position: absolute;
-    right: 1%;
-    bottom: 16%;
-}
-
-.colorBtnDropD {
-    background-color: rgb(229, 0, 77)!important;
-    color: white!important;
-}
-
-.colorBtnDropD:hover {
-    background-color: rgba(229, 0, 77, 0.1)!important;
-    color: rgb(229, 0, 77)!important;
-    border-width: 1px!important;
-    border-color:  rgb(229, 0, 77)!important;
-}
-
 a, .noBtn {
     color: #0B2341;
     background-color: transparent;
@@ -79,8 +61,6 @@ a:hover, a:focus, .noBtn:hover, .noBtn:focus {
 ul li {
     padding-left: 20px;
     padding-right: 20px;
-
-    font-size: 2rem;
 }
 
 .noBullet {

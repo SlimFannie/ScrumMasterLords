@@ -31,13 +31,13 @@
                             @csrf
                             <div>
                                 @if ($errors->any())
-                                <div class="alert alert-warning" role="alert">
-                                    <h5>{{$errors->first()}}</h5>
+                                <div class="alert alert-warning mx-auto w-75" role="alert">
+                                    <h5 class="bleuFonceText">{{$errors->first()}}</h5>
                                 </div>
                                 @endif
                             </div>
                             <div class="form-floating mx-auto inputWidth text-center">
-                                <input type="text" class="form-control inputWidth m-auto" name="matricule" id="matricule" placeholder="#">
+                                <input type="text" class="form-control inputWidth m-auto" name="matricule" id="matricule" placeholder="1000001">
                                 <label for="matricule" id="labelMatricule" class="px-4">Votre numéro d'employé</label>
                             </div>
                             <div class="form-floating mx-auto input-group text-center inputWidth">
@@ -48,8 +48,10 @@
                                     </span>
                                 <label for="motdepasse" id="labelPassword" class="px-4">Votre mot de passe</label>
                             </div>
-                            <h5 class="alerteMDP"><i class="fa-solid fa-user-shield"></i> Les administrateurs de l'application ne vous demanderons <span class="dramaLine">JAMAIS</span> votre mot de passe!<h5>
-                            <button class="btn hover" id="submitConnexion"><h3>Connexion <i class="fa-solid fa-door-closed hoverHide"></i><i class="fa-solid fa-door-open hoverShow"></i></h3></button>
+                            <div class="py-lg-5 px-2 px-lg-0 p-stupid-0">
+                                <h5 class="alerteMDP mb-1"><i class="fa-solid fa-user-shield"></i> Les administrateurs de l'application ne vous demanderons <span class="dramaLine">JAMAIS</span> votre mot de passe!<h5>
+                                <button class="btn btn-co hover mt-3 mt-lg-5 py-lg-3 m-0" id="submitConnexion"><h3>Connexion <i class="fa-solid fa-door-closed hoverHide"></i><i class="fa-solid fa-door-open hoverShow"></i></h3></button>
+                            </div>
                         </form>
                     </div>
                 </div>

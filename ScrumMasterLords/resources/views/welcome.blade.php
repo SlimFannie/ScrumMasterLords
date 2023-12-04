@@ -15,7 +15,7 @@
                                 <h5 class="card-title m-0">{{ $formulaire->titre }}</h5>
                             </div>
                             <div class="card-body">
-                                <a href="">Voir le formulaire.</a>  
+                                <a href="{{ route('show.accident', [$formId = $formulaire->id]) }}">Voir le formulaire.</a>  
                             </div>
                             <div class="card-footer text-muted">
                                 {{ $formulaire->created_at->format('d/m/Y') }}

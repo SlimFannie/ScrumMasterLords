@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5
 {
     color: #FFFFFF;
     font-weight: bolder;
-    margin: 0px;
+    margin: 0px!important;
 }
 
 label {
@@ -82,10 +82,6 @@ input {
     width: 50px;
 }
 
-.alerteMDP {
-  margin-bottom: 35px!important;
-}
-
 .alerteMDP:hover {
     background: rgba(255, 242, 168,0.7);
     color: #0B2341;
@@ -96,8 +92,13 @@ input {
 }
 
 .btn-co {
-    background-color: #0B2341; 
+    background-color: #0B2341;
     color: #0076D5;
+}
+
+.btn-co:hover, .btn-co:focus {
+  border: 1px solid rgba(255, 242, 168,0.7)!important;
+  box-shadow: 0px 0px 2px 5px rgba(255, 242, 168,0.7)!important;
 }
 
 .accueilText {
@@ -115,7 +116,6 @@ input {
     height: 100px;
     border-radius: 150px;	
     box-shadow: 10px 10px rgba(0,0,0,0.2);
-    animation: move 3s infinite;
   }
 
  .logoAccueil {
@@ -148,15 +148,6 @@ input {
     right: 40px;
   }
   
-  @keyframes move {
-    0% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(-40px);
-    }
-  }
-
 .cloudDiv {
     position: absolute;
     left:50%;
@@ -290,7 +281,11 @@ video {
   }
 }
 
-@media(max-height: 800px) and (min-width:1000px) {
+@media(max-height: 600px) and (min-width:1000px) {
+  .p-stupid-0 {
+    padding: 0px!important;
+  }
+
   .alerteMDP {
     font-size: 1rem!important;
   }
