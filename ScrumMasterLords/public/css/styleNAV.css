@@ -101,8 +101,39 @@ i {
         font-size: 1.5rem;
     }
 
+ }
+
+ @media (max-width: 1400px) { 
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    a {
+        font-size: 1.5rem;
+    }
+
     .dropdown-menu {
-        width: 100vw!important;
+        width: max-content;
+    }
+
+    .dropdown-item {
+        padding-top: 20px!important;
+        padding-bottom: 20px!important;
+    }
+    
+    .dropdown-center:hover > .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 1.5px;
+        left: -148px;
+        width: max-content;
+    }
+
+    .scrollY {
+        height: 100%;
+        overflow-y: auto;
     }
 
  }

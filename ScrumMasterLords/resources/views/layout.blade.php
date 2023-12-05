@@ -15,14 +15,14 @@
 </head>
 <body>
 <div class="container-fluid g-0">
-        <div class="row p-lg-3 bg-light g-0 sticky-top blackText h-15">
-            <div class="col-lg-2 col-4 g-0 ps-3 p-lg-0 d-flex align-items-center">
+        <div class="row p-xxl-3 p-xl-2 bg-light g-0 sticky-top blackText h-15">
+            <div class="col-xxl-2 col-4 g-0 ps-3 p-xxl-0 d-flex align-items-center">
                 <a class="d-inline" href="{{ route('dashboard', Session::get('username')) }}">
                     <div class ="row g-0">
                         <div class="col-2 g-0">
                         <img src="{{ asset('img/logo_v3r_sans_texte.jpg') }}" class="logoNav my-auto"> 
                         </div>
-                        <div class="col-8 g-0 ms-4 d-none d-lg-block">
+                        <div class="col-8 g-0 ms-4 d-none d-xl-block">
                             <h5 class="mb-0">Direction des ressources humaines</h5>
                             <p class="mb-0"><span class="line">Téléphone:</span> (819) 372-4603</p>
                             <p class="mb-0"><span class="line">Télécopie:</span> (819) 374-2016</p>
@@ -30,20 +30,41 @@
                     </div>  
                 </a>
             </div>
-            <div class="col-lg-6 col-4 g-0 d-flex align-items-center justify-content-lg-end justify-content-center">
-                <div class="dropdown d-lg-none">
-                    <button class="d-lg-none noBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="col-xxl-6 col-4 g-0 d-flex align-items-center justify-content-xxl-end justify-content-center">
+                <div class="dropdown-center d-xxl-none">
+                    <button class="d-xxl-none noBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-bars"></i>
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><h3 class="mt-4"><i class="fa-solid fa-arrow-right"></i> <span class="line">Nouveau formulaire</span></h4></li>
-                        <li><h3 class="my-5"><i class="fa-solid fa-arrow-right"></i> <span class="line">Procédures de travail</span></h4></li>
+                    <ul class="dropdown-menu vw-50">
                         <li>
-                            <h3 class="mb-4"><i class="fa-solid fa-arrow-right"></i> <a href="{{ route('dashboard', Session::get('username')) }}" class="noBorder p-0 line">Mes formulaires</a></h4>
+                            <button class="d-xxl-none noBtn mt-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <h3 class="my-auto py-3"><i class="fa-solid fa-arrow-right"></i> <span class="line">Nouveau formulaire</span></h3>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ route('formulaires.accident', Session::get('username')) }}">Accident de travail</a></li>
+                                <li><a class="dropdown-item" href="{{ route('formulaires.danger', Session::get('username')) }}">Situation dangereuse</a></li>
+                                @if (Session::get('user.superieur') == true)
+                                <li><a class="dropdown-item" href="{{ route('formulaires.atelier', Session::get('username')) }}">Atelier mécanique</a></li>
+                                <li><a class="dropdown-item" href="{{ route('formulaires.audit', Session::get('username')) }}">Audit SST</a></li>
+                                @endif
+                            </ul>
+                        </li>
+                        <li>
+                            <button class="d-xxl-none noBtn my-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <h3 class="my-auto py-3"><i class="fa-solid fa-arrow-right"></i> <span class="line">Procédures de travail</span></h3>
+                            </button>
+                            <ul class="dropdown-menu scrollY">
+                                @foreach(Helper::getDepartement() as $departement)
+                                    <li><a class="dropdown-item" href="#"><h5 class="mb-0">{{ $departement->nom }}</h5></a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li>
+                            <h3 class="mb-4"><a href="{{ route('dashboard', Session::get('username')) }}" class="noBorder py-3"><i class="fa-solid fa-arrow-right"></i> <span class="line">Mes formulaires</span></a></h4>
                         </li>
                     </ul>
                 </div>
-                <div class="dropdown d-none d-lg-block">
+                <div class="dropdown d-none d-xxl-block">
                     <button class="btn noBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <h2 class="d-inline"><i class="fa-solid fa-file-pen"></i> <span class="line">Nouveau formulaire</span> <i class="fa-solid fa-chevron-down"></i></h2>
                     </button>
@@ -56,7 +77,7 @@
                         @endif
                     </ul>
                 </div>
-                <div class="dropdown ms-4 d-none d-lg-block">
+                <div class="dropdown ms-4 d-none d-xxl-block">
                     <button class="btn noBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <h2 class="d-inline"><i class="fa-solid fa-clipboard-list"></i> <span class="line">Procédure de travail</span> <i class="fa-solid fa-chevron-down"></i></h2>
                     </button>
@@ -67,13 +88,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-4 g-0 p-lg-0 pe-3 d-flex justify-content-end">
-                <a href="{{ route('usagers.logout') }}" class="my-auto me-2"><i class="fa-solid fa-power-off fa-lg"></i></a>
-                <h2 class="d-none d-lg-inline-flex my-auto me-2">Bienvenue <span class="line ms-1">{{Session::get('user.prenom')}} {{Session::get('user.nom')}}</span></h2>
+            <div class="col-4 g-0 p-xxl-0 pe-3 d-flex justify-content-end">
+                <a href="{{ route('usagers.logout') }}" class="my-auto me-2"><i class="fa-solid fa-power-off fa-xxl"></i></a>
+                <h2 class="d-none d-xxl-inline-flex my-auto me-2">Bienvenue <span class="line ms-1">{{Session::get('user.prenom')}} {{Session::get('user.nom')}}</span></h2>
                 <div class="btn-group">
                     <button type="button" class="btn p-0" data-bs-toggle="dropdown" aria-expanded="false">
                         @if (count(Helper::getNotif()))
-                        <span class="position-absolute m-lg-0 mt-3 badge rounded-pill bg-danger">
+                        <span class="position-absolute m-xxl-0 mt-3 badge rounded-pill bg-danger">
                             {{count(Helper::getNotif())}}
                         </span>
                         @endif
