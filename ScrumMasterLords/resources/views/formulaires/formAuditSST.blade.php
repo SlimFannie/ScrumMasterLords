@@ -6,8 +6,8 @@
         <div class="container-fluid g-0 sign mb-3">
             <div class="mt-3 bigTitleForm">
                 <div class="row g-0">
-                    <div class="col-10 offset-col-3 text-center m-4 g-0">
-                        <h3>Grille audit SST - formulaire simplifié<h3>
+ mx-auto                    <div class="col-10 offset-col-3 text-center m-4 g-0">
+                        <h3 style="color: white;">Grille audit SST - formulaire simplifié<h3>
                     </div>
                 </div>
             </div>

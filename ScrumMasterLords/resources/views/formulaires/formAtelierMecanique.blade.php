@@ -6,8 +6,8 @@
         <div class="container-fluid g-0 sign marginNav">
             <div class="mt-3 bigTitleForm mb-3">
                 <div class="row g-0">
-                    <div class="col-10 offset-col-3 text-center m-4 g-0">
-                        <h3 style="color; rgb(11, 35, 65)">Atelier mécanique - Rapport d'accident (véhicule)<h3>
+                    <div class="col-10 offset-col-3 text-center m-4 g-0 mx-auto">
+                        <h3 style="color: white;">Atelier mécanique - Rapport d'accident (véhicule)<h3>
                     </div>
                 </div>
             </div>
