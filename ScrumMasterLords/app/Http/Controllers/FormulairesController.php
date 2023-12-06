@@ -20,8 +20,8 @@ class FormulairesController extends Controller
     
     public function index() {
         $usager = Usager::find(Session::get('user.id'));
-        $formulaires = DB::table('formulaire_usager')->where('usager_id', $usager->id)->get();
-        $historiques = $usager->formulaires()->wherePivot('lu', true)->get();
+        $formulaires = DB::table('formulaire_usager')->where(['usager_id', $usager->id],['lu', false])->get();
+        $historiques = DB::table('formulaire_usager')->where(['usager_id', $usager->id],['lu', true])->get();
 
         Log::debug($usager);
         Log::debug($formulaires);
