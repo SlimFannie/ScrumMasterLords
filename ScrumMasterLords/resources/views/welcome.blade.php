@@ -45,7 +45,7 @@
                                         <a href="{{ route('show.form', ['id'=>$formulaire->id]) }}" class="my-auto" style="font-size:20px;"><i class="fa-solid fa-magnifying-glass"></i> Voir le formulaire</a>
                                     </div>
                                     <div class="card-footer text-muted">
-                                        {{ $formulaire->created_at->format('d/m/Y') }}
+                                        {{ $formulaire->created_at }}
                                     </div>
                                 </div>
                             @endforeach

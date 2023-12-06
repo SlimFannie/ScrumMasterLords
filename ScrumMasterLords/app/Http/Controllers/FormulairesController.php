@@ -20,18 +20,14 @@ class FormulairesController extends Controller
     
     public function index() {
         $usager = Usager::find(Session::get('user.id'));
-        $formulaires = DB::table('formulaire_usager')->where(['usager_id', $usager->id],['lu', false])->get();
-        $historiques = DB::table('formulaire_usager')->where(['usager_id', $usager->id],['lu', true])->get();
-
-        Log::debug($usager);
-        Log::debug($formulaires);
-        Log::debug($historiques);
+        $formulaires = DB::table('formulaire_usager')->where([['usager_id', $usager->id],['lu', false]])->get();
+        $historiques = DB::table('formulaire_usager')->where([['usager_id', $usager->id],['lu', true]])->get();
 
         return View('welcome', ['formulaires'=>$formulaires, 'historiques'=>$historiques, 'usager'=>$usager]);
     }
 
-    public function show(Request $id) {
-        $formulaire = DB::table('formulaire_usager')->find($id);
+    public function show(int $id) {
+        $formulaire = DB::table('formulaire_usager')->where('id', '=', $id)->get();
 
         return View('showForm', ['formulaire'=>$formulaire]);
     }
@@ -101,7 +97,8 @@ class FormulairesController extends Controller
                 'reponse7' => $request->endroit,
                 'reponse8' => $request->dTemoin,
                 'reponse9' => $request->dEvent,
-                'reponse10' => $request->dCorrection
+                'reponse10' => $request->dCorrection,
+                'created_at' => now()
             ]);
             return redirect()->route('dashboard', ['username'=>Session::get('username')]);
         }
