@@ -20,9 +20,10 @@ class FormulairesController extends Controller
     
     public function index() {
         $usager = Usager::find(Session::get('user.id'));
-        $formulaires = $usager->formulaires;
+        $formulaires = $usager->formulaires()->where('lu', false)->get();
+        $historiques = $usager->formulaires()->where('lu', true)->get();
 
-        return View('welcome', ['formulaires'=>$formulaires]);
+        return View('welcome', ['formulaires'=>$formulaires, 'historiques'=>$historiques]);
     }
 
     // Accident de travail

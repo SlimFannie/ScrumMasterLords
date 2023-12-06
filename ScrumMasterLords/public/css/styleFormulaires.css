@@ -42,16 +42,6 @@ input[type=text]:focus
     padding: 0;
 }
 
-.zoneForm
-{
-    border-radius: 20px;
-    border-style: solid;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: rgb(11, 35, 65);
-    border-color: rgb(0, 118, 213);
-};
-
 .Form
 {
     margin-bottom: 1rem;
@@ -76,3 +66,13 @@ h1, h2, h3, h4, h5
 {
     color: rgb(11, 35, 65);
 }
+
+.zoneForm
+{
+    border-radius: 20px;
+    border-style: solid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(11, 35, 65);
+    border-color: rgb(0, 118, 213);
+};

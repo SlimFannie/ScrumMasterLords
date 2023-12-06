@@ -94,3 +94,31 @@ input[type=radio]
     border-radius: 20px 20px;
     border-width: 7px;
 }
+
+.zoneTitre
+{
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #0B2341;
+
+    width: 75%;
+    margin: auto;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    background-color: rgba(255,255,255, .75);
+    
+}
+
+.zoneAttention {
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #0B2341;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    background: rgba(255, 242, 168,0.8);
+    
+}

@@ -90,11 +90,11 @@
             </div>
             <div class="col-4 g-0 p-xxl-0 pe-3 d-flex justify-content-end">
                 <a href="{{ route('usagers.logout') }}" class="my-auto me-2"><i class="fa-solid fa-power-off fa-xxl"></i></a>
-                <h2 class="d-none d-xxl-inline-flex my-auto me-2">Bienvenue <span class="line ms-1">{{Session::get('user.prenom')}} {{Session::get('user.nom')}}</span></h2>
+                <h2 class="d-none d-xl-inline-flex my-auto me-2">Bienvenue <span class="line ms-1">{{Session::get('user.prenom')}} {{Session::get('user.nom')}}</span></h2>
                 <div class="btn-group">
                     <button type="button" class="btn p-0" data-bs-toggle="dropdown" aria-expanded="false">
                         @if (count(Helper::getNotif()))
-                        <span class="position-absolute m-xxl-0 mt-3 badge rounded-pill bg-danger">
+                        <span class="position-absolute badge rounded-pill bg-danger">
                             {{count(Helper::getNotif())}}
                         </span>
                         @endif
