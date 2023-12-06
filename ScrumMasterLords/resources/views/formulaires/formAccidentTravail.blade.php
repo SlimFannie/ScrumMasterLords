@@ -6,8 +6,8 @@
     <div class="container-fluid g-0 mb-2 sign mb-3">
         <div class="mt-3 bigTitleForm">
             <div class="row g-0 mb-2">
-                <div class="col-10 offset-col-3 text-center m-4 g-0 mb-2">
-                    <h3>Déclaration d'un accident de travail<h3>
+                <div class="col-10 text-center m-4 g-0 mb-2">
+                    <h3 style="color: white;">Déclaration d'un accident de travail<h3>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
             </div>
 
             <div class="row g-0 mb-3">
-                <p class="textForm">Cochez, s'il y a lieu, le côté droit ou le côté gauche.</p>
+                <p class="textForm text-center">Cochez, s'il y a lieu, le côté droit ou le côté gauche.</p>
 
                 <div class="input-group">
                     <span class="input-group-text row g-0">
@@ -202,79 +202,103 @@
         </div>
     </div>
 
-            <div class="container-fluid zoneForm">
-                <div class="row g-0 mb-3">
-                    <h4 class="titleForm text-center">Description de la blessure (à cocher)</h4>
+    <div class="container-fluid zoneForm">
+        <div class="row g-0 mb-3">
+            <h4 class="titleForm text-center">Description de la blessure (à cocher)</h4>
+        </div>
+        <div class="input-group" name="descriptionBlessure mb-3">
+            <span class="input-group-text row g-0 mb-3" style="text-align: left;">
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="brulure" name="brulure" value="1">
+                    <label class="form-check-label" for="brulure">Brûlure, engelure</label>
                 </div>
-                <div class="input-group" name="descriptionBlessure mb-3">
-                    <span class="input-group-text row g-0">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="brulure" name="brulure" value="1">
-                            <label class="form-check-label" for="brulure">Brûlure, engelure</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="commotion" name="commotion" value="1">
-                            <label class="form-check-label" for="commotion">Commotion cérébrale</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="corpsEtranger" name="corpsEtranger" value="1">
-                            <label class="form-check-label" for="corpsEtranger">Corps étranger</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="coupure" name="coupure" value="1">
-                            <label class="form-check-label" for="coupure">Coupure, lacération, déchirure</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="dos" name="dos" value="1">
-                            <label class="form-check-label" for="dos">Douleur au dos</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="egratignure" name="egratignure" value="1">
-                            <label class="form-check-label" for="egratignure">Égratignure, élongation, contusion, foulure, luxation</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="fracture" name="fracture" value="1">
-                            <label class="form-check-label" for="fracture">Fracture, amputation</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="irritation" name="irritation" value="1">
-                            <label class="form-check-label" for="irritation">Irritation, infection</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="inhalation" name="inhalation" value="1">
-                            <label class="form-check-label" for="inhalation">Inhalation</label>
-                        </div>
-                    </span>
-                    <div class="form-check input-group">
-                        <input class="form-check-input" type="checkbox" id="autre" name="autre" value="1">
-                        <label class="form-check-label" for="autre">Autre</label>
-                        <input class="form-control" type="text" id="autreText" name="autreText" placeholder="Décrivez">
-                    </div>
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="commotion" name="commotion" value="1">
+                    <label class="form-check-label" for="commotion">Commotion cérébrale</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="corpsEtranger" name="corpsEtranger" value="1">
+                    <label class="form-check-label" for="corpsEtranger">Corps étranger</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="coupure" name="coupure" value="1">
+                    <label class="form-check-label" for="coupure">Coupure, lacération, déchirure</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="dos" name="dos" value="1">
+                    <label class="form-check-label" for="dos">Douleur au dos</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="egratignure" name="egratignure" value="1">
+                    <label class="form-check-label" for="egratignure">Égratignure, élongation, contusion, foulure, luxation</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="fracture" name="fracture" value="1">
+                    <label class="form-check-label" for="fracture">Fracture, amputation</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="irritation" name="irritation" value="1">
+                    <label class="form-check-label" for="irritation">Irritation, infection</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input inputForm" type="checkbox" id="inhalation" name="inhalation" value="1">
+                    <label class="form-check-label" for="inhalation">Inhalation</label>
+                </div>
+            </span>
+            <div class="form-check input-group mb-3">
+                <div class="container-fluid">
+                    <input class="form-check-input inputForm" type="checkbox" id="autre" name="autre" value="1">
+                    <label class="form-check-label textForm" for="autre">Autre</label>
+                </div>
+                <div class="container-fluid">
+                    <input class="form-control inputForm" type="text" id="autreText" name="autreText" placeholder="Décrivez">
                 </div>
             </div>
+        </div>
+    </div>
 
-        <h4>Violence (à cocher)</h4>
-            <div class="form-check input-group" name="violence">
-                <input class="form-check-input" type="checkbox" id="physique" name="physique" value="1">
-                <label class="form-check-label" for="physique">Physique</label>
-                <input class="form-check-input" type="checkbox" id="verbale" name="verbale" value="1">
-                <label class="form-check-label" for="verbale">Verbale</label>
+    <div class="container-fluid zoneForm">
+        <div class="row g-0 mb-3">
+            <h4 class="titleForm text-center">Violence (à cocher)</h4>
+        </div>
+        <div class="form-check input-group mb-3 row" name="violence">
+            <div class="container-fluid">
+                <input class="form-check-input inputForm" type="checkbox" id="physique" name="physique" value="1">
+                <label class="form-check-label textForm" for="physique">Physique</label>
             </div>
-        <h4>Décrivez la tâcher effectuée et comment s'est produit la blessure.</h4>
-        <input class="form-control" type="textarea" id="histoire" name="histoire">
-        <div class="form-check input-group">
-            <input class="form-check-input" type="checkbox" id="secouriste" name="secouriste" value="1">
-            <label class="form-check-label" for="autre">Secouriste</label>
-            <input class="form-control" type="text" id="secouristeText" name="secouristeText" placeholder="Nom">
+            <div class="container-fluid">
+                <input class="form-check-input inputForm" type="checkbox" id="verbale" name="verbale" value="1">
+                <label class="form-check-label textForm" for="verbale">Verbale</label>
+            </div>
         </div>
-        <h4>Détails sur la durée de l'absence</h4>
-        <div class="form-check input-group" name="absence">
-            <input class="form-check-input" type="checkbox" id="aucune" name="aucune" value="1">
-            <label class="form-check-label" for="aucune">Accident de nécessitant aucune absence</label>
-            <input class="form-check-input" type="checkbox" id="consultation" name="consultation" value="1">
-            <label class="form-check-label" for="consultation">Accident nécessitant une consultation médicale</label>
+    </div>
+
+    <div class="container-fluid zoneForm">
+        <div class="row g-0 mb-3">
+            <h4 class="titleForm text-center">Décrivez la tâcher effectuée et comment s'est produit la blessure.</h4>
         </div>
-        <h4>Qui était votre supérieur au moment de l'accident?</h4>
+        <input class="form-control inputForm" type="textarea" id="histoire" name="histoire">
+        <div class="form-check input-group mb-3">
+            <input class="form-check-input inputForm" type="checkbox" id="secouriste" name="secouriste" value="1">
+            <label class="form-check-label textForm" for="autre">Secouriste</label>
+            <input class="form-control inputForm" type="text" id="secouristeText" name="secouristeText" placeholder="Nom">
+        </div>
+    </div>
+
+    <div class="container-fluid zoneForm">
+        <div class="row g-0 mb-3">
+            <h4 class="titleForm text-center">Détails sur la durée de l'absence</h4>
+        </div>
+        <div class="form-check input-group mb-3" name="absence">
+            <input class="form-check-input inputForm" type="checkbox" id="aucune" name="aucune" value="1">
+            <label class="form-check-label textForm" for="aucune">Accident de nécessitant aucune absence</label>
+            <input class="form-check-input inputForm" type="checkbox" id="consultation" name="consultation" value="1">
+            <label class="form-check-label textForm" for="consultation">Accident nécessitant une consultation médicale</label>
+        </div>
+    </div>
+
+
+        <h4 class="titleForm text-center">Qui était votre supérieur au moment de l'accident?</h4>
         <select class="form-select" name="superieur" id="superieur">
             <option selected>Choisissez...</option>
             @if (count((array)$superieurs))
