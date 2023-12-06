@@ -20,6 +20,7 @@ class FormulaireUsagerSeeder extends Seeder
                 'reponse1'=>'test',
                 'reponse2'=>'test',
                 'reponse3'=>'rat',
+                'created_at'=> now()
             ],
             [
                 'usager_id'=>'1',
@@ -27,6 +28,7 @@ class FormulaireUsagerSeeder extends Seeder
                 'reponse1'=>'test',
                 'reponse2'=>'test',
                 'reponse3'=>'gros rat',
+                'created_at'=> now()
             ],
             [
                 'usager_id'=>'2',
@@ -34,6 +36,7 @@ class FormulaireUsagerSeeder extends Seeder
                 'reponse1'=>'rat',
                 'reponse2'=>'rat',
                 'reponse3'=>'rat',
+                'created_at'=> now()
             ],
         ]);
     }

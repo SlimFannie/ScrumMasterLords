@@ -14,28 +14,37 @@
     </div>
 
     <form method="POST" action="{{ route('store.danger', $username) }}">
+        @csrf
+        <div>
+            @if ($errors->any())
+            <div class="alert alert-warning" role="alert">
+                <h5>{{$errors->first()}}</h5>
+            </div>
+            @endif
+        </div>
         <div class="container-fluid zoneForm">
-            <div class="row g-0 mt mb-2 text-center">
-                <h3 class="titleForm">Identification<h3>
+            <div class="row g-0 mb-2 text-center">
+                <h4 class="titleForm">Identification<h4>
             </div>
-            
             <div class="row g-0 mb-3">
-                <header class="textForm" for="nom" id="header">Nom</header>
-                <input class="inputForm" type="text" id="nom" class="champ">
 
-                <header class="textForm" for="prenom" id="header">Prénom</header>
-                <input class="inputForm" type="text" id="prenom" class="champ">
-
-                <header class="textForm" for="matricule" id="header">Matricule</header>
-                <input class="inputForm" type="text" id="matricule" class="champ">
+                <p class="textForm"><span class="underline textForm">Nom complet:</span> {{Session::get('user.prenom')}} {{Session::get('user.nom')}}</p>
+                <p class="textForm"><span class="underline textForm">Numéro d'employé:</span> {{Session::get('user.matricule')}}</p>
+                <!-- Bouton modal identifiant inexacte -->
+                <button type="button" class="btn btn-primary w-25" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Ces identifiants sont inexactes?  
+                </button>
+                <!---->
             </div>
+        
 
-            <div class="row g-0 mb-3">
-                <header class="textForm" for="fonction" id="header">Fonction au moment de l'évènement</header>
-                <input class="inputForm" type="text" id="fonction" class="champ">
+                <div class="row g-0 mb-3">
+                    <header class="textForm" for="fonction" id="header">Fonction au moment de l'évènement</header>
+                    <input class="inputForm" type="text" class="champ" name="fonction" id="fonction" placeholder="Menuisier" value="{{ old('fonction') }}">
 
-                <header class="textForm" for="secteur" id="header">Secteur d'activité</header>
-                <input class="inputForm" type="text" id="secteur" class="champ">
+                    <header class="textForm" for="secteur" id="header">Secteur d'activité</header>
+                    <input class="inputForm" type="text" name="secteur" id="secteur" value="{{ old('secteur') }}" placeholder="Secteur" class="champ">
+                </div>
             </div>
         </div>
 
@@ -46,25 +55,25 @@
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dateHeure" id="header">Date et heure de l'observation :</header>
-                <input class="inputForm" type="text" type="datetime-local" id="dateHeure" class="champ">
+                <input class="inputForm" type="datetime-local" name="dateHeure" id="dateHeure" value="{{ old('dateHeure') }}">
 
-                <header class="textForm" for="lieu" id="header">Lieu</header>
-                <input class="inputForm" type="text" id="lieu" class="champ">
+                <header class="textForm" for="endroit" id="header">Lieu</header>
+                <input class="inputForm" type="text" name="endroit" id="endroit" value="{{ old('endroit') }}" placeholder="Dans l'entrée de l'hôtel de ville." class="champ">
             </div>
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dTemoin" id="header">Témoins :</header>
-                <textarea id="dTemoin" class="resize inputForm"></textarea>
+                <textarea id="dTemoin" class="resize inputForm" name="dTemoin" id="dTemoin" value="{{ old('dTemoin') }}"></textarea>
             </div>
 
             <div class="row g-0 mb-3">
                 <header class="textForm" for="dEvent" id="header">Description :</header>
-                <textarea id="dEvent" class="resize inputForm"></textarea>
+                <textarea id="dEvent" class="resize inputForm" name="dEvent" id="dEvent" value="{{ old('dEvent') }}"></textarea>
             </div>
 
             <div class="row g-0 mb-3">
-                <header class="textForm" for="dCorrection" id="header">Correction(s) ou amélioraions proposées:</header>
-                <textarea id="dCorrection" class="resize inputForm"></textarea>
+                <header class="textForm" for="dCorrection" id="header">Correction(s) ou améliorations proposées:</header>
+                <textarea id="dCorrection" class="resize inputForm" name="dCorrection" id="dCorrection" value="{{ old('dCorrection') }}"></textarea>
             </div>
         </div>
 
