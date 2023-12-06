@@ -39,9 +39,6 @@ Route::get('/{username}/AccidentDeTravail',
 Route::POST('/{username}/AccidentDeTravail/Envoi',
 [FormulairesController::class, 'storeAccident'])->name('store.accident');
 
-Route::get('/AccidentDeTravail/{formId}',
-[FormulairesController::class, 'showAccident'])->name('show.accident');
-
 /* Audit SST */
 
 Route::get('/{username}/AuditSST',
@@ -72,3 +69,7 @@ Route::POST('/{username}/AtelierMecanique/Envoi',
 Route::get('/{username}/procedures',
 [ProceduresTravailController::class, 'index'])->name('procedures.index');
 
+/* Autre */
+
+Route::get('/formulaire/{id}',
+[FormulairesController::class, 'show'])->name('show.form');

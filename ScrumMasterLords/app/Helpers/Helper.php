@@ -4,7 +4,9 @@ namespace App\Helpers;
 
 use App\Models\Usager;
 use App\Models\Departement;
+use App\Models\Formulaire;
 use Session;
+use Request;
 
     class Helper
 
@@ -21,6 +23,12 @@ use Session;
             $departements = Departement::all();
 
             return $departements;
+        }
+
+        public static function getTitre(int $id) {
+            $formulaire = Formulaire::find($id);
+
+            return $formulaire;
         }
         
     }

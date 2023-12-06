@@ -40,7 +40,7 @@ return new class extends Migration
             $table->string('question23')->nullable();
             $table->string('question24')->nullable();
             $table->string('question25')->nullable();
-            $table->timestamps();
+            $table->timestamps(false);
         });
     }
 
